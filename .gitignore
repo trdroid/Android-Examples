@@ -1,6 +1,7 @@
 *.class
 *.dex
 *.log
+*.pro
 
 bin/
 gen/

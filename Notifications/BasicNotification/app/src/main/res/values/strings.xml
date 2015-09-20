@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">BasicNotification</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="display_notification_button_label">Display Notification</string>
+    <string name="title_activity_notification_board">Notification Board</string>
+    <string name="message">A message from the Library</string>
+</resources>
