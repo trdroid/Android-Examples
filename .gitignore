@@ -1,7 +1,6 @@
 *.class
 *.dex
 *.log
-.navigation/
 
 bin/
 gen/
@@ -11,6 +10,9 @@ captures/
 .gradle/
 build/
 local.properties
+
+.navigation/
+.idea/
 
 *.apk
 *.ap_
