@@ -30,12 +30,17 @@ public class MyService extends Service
     public int onStartCommand(Intent intent, int flags, int startId) {
         Toast.makeText(this, "Service Started", Toast.LENGTH_LONG).show();
 
+        /*
+            Having a long running synchronous task here would result in an ANR as the service code runs in the main thread
+         */
+
         //Return START_STICKY to let the service continue running until explicitly stopped
         return START_STICKY;
     }
 
     /*
-        onDestroy() is called when the service is stopped using the stopService() method
+        onDestroy() is called when the service is stopped using the stopService() method.
+        This is where the resources used by the service should be freed.
      */
     @Override
     public void onDestroy() {
