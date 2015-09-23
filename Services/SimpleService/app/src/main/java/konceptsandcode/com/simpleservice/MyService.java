@@ -40,6 +40,7 @@ public class MyService extends Service
 
     /*
         onDestroy() is called when the service is stopped using the stopService() method.
+        A service can stop itself by calling stopSelf() method
         This is where the resources used by the service should be freed.
      */
     @Override
