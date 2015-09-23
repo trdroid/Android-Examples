@@ -5,3 +5,5 @@ onBind() allows an activity to bind to a service. This allows the activity to di
 onStartCommand() is called when the service is explicitly started using the startService() method
 
 onDestroy() is called when the service is stopped using the stopService() method
+
+The service code runs in the main thread.
