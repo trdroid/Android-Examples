@@ -28,14 +28,14 @@ public class MyService extends Service
         Toast.makeText(this, "Service Started", Toast.LENGTH_LONG).show();
 
         File[] files = new File[5];
-        DataCompressor imageProcessor = new DataCompressor();
+        DataCompressor dataCompressor = new DataCompressor();
 
         /*
             Type of the array passed as an argument to execute() method matches the first type parameter of AsyncTask
 
             AsyncTask<File
          */
-        imageProcessor.execute(files);
+        dataCompressor.execute(files);
 
         return START_STICKY;
     }
