@@ -115,15 +115,10 @@ public class MyService extends Service
         @Override
         protected void onPostExecute(Float ratio)
         {
-            /*
-                Eg: Display a Toast or a Notification to indicate the user that the task is done
-             */
-
-            /*
-                A service could be stopped when done
-             */
-
+            //Display a Toast or a Notification to indicate the user that the task is done
             Toast.makeText(getBaseContext(), "Value received from doInBackground " + ratio, Toast.LENGTH_LONG).show();
+
+            //A service could be stopped when done
             stopSelf();
         }
     }
