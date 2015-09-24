@@ -69,6 +69,8 @@ public class MyService extends Service
             The return type of doInBackground method matches the third type parameter of AsyncTask
             AsyncTask<~~,~~,Float>
 
+            The value returned is sent as an argument to onPostExecute() method
+
             Long running code should be placed in this method which is executed in a background thread
          */
         @Override
