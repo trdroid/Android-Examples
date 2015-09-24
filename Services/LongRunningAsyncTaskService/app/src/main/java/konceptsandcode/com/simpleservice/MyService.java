@@ -7,7 +7,6 @@ import android.os.IBinder;
 import android.widget.Toast;
 
 import java.io.File;
-import java.net.URL;
 
 /*
     Service runs on the same thread as the activity
