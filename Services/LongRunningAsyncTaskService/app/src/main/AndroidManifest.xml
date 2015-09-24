@@ -17,24 +17,6 @@
             </intent-filter>
         </activity>
 
-        <!--
-            Adding an intent filter makes the service available to other applications
-
-            For example:
-
-        <service
-            android:name=".MyService"
-            android:enabled="true"
-            android:exported="true" >
-            <intent-filter>
-                <action android:name="com.example.MyService"
-            </intent-filter>
-        </service>
-
-
-        To start the service, use the startService method as
-            startService(new Intent("com.example.MyService"))
-        -->
         <service
             android:name=".MyService"
             android:enabled="true"
