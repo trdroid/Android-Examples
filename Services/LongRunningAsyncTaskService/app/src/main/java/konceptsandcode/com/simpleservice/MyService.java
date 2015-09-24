@@ -62,6 +62,9 @@ public class MyService extends Service
         /*
             Long running task
          */
+        try {
+            Thread.sleep(1000);
+        }catch(InterruptedException e) {}
     }
 
     /*
@@ -83,13 +86,14 @@ public class MyService extends Service
         protected Float doInBackground(File... files)
         {
             int progress = 0;
-            Float compressionRatio = 0f;
+            Float compressionRatio = 0.5f;
 
             for(int iter = 0; iter < files.length; iter++) {
 
                 //invoke a long running task
                 compress(files[iter]);
 
+                progress += 20;
                 /*
                     report progress of the task by calling publishProgress() method
                  */
@@ -106,9 +110,9 @@ public class MyService extends Service
             This method runs in the main thread
         */
         @Override
-        protected void onProgressUpdate(Integer... values)
+        protected void onProgressUpdate(Integer... progress)
         {
-            super.onProgressUpdate(values);
+            Toast.makeText(getBaseContext(), String.valueOf(progress[0]) + " %", Toast.LENGTH_LONG).show();
         }
 
         /*
@@ -128,6 +132,7 @@ public class MyService extends Service
                 A service could be stopped when done
              */
 
+            Toast.makeText(getBaseContext(), "Value received from doInBackground " + ratio, Toast.LENGTH_LONG).show();
             stopSelf();
         }
     }
