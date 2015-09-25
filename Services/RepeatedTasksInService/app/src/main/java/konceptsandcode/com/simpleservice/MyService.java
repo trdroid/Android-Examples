@@ -60,7 +60,7 @@ public class MyService extends Service
 
         /*
             How frequently the task is schedule to run is independent of how long the task runs.
-            In this example, the task would be schedule to execute every INTERVAL ms (2000 ms in this case)
+            In this example, the task would be scheduled to execute every INTERVAL ms (2000 ms in this case)
          */
         return START_STICKY;
     }
@@ -68,6 +68,10 @@ public class MyService extends Service
     @Override
     public void onDestroy() {
         super.onDestroy();
+
+        if(timer != null) {
+            timer.cancel();
+        }
 
         Toast.makeText(this, "Service Stopped and Destroyed", Toast.LENGTH_LONG).show();
     }
