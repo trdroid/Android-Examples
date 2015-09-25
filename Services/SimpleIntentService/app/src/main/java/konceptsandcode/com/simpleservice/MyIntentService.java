@@ -22,6 +22,10 @@ public class MyIntentService extends IntentService
     }
 
 
+    /*
+        Code in onHandleIntent will be executed on a separate thread.
+        The thread is terminated after the task finishes.
+     */
     @Override
     protected void onHandleIntent(Intent intent)
     {
