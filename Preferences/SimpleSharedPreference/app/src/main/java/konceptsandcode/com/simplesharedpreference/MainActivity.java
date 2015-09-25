@@ -48,17 +48,17 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    public void onSetPreferencesButton(View view) {
+    public void onSetPreferencesButtonClick(View view) {
         startActivity(new Intent("com.example.sharedpreference"));
     }
 
-    public void onReadPreferencesButton(View view) {
+    public void onReadPreferencesButtonClick(View view) {
         String settingsInText = "BlueTooth:" + preferences.getBoolean("allowBluetooth", false);
 
         Toast.makeText(this, settingsInText, Toast.LENGTH_LONG).show();
     }
 
-    public void onEditPreferencesButton(View view) {
+    public void onEditPreferencesButtonClick(View view) {
         CheckBox bluetoothCheckBox = (CheckBox)findViewById(R.id.enableBluetoothCheckBox);
         SharedPreferences.Editor preferencesEditor = preferences.edit();
         preferencesEditor.putBoolean("allowBluetooth", bluetoothCheckBox.isChecked());

@@ -8,14 +8,14 @@
         android:text="@string/set_preference_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:onClick="onSetPreferencesButton" />
+        android:onClick="onSetPreferencesButtonClick" />
 
     <Button
         android:id="@+id/readPreferencesButton"
         android:text="@string/read_preference_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:onClick="onReadPreferencesButton" />
+        android:onClick="onReadPreferencesButtonClick" />
 
     <CheckBox
         android:id="@+id/enableBluetoothCheckBox"
@@ -28,6 +28,6 @@
         android:text="@string/edit_preference_button"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:onClick="onEditPreferencesButton" />
+        android:onClick="onEditPreferencesButtonClick" />
 
 </LinearLayout>
