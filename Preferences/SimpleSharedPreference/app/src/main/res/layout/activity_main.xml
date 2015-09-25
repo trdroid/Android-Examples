@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/setPreferencesButton"
+        android:text="@string/set_preference_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSetPreferencesButton" />
+
+    <Button
+        android:id="@+id/readPreferencesButton"
+        android:text="@string/read_preference_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onReadPreferencesButton" />
+
+    <CheckBox
+        android:id="@+id/enableBluetoothCheckBox"
+        android:text="Enable Bluetooth"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/editPreferencesButton"
+        android:text="@string/edit_preference_button"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onEditPreferencesButton" />
+
+</LinearLayout>

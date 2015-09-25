@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PreferenceActivity</string>
+    <string name="pref_activity_name">Preferences Screen</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="set_preference_button">Set Preferences</string>
+    <string name="read_preference_button">Display Preferences</string>
+    <string name="edit_preference_button">Edit Preferences</string>
+</resources>
+
