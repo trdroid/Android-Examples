@@ -7,9 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-/*
-    After launching the app, hitting the home button still displays Toasts from the Service running in the background
- */
 public class MainActivity extends AppCompatActivity
 {
 
