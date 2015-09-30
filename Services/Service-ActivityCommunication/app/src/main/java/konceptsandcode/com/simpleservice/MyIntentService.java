@@ -33,6 +33,8 @@ public class MyIntentService extends IntentService
 
         /*
             Broadcast a message to the MainActivity to indicate that the task is done.
+            
+            The action is an arbitray identifier which should be unique. Java's package namespace can be used here.
          */
         Intent broadcastIntent = new Intent().setAction("TASK_FINISHED");
         getBaseContext().sendBroadcast(broadcastIntent);
