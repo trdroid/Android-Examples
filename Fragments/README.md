@@ -17,6 +17,7 @@ Fragments were released in Android 3.0. A fragment SDK that works on old Android
 Consider a scenario:
 
 a) Portrait Mode on a Phone:
+
   Screen1: A List View
   
   Screen2: Clicking on each item transitions to a Details View
