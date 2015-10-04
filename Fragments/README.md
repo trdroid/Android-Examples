@@ -14,16 +14,19 @@ Fragments have a life cycle like any other Android component.
 
 Fragments were released in Android 3.0. A fragment SDK that works on old Android devices was also released by Google.
 
-For example:
+Consider a scenario:
 
 a) Portrait Mode on a Phone:
   Screen1: A List View
+  
   Screen2: Clicking on each item transitions to a Details View
 
 b) Landscape Mode on a Tablet: 
+
   Screen1: A List View to the left, a Details View to the right
 
 c) Portrait Mode on a Tablet:
+
   Screen1: A List View on the top, a Details View on the bottom
 
 Trying to achieve this just by designing layouts for various configurations would be a "messy" solution.
@@ -31,11 +34,14 @@ Trying to achieve this just by designing layouts for various configurations woul
 An easier approach is to use Fragments.
 
 a) Screen1: Entire Screen1, Fragment A displays a List (Clicking on an element leads to Screen2)
+
    Screen2: Entire Screen2, Fragment B shows Details 
 
 b) Screen1: Left of Screen1, Fragment A displays a List (Clicking on an element shows details)
+
    Screen1: Right of Screen1, Fragment B shows Details
    
 c) Screen1: Top of Screen1, Fragment A displays a List (Clicking on an element shows details)
+
    Screen1: Bottom of Screen1, Fragment B shows Details
    
