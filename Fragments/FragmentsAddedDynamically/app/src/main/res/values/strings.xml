@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Fragments</string>
+    <string name="label1">Fragment 1 in Portrait Mode</string>
+    <string name="label2">Fragment 2 in Landscape Mode</string>
+</resources>
