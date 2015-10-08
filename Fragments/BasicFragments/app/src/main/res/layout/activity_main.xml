@@ -6,7 +6,7 @@
 
     <!--
         let the layout_width for both fragments be fill_parent
-        distribute this equally between the two fragments by using layout_weight attribute
+        distribute the estate between the two fragments by using layout_weight attribute
     -->
 
     <fragment
