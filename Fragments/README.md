@@ -2,7 +2,7 @@
 
 Fragments allow for the creation of the user interface for an Android application in a versatile way.
 
-A Fragment has an associated view hierarchy just like an Activity. 
+A Fragment has an associated view hierarchy just like an Activity. It can be inflated from an XML file or created in code. 
 
 An Activity specifies Fragments as containers in its layout. The internal structure of each Fragment is laid out in its own layout file that specifies the Fragment's view hierarchy, which has to be attached to the view hiearchy of the enclosing Activity.
 
@@ -12,8 +12,9 @@ A Fragment is extended from android.app.Object where as an Activity from Context
 
 Fragments have a life cycle like any other Android component. 
 
-Fragments were released in Android 3.0. A fragment SDK that works on old Android devices was also released by Google.
+Fragments were released in Android 3.0. A fragment SDK that works on older Android devices was also released by Google.
 
+### A Scenario for using Fragments
 Consider a scenario:
 
 a) Portrait Mode on a Phone:
@@ -46,3 +47,9 @@ c) Screen1: Top of Screen1, Fragment A displays a List (Clicking on an element s
 
    Screen1: Bottom of Screen1, Fragment B shows Details
    
+
+### Benefits
+
+Activities are killed and recreated on configuration changes. This requires the developers to save their state before termination and restore it on recreation. 
+
+This tearing-down and recreation could be avoided with Fragments as they can be retained across orientation changes.
