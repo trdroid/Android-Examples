@@ -8,7 +8,9 @@ An Activity specifies Fragments as containers in its layout. The internal struct
 
 Fragments are contained within an activity and only exist within the context of an activity. 
 Fragments could be thought of as "fragmented" or "mini" activities. 
-A Fragment is extended from android.app.Object where as an Activity from Context.
+A Fragment is extended from android.app.Object.
+
+A Fragment has access to the Activity it is tied to and its resources. A Fragment also has access to its FragmentManager through the Activity. 
 
 Fragments have a life cycle like any other Android component. 
 
@@ -50,6 +52,10 @@ c) Screen1: Top of Screen1, Fragment A displays a List (Clicking on an element s
 
 ### Benefits
 
-Activities are killed and recreated on configuration changes. This requires the developers to save their state before termination and restore it on recreation. 
+Activities are killed and recreated on configuration changes. This requires their state to be saved before termination and restored on recreation. 
 
 This tearing-down and recreation could be avoided with Fragments as they can be retained across orientation changes.
+
+Fragments can be added to the backstack in a way that pressing the Back button steps backward through the fragments while saying inside the current activity. 
+
+
