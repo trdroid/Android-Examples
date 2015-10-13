@@ -33,9 +33,7 @@ c) Portrait Mode on a Tablet:
 
   Screen1: A List View on the top, a Details View on the bottom
 
-*Trying to achieve this just by designing layouts for various configurations would be a "messy" solution.*
-
-*An easier approach is to use Fragments.*
+> *Trying to achieve this just by designing layouts for various configurations would be a "messy" solution. An easier approach is to use Fragments.*
 
 a) Screen1: Entire Screen1, Fragment A displays a List (Clicking on an element leads to Screen2)
 
