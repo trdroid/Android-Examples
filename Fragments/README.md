@@ -4,7 +4,7 @@ Fragments allow for the creation of the user interface for an Android applicatio
 
 A Fragment has an associated view hierarchy just like an Activity. It can be inflated from an XML file or created in code. 
 
-A Fragment has a bundle that can be assigned with the initialization arguments of the fragment. This should be done before it is attached to the Activity that it is bound to. These arguments are retained across fragment tear-down and recreation. 
+A Fragment has a bundle that can be assigned its initialization arguments. This should be done before it is attached to the Activity that it is bound to i.e. immediately after constructing the fragment. These arguments are retained across fragment tear-down and recreation. 
 
 An Activity specifies Fragments as containers in its layout. The internal structure of each Fragment is laid out in its own layout file that specifies the Fragment's view hierarchy, which has to be attached to the view hiearchy of the enclosing Activity.
 
