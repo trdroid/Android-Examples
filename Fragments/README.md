@@ -50,7 +50,9 @@ c) Screen1: Top of Screen1, Fragment A displays a List (Clicking on an element s
 
 ### Benefits
 
-Activities are killed and recreated on configuration changes. This requires their state to be saved before termination and restored on recreation. This work can be overcome with Fragments as they can be retained across orientation changes.
+Activities are killed and recreated on configuration changes. This requires their state to be saved before termination and restored on recreation. 
+
+The saving and restoration can be overcome with Fragments as they can be retained across orientation changes.
 
 Fragments can be added to the backstack in a way that pressing the Back button steps backward through the fragments while saying inside the current activity. 
 
