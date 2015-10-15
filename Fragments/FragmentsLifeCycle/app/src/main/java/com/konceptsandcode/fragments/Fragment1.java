@@ -42,11 +42,15 @@ public class Fragment1 extends android.support.v4.app.Fragment
         return fragment1;
     }
 
+
+
     public Fragment1()
     {
         // Required empty public constructor
         Log.d("Fragment1", "in Constructor");
     }
+
+
 
     /*
         If the fragment is defined by a <fragment> tag, the onInflate() callback will be called.
@@ -67,6 +71,8 @@ public class Fragment1 extends android.support.v4.app.Fragment
         Log.d("Fragment1", "onInflate");
     }
 
+
+
     /*
         onAttach() is called after fragment is associated with its Activity.
 
@@ -84,6 +90,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
         Log.d("Fragment1", "onAttach");
     }
 
+
     /*
         onCreate() method get a saved bundle (saved in onSaveInstanceState() method)
 
@@ -99,6 +106,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
         super.onCreate(savedInstanceState);
         Log.d("Fragment1", "onCreate");
     }
+
 
 
     /*
@@ -120,6 +128,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
     }
 
 
+
     /*
         onViewCreated() is called right after onCreateView() and is passed the view returned by onCreateView()
      */
@@ -128,6 +137,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
     {
         super.onViewCreated(view, savedInstanceState);
     }
+
 
 
     /*
@@ -145,6 +155,8 @@ public class Fragment1 extends android.support.v4.app.Fragment
         Log.d("Fragment1", "onCreate");
     }
 
+
+
     /*
         onStart() of a fragment is tied to the onStart() of its Activity.
 
@@ -161,6 +173,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
     }
 
 
+
     /*
         onResume() of a Fragment is tied to Activity's onResume() method
 
@@ -174,6 +187,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
     }
 
 
+
     /*
         onPause() of a Fragment is tied to Activity's onPause() method
      */
@@ -183,6 +197,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
         super.onPause();
         Log.d("Fragment1", "onPause");
     }
+
 
 
     /*
@@ -200,11 +215,13 @@ public class Fragment1 extends android.support.v4.app.Fragment
     }
 
 
+
     @Override
     public void onViewStateRestored(Bundle savedInstanceState)
     {
         super.onViewStateRestored(savedInstanceState);
     }
+
 
 
     /*
@@ -220,6 +237,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
     }
 
 
+
     /*
         onDestroyView() is called after the view hierarchy created in onCreateView() method
         has been detached from the fragment
@@ -230,6 +248,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
         super.onDestroyView();
         Log.d("Fragment1", "onDestroyView");
     }
+
 
 
     /*
@@ -244,6 +263,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
     }
 
 
+
     /*
         The invocation of this method implies that the fragment is not tied to its enclosing Activity.
         Its view hierarchy and all of its resources are released
@@ -255,6 +275,8 @@ public class Fragment1 extends android.support.v4.app.Fragment
         Log.d("Fragment1", "onDetach");
     }
 
+
+    
     /*
         Specifies if the Fragment should be completely destroyed on Activity recreation
 
