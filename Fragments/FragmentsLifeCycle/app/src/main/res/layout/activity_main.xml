@@ -4,11 +4,6 @@
     android:layout_height="fill_parent"
     android:layout_width="fill_parent">
 
-    <!--
-        let the layout_width for both fragments be fill_parent
-        distribute the estate between the two fragments by using layout_weight attribute
-    -->
-
     <fragment
         android:id="@+id/fragment1"
         android:name="com.konceptsandcode.fragments.Fragment1"
@@ -16,13 +11,4 @@
         android:layout_height="match_parent"
         android:layout_weight="1"
         />
-
-    <fragment
-        android:id="@+id/fragment2"
-        android:name="com.konceptsandcode.fragments.Fragment2"
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        />
-
 </LinearLayout>

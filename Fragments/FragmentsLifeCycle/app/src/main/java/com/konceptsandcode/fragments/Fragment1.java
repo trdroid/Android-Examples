@@ -145,6 +145,14 @@ public class Fragment1 extends android.support.v4.app.Fragment
         Log.d("Fragment1", "onCreate");
     }
 
+    /*
+        onStart() of a fragment is tied to the onStart() of its Activity.
+
+        When you are using Fragments, whatever code that usually goes into the onStart() of an Activity,
+        can be placed in onStart() of a Fragment
+
+        Fragment is now visible to the user, but the user cannot interact with it yet
+     */
     @Override
     public void onStart()
     {
@@ -152,6 +160,12 @@ public class Fragment1 extends android.support.v4.app.Fragment
         Log.d("Fragment1", "onStart");
     }
 
+
+    /*
+        onResume() of a Fragment is tied to Activity's onResume() method
+
+        The user can start interacting with the app once this callback returns
+     */
     @Override
     public void onResume()
     {
@@ -159,6 +173,10 @@ public class Fragment1 extends android.support.v4.app.Fragment
         Log.d("Fragment1", "onResume");
     }
 
+
+    /*
+        onPause() of a Fragment is tied to Activity's onPause() method
+     */
     @Override
     public void onPause()
     {
@@ -166,6 +184,34 @@ public class Fragment1 extends android.support.v4.app.Fragment
         Log.d("Fragment1", "onPause");
     }
 
+
+    /*
+        A Fragment can save its state just like an Activity in a Bundle.
+        This bundle gets passed to other callbacks like
+        onInflate(), onCreate(), onCreateView(), onViewCreated(), onActivityCreated()
+
+        If a reference to a Fragment has to be saved, just save the Fragment's identifier
+        and re-establish connections in the onViewStateRestored() callback
+     */
+    @Override
+    public void onSaveInstanceState(Bundle outState)
+    {
+        super.onSaveInstanceState(outState);
+    }
+
+
+    @Override
+    public void onViewStateRestored(Bundle savedInstanceState)
+    {
+        super.onViewStateRestored(savedInstanceState);
+    }
+
+
+    /*
+        onStop() of a Fragment is tied to its Activity onStop() callback
+
+        A Fragment that has been stopped, could go to onStart() and then to onResume() callbacks
+    */
     @Override
     public void onStop()
     {
@@ -188,7 +234,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
 
     /*
         onDestroy() is called when the fragment is no longer in use
-        It is still attached to its enclosing activity.
+        It is still attached to its enclosing activity but cannot do much.
      */
     @Override
     public void onDestroy()
