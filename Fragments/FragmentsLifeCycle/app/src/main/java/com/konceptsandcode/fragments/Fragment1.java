@@ -100,6 +100,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
         Log.d("Fragment1", "onCreate");
     }
 
+
     /*
         onCreateView() should return the view hierarchy of the fragment
 
@@ -118,6 +119,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
         return inflater.inflate(R.layout.fragment1, container, false);
     }
 
+
     /*
         onViewCreated() is called right after onCreateView() and is passed the view returned by onCreateView()
      */
@@ -127,8 +129,14 @@ public class Fragment1 extends android.support.v4.app.Fragment
         super.onViewCreated(view, savedInstanceState);
     }
 
+
     /*
-        Called after the completion of
+        Called after the completion of the enclosing Activity's onCreate() callback
+
+        The Activity's view hierarchy is ready and available and so is the Fragment's view hierarchy if one is returned
+         before
+
+        Additional UI changes can be done here before displaying the UI to the user
      */
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
@@ -165,6 +173,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
         Log.d("Fragment1", "onStop");
     }
 
+
     /*
         onDestroyView() is called after the view hierarchy created in onCreateView() method
         has been detached from the fragment
@@ -175,6 +184,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
         super.onDestroyView();
         Log.d("Fragment1", "onDestroyView");
     }
+
 
     /*
         onDestroy() is called when the fragment is no longer in use
@@ -187,6 +197,7 @@ public class Fragment1 extends android.support.v4.app.Fragment
         Log.d("Fragment1", "onDestroy");
     }
 
+
     /*
         The invocation of this method implies that the fragment is not tied to its enclosing Activity.
         Its view hierarchy and all of its resources are released
@@ -198,5 +209,29 @@ public class Fragment1 extends android.support.v4.app.Fragment
         Log.d("Fragment1", "onDetach");
     }
 
+    /*
+        Specifies if the Fragment should be completely destroyed on Activity recreation
 
+        The question becomes:
+        Do you want to use the same Fragment instance on Activity recreation or create a new one from scratch?
+
+        If you choose to retain the Fragment, it has to be detached from this Activity and attached to the new one
+
+        Since the Fragment is being retained, its onDestroy() method is not called on the Activity tear-down
+        and because the same Fragment is attached to a new Activity, its onCreate() method is not called on
+        reattachment
+
+        When a Fragment is retained, its callbacks should take into consideration the reasons for the Activity recreation
+
+        For example, say if the Activity is recreated because of a configuration change, appropriate actions must be
+        taken in the Fragment, like inflating a new view hierarchy in the onCreateView() method
+
+        setRetainInstance can be called from
+        onCreate() or onCreateView() or onActivityCreated()
+     */
+    @Override
+    public void setRetainInstance(boolean retain)
+    {
+        super.setRetainInstance(retain);
+    }
 }
