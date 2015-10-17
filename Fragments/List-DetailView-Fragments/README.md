@@ -2,7 +2,7 @@
 
 On launching the app, the RecipesActivity is invoked (as it is the entry point as declared in the manifest file)
 
-RecipesActivity lays out its UI from activity_main.xml, which contains a <fragment> tag with class RecipesFragment
+RecipesActivity lays out its UI from activity_main.xml, which contains a \<fragment\> tag with class RecipesFragment
 
 The RecipesFragment is instantiated and it's lifecycle is started
 
