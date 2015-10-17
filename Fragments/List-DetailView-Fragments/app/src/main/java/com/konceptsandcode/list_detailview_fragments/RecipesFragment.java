@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class RecipesFragment extends ListFragment {
-    private MainActivity mainActivity = null;
+    private RecipesActivity mainActivity = null;
     private int selectedItemIndex = 0;
 
     @Override
@@ -22,7 +22,7 @@ public class RecipesFragment extends ListFragment {
     public void onAttach(Activity activity)
     {
         super.onAttach(activity);
-        this.mainActivity = (MainActivity)activity;
+        this.mainActivity = (RecipesActivity)activity;
     }
 
     @Override
@@ -44,8 +44,6 @@ public class RecipesFragment extends ListFragment {
 
         listView.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
         listView.setSelection(selectedItemIndex);
-
-        //mainActivity.showRecipeDetails(selectedItemIndex);
     }
 
     @Override
