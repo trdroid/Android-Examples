@@ -19,6 +19,6 @@ The RecipeStepsFragment displays the STEPS content of the model with the right i
 
 ### Observations
 
-RecipesFragment is defined in the layout of RecipesActivity
+RecipesFragment is defined in RecipesActivity's layout file with a \<fragment\> tag
 
 RecipeStepsFragments are defined dynamically in RecipeStepsActivity
