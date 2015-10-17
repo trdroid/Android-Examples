@@ -17,3 +17,8 @@ The RecipeStepsActivity creates a new RecipeStepsFragment and also passes in the
 
 The RecipeStepsFragment displays the STEPS content of the model with the right index.
 
+### Observations
+
+RecipesFragment is defined in the layout of RecipesActivity
+
+RecipeStepsFragments are defined dynamically in RecipeStepsActivity
