@@ -16,7 +16,7 @@ public class MainActivity extends Activity
         Intent intent = new Intent();
 
         intent.setClass(getApplicationContext(), RecipeStepsActivity.class);
-        intent.putExtra("indexOfSelectedRecipe", indexOfSelectedRecipe);
+        intent.putExtra("selectedItemIndex", indexOfSelectedRecipe);
         startActivity(intent);
     }
 }

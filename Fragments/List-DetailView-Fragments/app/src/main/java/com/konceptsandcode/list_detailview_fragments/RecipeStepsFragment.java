@@ -4,9 +4,13 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class RecipeStepsFragment extends Fragment {
-    //private int selectedItemIndex = 0;
+    private int selectedItemIndex = 0;
 
     public static RecipeStepsFragment newFragmentInstance(int selectedItemIndex) {
         RecipeStepsFragment recipeDetailsFragment = new RecipeStepsFragment();
@@ -41,11 +45,26 @@ public class RecipeStepsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
+
+        selectedItemIndex = getArguments().getInt("selectedItemIndex", 0);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {
         super.onActivityCreated(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        if(container == null) {
+            return null;
+        }
+
+        View view = inflater.inflate(R.layout.recipe_steps, container, false);
+        TextView stepsTextView = (TextView) view.findViewById(R.id.steps);
+        stepsTextView.setText(RecipesModel.STEPS[selectedItemIndex]);
+
+        return view;
     }
 }

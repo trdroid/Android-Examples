@@ -50,7 +50,7 @@ public class RecipesFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        mainActivity.showRecipeDetails(selectedItemIndex);
+        mainActivity.showRecipeDetails(position);
         selectedItemIndex = position;
     }
 }
