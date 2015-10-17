@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--
+        NOTE: A Fragment is not like a regular View that you'd declare in the layout file
+        It is just a placeholder. No child tags should be placed under <fragment>
+
+        A Fragment has its own view hierarchy which will be inflated by the Fragment itself.
+
+        Note that it has a class attribute which specifies a class that extends on one of the Android's Fragment classes
+         and contains custom logic
+    -->
+
+    <fragment class="com.konceptsandcode.list_detailview_fragments.RecipesFragment"
+        android:id="@+id/recipes"
+        android:layout_weight="1"
+        android:layout_width="0px"
+        android:layout_height="match_parent"
+        />
+</LinearLayout>
