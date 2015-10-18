@@ -27,21 +27,31 @@ public class MainActivity extends AppCompatActivity
         boolean isLandscapeMode = display.getWidth() > display.getHeight();
 
         if(isLandscapeMode) {
+            /*
+                fragment2's view is inflated in its onCreateView() method defined in Fragment2
+            */
             Fragment2 fragment2 = new Fragment2();
 
             /*
                 android.R.id.content is the content view of this activity
-
+                
                 replace(<>, android.support.v4.app.Fragment instance) is not supported
                 replace(<>, android.app.Fragment instance) is supported
 
-                so fragment1 should be an instance of android.app.Fragment;
+                so fragment2 should be an instance of android.app.Fragment;
              */
 
             fragmentTransaction.replace(android.R.id.content, fragment2);
         } else {
             //portrait mode
+            /*
+                fragment1's view is inflated in its onCreateView() method defined in Fragment1
+            */
             Fragment1 fragment1 = new Fragment1();
+            
+            /*
+                Specifies where in the enclosing Activity's view hierarchy should fragment1 be attached
+            */
             fragmentTransaction.replace(android.R.id.content, fragment1);
         }
 
