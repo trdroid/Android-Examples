@@ -23,10 +23,34 @@ The RecipeStepsFragment displays the STEPS content of the model with the right i
 
 ### Notes
 
-RecipesFragment is defined in RecipesActivity's layout file with a \<fragment\> tag.
-It extends ListFragment
+STEP A: Instantiating a Fragment
+
+STEP B: Inflating Fragment's view
+
+STEP C: Where in the enclosing Activity should the Fragment be attached? i.e. Attaching the Fragment with its Activity's view hierarchy
+
+RecipesFragment
+
+STEP A:
+It is defined in RecipesActivity's layout file with a \<fragment\> tag.
+It is instantiated when its Activity's layout is inflated
+
+STEP B:
+It extends ListFragment.
 Its view is inflated from android.R.layout.simple_list_item_1 in its onActivityCreated() method
 
+STEP C:
+The location of \<fragment\> tag in the Activity's layout
+
+
+RecipeStepsFragments
+
+STEP A:
 RecipeStepsFragments are defined dynamically in RecipeStepsActivity.
-RecipeStepsFragments extend Fragment
+
+STEP B:
+RecipeStepsFragments extend Fragment.
 Its view is inflated from layout/recipe_steps.xml in its onCreateView() method
+
+STEP C:
+Specified in RecipesActivity using a FragmentTransaction
