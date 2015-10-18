@@ -58,4 +58,33 @@ The saving and restoration can be overcome with Fragments as they can be retaine
 
 Fragments can be added to the backstack in a way that pressing the Back button steps backward through the fragments while saying inside the current activity. 
 
+# Creation
+
+STEP A: Instantiating a Fragment
+
+STEP B: Inflating Fragment's view
+
+STEP C: Where in the enclosing Activity should the Fragment be attached? i.e. Attaching the Fragment with its Activity's view hierarchy
+
+
+### Declaring \<fragment\> tag
+
+* An Activity's layout has a \<fragment\> tag with a class attribute specifying a class that extends any Fragment class.
+* When the Activity's layout is inflated, the fragment's class (as specified in the class attribute) is instantiated (STEP A)
+* The Fragment's lifecycle starts as soon as it is instantiated and its callbacks are called. Its view should be inflated from a layout file (or by code) and returned from one of these callbacks (STEP B)
+* The position of the \<fragment\> tag in the Activity's layout addresses (STEP C)
+
+### Instantiating in code
+* A Fragment can be dynamically created by instantiating it in code (STEP A)
+* Its lifecycle starts. Its view should be inflated from a layout file (or by code) and returned from one of these callbacks (STEP B)
+* Where a Fragment should be attached in its enclosing Activity's view hierarchy is specified in a FragmentTransaction (STEP C)
+
+# Questions
+
+What is container ViewGroup in onCreateView? If it represents the immediate parent of the Fragment, then why is it invalid to attach the Fragment to ViewGroup explicitly. How is it different than specifying the view hierarchy in a FragmentTransaction?
+
+What does it mean to say that Android takes care of attaching the fragments for us?
+
+
+
 
