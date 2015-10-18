@@ -61,17 +61,19 @@ Fragments can be added to the backstack in a way that pressing the Back button s
 # Creation
 
 STEP A: Instantiating a Fragment
+
 STEP B: Inflating Fragment's view
+
 STEP C: Where in the enclosing Activity should the Fragment be attached? i.e. Attaching the Fragment with its Activity's view hierarchy
 
 
-# Declaring \<fragment\> tag
+### Declaring \<fragment\> tag
 
 * An Activity's layout has a \<fragment\> tag with a class attribute specifying a class that extends any Fragment class. The position of the \<fragment\> tag in the layout addresses STEP C.
 * When the Activity's layout is inflated, the fragment's class (as specified in the class attribute) is instantiated. This addresses STEP A.
 * The Fragment's lifecycle starts as soon as it is instantiated and its callbacks are called. Its view should be inflated from a layout file (or by code) and returned from one of these callbacks. This addresses STEP B.
 
-# Instantiating in code
+### Instantiating in code
 * A Fragment can be dynamically created by instantiating it in code (STEP A)
 * Its lifecycle starts. Its view should be inflated from a layout file (or by code) and returned from one of these callbacks (STEP B)
 * Where a Fragment should be attached inside its enclosing Activity is specified in a FragmentTransaction
