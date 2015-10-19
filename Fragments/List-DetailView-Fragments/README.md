@@ -29,7 +29,7 @@ STEP B: Inflating Fragment's view
 
 STEP C: Where in the enclosing Activity should the Fragment be attached? i.e. Attaching the Fragment with its Activity's view hierarchy
 
-RecipesFragment
+> RecipesFragment
 
 STEP A:
 It is defined in RecipesActivity's layout file with a \<fragment\> tag.
@@ -43,7 +43,7 @@ STEP C:
 The location of \<fragment\> tag in the Activity's layout
 
 
-RecipeStepsFragments
+> RecipeStepsFragments
 
 STEP A:
 RecipeStepsFragments are defined dynamically in RecipeStepsActivity.
