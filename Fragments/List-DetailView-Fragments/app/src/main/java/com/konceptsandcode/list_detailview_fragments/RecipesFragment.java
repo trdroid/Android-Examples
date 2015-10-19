@@ -4,36 +4,56 @@ import android.app.Activity;
 import android.app.ListFragment;
 import android.os.Bundle;
 import android.util.AttributeSet;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 public class RecipesFragment extends ListFragment {
-    private RecipesActivity mainActivity = null;
+    public static final String TAG = "RecipesFragment";
+    private RecipesActivity recipesActivity = null;
     private int selectedItemIndex = 0;
 
     @Override
     public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState)
     {
+        Log.v(TAG, "onInflate");
         super.onInflate(activity, attrs, savedInstanceState);
     }
 
     @Override
     public void onAttach(Activity activity)
     {
+        Log.v(TAG, "onAttach");
         super.onAttach(activity);
-        this.mainActivity = (RecipesActivity)activity;
+        this.recipesActivity = (RecipesActivity)activity;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+        Log.v(TAG, "onCreate");
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        Log.v(TAG, "onCreateView");
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        Log.v(TAG, "onViewCreated");
+        super.onViewCreated(view, savedInstanceState);
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState)
     {
+        Log.v(TAG, "onActivityCreated");
         super.onActivityCreated(savedInstanceState);
 
         setListAdapter(new ArrayAdapter<>(getActivity(),
@@ -47,8 +67,64 @@ public class RecipesFragment extends ListFragment {
     }
 
     @Override
+    public void onStart() {
+        Log.v(TAG, "onStart");
+        super.onStart();
+    }
+
+    @Override
+    public void onResume() {
+        Log.v(TAG, "onResume");
+        super.onResume();
+    }
+
+    @Override
+    public void onPause() {
+        Log.v(TAG, "onPause");
+        super.onPause();
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        Log.v(TAG, "onSaveInstanceState");
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    public void onStop() {
+        Log.v(TAG, "onStop");
+        super.onStop();
+    }
+
+    @Override
+    public void onViewStateRestored(Bundle savedInstanceState) {
+        Log.v(TAG, "onViewStateRestored");
+        super.onViewStateRestored(savedInstanceState);
+    }
+
+    @Override
+    public void onDestroyView() {
+        Log.v(TAG, "onDestroyView");
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.v(TAG, "onDestroy");
+        super.onDestroy();
+    }
+
+    @Override
+    public void onDetach() {
+        Log.v(TAG, "onDetach");
+        super.onDetach();
+        recipesActivity = null;
+    }
+
+    @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
-        mainActivity.showRecipeDetails(position);
+        Log.v(TAG, "onListItemClick");
+        recipesActivity.showRecipeDetails(position);
         selectedItemIndex = position;
     }
 }
