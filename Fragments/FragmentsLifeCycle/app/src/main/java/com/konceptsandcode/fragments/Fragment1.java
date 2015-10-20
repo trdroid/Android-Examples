@@ -96,13 +96,14 @@ public class Fragment1 extends android.support.v4.app.Fragment
         
         It cannot be assumed that the fragment is completely created when this callback is called.
         
-        onCreate() method gets a saved bundle (saved in onSaveInstanceState() method) if it is being recreated.
+        onCreate() method gets a saved bundle (saved in onSaveInstanceState() method) if the fragment 
+        is being recreated.
 
         This method does not guarantee the completion of the enclosing Activity's onCreate() method,
          as a result code that relies on the enclosing Activity's view hierarchy should not be placed here
 
-        A background thread can be created at this point, if the fragment needs some data and has to make a blocking
-        call.
+        A background thread can be created at this point, if the fragment needs some data and has to make a 
+        blocking call.
      */
     @Override
     public void onCreate(Bundle savedInstanceState)
