@@ -212,6 +212,12 @@ public class Fragment1 extends android.support.v4.app.Fragment
 
         If a reference to a Fragment has to be saved, just save the Fragment's identifier
         and re-establish connections in the onViewStateRestored() callback
+        
+        QUESTION: From the doc..
+        There are many situations where a fragment may be mostly torn down (such as when placed on the
+        back stack with no UI showing), but its state will not be saved until its owning activity actually 
+        needs to save its state.
+        WHAT DOES IT MEAN?
      */
     @Override
     public void onSaveInstanceState(Bundle outState)
