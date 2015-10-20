@@ -94,7 +94,9 @@ public class RecipesFragment extends ListFragment {
     /*
         Save what index has been selected so that it can be retrieved when the fragment is recreated
 
-        QUESTION: Why is it necessary to store the item selected?
+        QUESTION
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Why is it necessary to store the item selected?
         Is it because of listView.setSelection(selectedItemIndex);?
      */
     @Override
@@ -137,7 +139,9 @@ public class RecipesFragment extends ListFragment {
     }
 
     /*
-        QUESTION: On clicking an item in the RecipesFragment (which is in the RecipesActivity),
+        QUESTION
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        On clicking an item in the RecipesFragment (which is in the RecipesActivity),
         the RecipesActivity sends an intent to RecipeStepsActivity which launches that Activity.
 
         But what if the user presses home button before RecipeStepsActivity launches?
