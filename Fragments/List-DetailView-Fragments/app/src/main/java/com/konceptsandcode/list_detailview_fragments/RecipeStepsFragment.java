@@ -45,6 +45,25 @@ public class RecipeStepsFragment extends Fragment {
         super.onAttach(activity);
     }
 
+    /*
+        Question
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+        Can Android just kill the Fragment, but NOT its enclosing Activity?
+
+        If that is the case it makes sense to save the selectedItemIndex in the bundle,
+        because if Android has to recreate this fragment, it would do so by calling its default constructor,
+        but not out custom defined static newFragmentInstance;
+
+        so Android would call .. onCreate(), onCreateView() and so on .. when recreating the fragment
+        and in onCreateView(), selectedItemIndex is used to display the steps for a selected recipe
+        so it is important to store selectedItemIndex for retrieving it on recreation
+
+        say if selectedItemIndex is 4 before the fragment is torn-down
+        if selectedItemIndex is not saved and retrieved, its value will be 0 and on recreation the steps for
+        recipe[0] will be displayed which is undesired.
+
+        so shouldn't selectedItemIndex be saved in onSaveInstanceState?
+     */
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
