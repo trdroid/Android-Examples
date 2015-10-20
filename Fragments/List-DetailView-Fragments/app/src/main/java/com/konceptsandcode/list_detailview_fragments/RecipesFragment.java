@@ -36,6 +36,13 @@ public class RecipesFragment extends ListFragment {
     {
         Log.v(TAG, "onCreate");
         super.onCreate(savedInstanceState);
+
+        /*
+            Restore the index of item last selected
+         */
+        if(savedInstanceState != null) {
+            selectedItemIndex = savedInstanceState.getInt("selectedItemIndex", 0);
+        }
     }
 
     @Override
@@ -84,10 +91,18 @@ public class RecipesFragment extends ListFragment {
         super.onPause();
     }
 
+    /*
+        Save what index has been selected so that it can be retrieved when the fragment is recreated
+
+        QUESTION: Why is it necessary to store the item selected?
+        Is it because of listView.setSelection(selectedItemIndex);?
+     */
     @Override
     public void onSaveInstanceState(Bundle outState) {
         Log.v(TAG, "onSaveInstanceState");
         super.onSaveInstanceState(outState);
+
+        outState.putInt("selectedItemIndex", selectedItemIndex);
     }
 
     @Override
@@ -121,6 +136,12 @@ public class RecipesFragment extends ListFragment {
         recipesActivity = null;
     }
 
+    /*
+        QUESTION: On clicking an item in the RecipesFragment (which is in the RecipesActivity),
+        the RecipesActivity sends an intent to RecipeStepsActivity which launches that Activity.
+
+        But what if the user presses home button before RecipeStepsActivity launches?
+     */
     @Override
     public void onListItemClick(ListView l, View v, int position, long id) {
         Log.v(TAG, "onListItemClick");
