@@ -92,7 +92,11 @@ public class Fragment1 extends android.support.v4.app.Fragment
 
 
     /*
-        onCreate() method get a saved bundle (saved in onSaveInstanceState() method)
+        Called after onAttach() and before onCreateView() to do initial creation of a fragment.
+        
+        It cannot be assumed that the fragment is completely created when this callback is called.
+        
+        onCreate() method gets a saved bundle (saved in onSaveInstanceState() method) if it is being recreated.
 
         This method does not guarantee the completion of the enclosing Activity's onCreate() method,
          as a result code that relies on the enclosing Activity's view hierarchy should not be placed here
