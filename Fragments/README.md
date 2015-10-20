@@ -85,6 +85,10 @@ What is container ViewGroup in onCreateView? If it represents the immediate pare
 
 What does it mean to say that Android takes care of attaching the fragments for us?
 
+https://github.com/konceptsandcode/Android/blob/master/Fragments/FragmentsLifeCycle/app/src/main/java/com/konceptsandcode/fragments/Fragment1.java
+
+https://github.com/konceptsandcode/Android/blob/master/Fragments/List-DetailView-Fragments/app/src/main/java/com/konceptsandcode/list_detailview_fragments/RecipeStepsFragment.java
+
 
 
 
