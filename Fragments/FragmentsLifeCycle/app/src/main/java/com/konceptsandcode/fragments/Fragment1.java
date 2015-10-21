@@ -135,7 +135,15 @@ public class Fragment1 extends android.support.v4.app.Fragment
 
 
     /*
-        onViewCreated() is called right after onCreateView() and is passed the view returned by onCreateView()
+        onViewCreated() is called right after onCreateView()
+        but before any saved state has been restored in to the view. 
+        
+        As the view hiearchy is created, subclasses can do their initializations here. 
+        
+        NOTE: The view hierarchy is not attached to its parent yet.
+        
+        It is passed the view returned by onCreateView()
+        
      */
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState)
@@ -228,7 +236,14 @@ public class Fragment1 extends android.support.v4.app.Fragment
     }
 
 
-
+    /*
+        Introduced in JellyBean 4.2
+        
+        Called when the view hierarchy of this fragment has all state restored 
+        
+        Logic for tweaking the UI for restored fragments can be put here as opposed to 
+        checking to see if the fragment is restored and writing the UI code in onActivityCreated()
+    */
     @Override
     public void onViewStateRestored(Bundle savedInstanceState)
     {
