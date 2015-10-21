@@ -112,6 +112,10 @@ public class RecipeStepsFragment extends Fragment {
             rather having to detect and implement this in code.
          */
         View view = inflater.inflate(R.layout.recipe_steps, container, false);
+
+        /*
+            After inflating the layout, any specific view from the layout can be accessed.
+         */
         TextView stepsTextView = (TextView) view.findViewById(R.id.steps);
         stepsTextView.setText(RecipesModel.STEPS[selectedItemIndex]);
 
