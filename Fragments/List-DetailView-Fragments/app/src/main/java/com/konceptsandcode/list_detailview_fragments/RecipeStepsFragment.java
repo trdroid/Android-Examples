@@ -95,10 +95,22 @@ public class RecipeStepsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.v(TAG, "onCreateView");
+
+        /*
+            if the parent ViewGroup container is null, this fragment is not displayed as it does not have a
+            view hierarchy for the fragment to attach to, so return null
+         */
         if(container == null) {
             return null;
         }
 
+        /*
+            Inflate the view for this fragment from a layout file.
+
+            It can also be created in code, but by using the following approach, the fragment uses systems logic
+            to find resources. The system chooses the appropriate layout file based on the device configuration
+            rather having to detect and implement this in code.
+         */
         View view = inflater.inflate(R.layout.recipe_steps, container, false);
         TextView stepsTextView = (TextView) view.findViewById(R.id.steps);
         stepsTextView.setText(RecipesModel.STEPS[selectedItemIndex]);
