@@ -61,3 +61,7 @@ Specified in RecipesActivity using a FragmentTransaction
 ![](https://github.com/konceptsandcode/Android/blob/master/Fragments/List-DetailView-Fragments/block%20diagrams/PortraitMode.jpg)
 
 
+### Block Diagram for Landscape Mode
+
+![](https://github.com/konceptsandcode/Android/blob/master/Fragments/List-DetailView-Fragments/block%20diagrams/LandscapeMode.jpg)
+
