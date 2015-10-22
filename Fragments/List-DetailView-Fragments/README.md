@@ -54,3 +54,10 @@ Its view is inflated from layout/recipe_steps.xml in its onCreateView() method
 
 STEP C:
 Specified in RecipesActivity using a FragmentTransaction
+
+
+### Block Diagram for Portrait Mode
+
+![](https://github.com/konceptsandcode/Android/blob/master/Fragments/List-DetailView-Fragments/block%20diagrams/PortraitMode.jpg)
+
+
