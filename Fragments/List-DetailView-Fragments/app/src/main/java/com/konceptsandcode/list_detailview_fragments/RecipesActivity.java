@@ -96,7 +96,7 @@ public class RecipesActivity extends Activity
                 recipeStepsFragment = RecipeStepsFragment.newFragmentInstance(selectedItemIndex);
 
                 /*
-                    attach the fragment by replacing container with id R.id.recipe_steps_container
+                    attach the fragment to the container with id R.id.recipe_steps_container
                  */
                 getFragmentManager()
                         .beginTransaction()

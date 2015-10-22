@@ -15,6 +15,13 @@
                 instances. (a fragment instance is ONLY created if one has not been created earlier and if
                 the instance already corresponds to the item tapped)
         This is the view container for RecipeStepsFragment fragments.
+
+        This is a view container to hold several fragments with each holding the details of a recipe
+
+        As we are not using a fragment tag here, the Fragment needed to show details of a recipe is
+        instantiated in code
+
+        The FrameLayout is the ViewGroup container that would hold the fragment instances
     -->
     <FrameLayout
         android:id="@+id/recipe_steps_container"
