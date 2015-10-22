@@ -31,6 +31,10 @@ public class RecipeStepsFragment extends Fragment {
         return newFragmentInstance(selectedItemIndex);
     }
 
+    public int getSelectedItemIndex() {
+        return selectedItemIndex;
+    }
+
     @Override
     public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanceState)
     {
@@ -52,7 +56,7 @@ public class RecipeStepsFragment extends Fragment {
 
         If that is the case it makes sense to save the selectedItemIndex in the bundle,
         because if Android has to recreate this fragment, it would do so by calling its default constructor,
-        but not out custom defined static newFragmentInstance;
+        and attaches the initialization bundle (just like how its done in our custom defined newFragmentInstance())
 
         so Android would call .. onCreate(), onCreateView() and so on .. when recreating the fragment
         and in onCreateView(), selectedItemIndex is used to display the steps for a selected recipe

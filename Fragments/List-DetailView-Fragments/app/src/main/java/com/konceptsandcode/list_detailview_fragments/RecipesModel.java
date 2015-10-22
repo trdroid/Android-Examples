@@ -12,9 +12,9 @@ public class RecipesModel {
     };
 
     public static String STEPS[] = {
-            "Make Lasagna",
-            "Make Pizza",
-            "Make Soup",
-            "Make Cake"
+            "Steps to make Lasagna",
+            "Steps to make Pizza",
+            "Steps to make Soup",
+            "Steps to make Cake"
     };
 }

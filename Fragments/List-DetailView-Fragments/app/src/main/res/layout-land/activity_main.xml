@@ -12,7 +12,8 @@
 
     <!--
         A RecipeStepsFragment is created per each recipe tapped, so there will be several RecipeStepsFragment
-                instances
+                instances. (a fragment instance is ONLY created if one has not been created earlier and if
+                the instance already corresponds to the item tapped)
         This is the view container for RecipeStepsFragment fragments.
     -->
     <FrameLayout
