@@ -22,6 +22,13 @@
         instantiated in code
 
         The FrameLayout is the ViewGroup container that would hold the fragment instances
+
+        Fragments MUST live inside a view container, known as a view group.
+        A ViewGroup class includes layouts and their derived classes
+
+        FrameLayout is a "light weight" view group unlike other view groups with extra baggage
+
+        Specifying a <fragment> instead of a ViewGroup like FrameLayout does not allow fragment swapping
     -->
     <FrameLayout
         android:id="@+id/recipe_steps_container"

@@ -15,6 +15,14 @@ public class RecipeStepsActivity extends Activity {
         Log.v(TAG, "onCreate");
         super.onCreate(savedInstanceState);
 
+        /*
+            Question
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+            Is it really necessary to create a new fragment per item click?
+            Once a fragment is created, can't we just use it for subsequent item clicks by changing it selectedItemIndex
+
+         */
         if(getIntent() != null) {
             RecipeStepsFragment recipeStepsFragment =
                     RecipeStepsFragment.newFragmentInstance(getIntent().getExtras());

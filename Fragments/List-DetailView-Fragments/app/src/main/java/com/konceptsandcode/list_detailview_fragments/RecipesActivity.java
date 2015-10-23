@@ -27,7 +27,7 @@ public class RecipesActivity extends Activity
             based on the orientation (a configuration type) of the device
          */
         setContentView(R.layout.activity_main);
-    }
+    }cd
 
     @Override
     public void onAttachFragment(Fragment fragment) {
@@ -97,6 +97,8 @@ public class RecipesActivity extends Activity
 
                 /*
                     attach the fragment to the container with id R.id.recipe_steps_container
+
+                    Use FragmentTransaction to swap one fragment with another
                  */
                 getFragmentManager()
                         .beginTransaction()
