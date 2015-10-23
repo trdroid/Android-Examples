@@ -27,7 +27,7 @@ public class RecipesActivity extends Activity
             based on the orientation (a configuration type) of the device
          */
         setContentView(R.layout.activity_main);
-    }cd
+    }
 
     @Override
     public void onAttachFragment(Fragment fragment) {

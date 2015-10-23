@@ -16,12 +16,22 @@ public class RecipeStepsActivity extends Activity {
         super.onCreate(savedInstanceState);
 
         /*
-            Question
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Question (I think I have an answer):
 
             Is it really necessary to create a new fragment per item click?
             Once a fragment is created, can't we just use it for subsequent item clicks by changing it selectedItemIndex
 
+            Since this is used only in Portrait mode where this RecipeStepsFragment is only displayed after
+            tapping an item in RecipesFragment, we have to exit RecipeStepsFragment to be able to tap another item
+            from the list.
+
+            Its a question of .. Should we just use one fragment the first time its created and reuse the same just
+            by changing its text (or)
+            Should we just created a new fragment per click and on returning to the main list, we leave the fragment
+            instance to be garbage collected
+
+            But here lies the answer .. How can you retain a RecipeStepsFragment and hold it in memory to be used
+            the next time.
          */
         if(getIntent() != null) {
             RecipeStepsFragment recipeStepsFragment =
