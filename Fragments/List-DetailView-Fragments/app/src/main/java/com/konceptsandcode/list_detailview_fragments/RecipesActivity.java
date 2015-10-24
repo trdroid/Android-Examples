@@ -84,13 +84,17 @@ public class RecipesActivity extends Activity
                 Retrieve a FragmentManager by calling getFragmentManager() on an Activity or an attached fragment
 
                 A fragment can be retrieved from the FragmentManager using either
-                    a) the fragment's id (fragment's resource ID if inflated from XML with <fragment> tag
-                        (or) container's resource ID if fragment is placed in the view hierarchy
-                        using a fragment transaction
-                    b) fragment's tag (String that can be assigned in the fragment's XML definition
+                    a) the fragment's id
+                        fragment's resource ID (findFragmentById()) if inflated from XML with <fragment> tag
+                        using
+                        (or)
+                        container's resource ID (findFragmentByTag()) if fragment is placed in the view hierarchy
+                        with a fragment transaction
+                    b) fragment's tag
+                        String that can be assigned in the fragment's XML definition
                         (or) when placed in the view hierarchy using a fragment transaction
-                    c) a combination of bundle and key (only works for fragments persisted using putFragment() method)
-
+                    c) a combination of bundle and key
+                        a fragment persisted with putFragment() method can be retrieved using getFragment()
              */
             RecipeStepsFragment recipeStepsFragment =
                     (RecipeStepsFragment) getFragmentManager().findFragmentById(R.id.recipe_steps_container);
