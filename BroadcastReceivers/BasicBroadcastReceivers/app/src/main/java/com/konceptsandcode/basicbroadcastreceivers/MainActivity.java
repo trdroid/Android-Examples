@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         Log.d(TAG, ThreadUtils.getThreadInfo());
 
         Intent broadcastIntent = new Intent("com.konceptsandcode.intents.uniquemessage");
+        broadcastIntent.addFlags(Intent.FLAG_INCLUDE_STOPPED_PACKAGES);
 
         broadcastIntent.putExtra("message", "Message from MainActivity");
 
