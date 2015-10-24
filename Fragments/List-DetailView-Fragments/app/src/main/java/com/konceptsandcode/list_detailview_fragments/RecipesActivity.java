@@ -113,6 +113,14 @@ public class RecipesActivity extends Activity
                               pressing back button pops an Activity from the back stack)
                            b) Can perform transitions from an old fragment to a new one using transitions and animations
                            c) Can save transition details in a fragment transaction that can be reversed later
+
+                    When popping fragment transactions off the back stack, data changes, say, in the activity are not
+                    undone. Pressing back button just steps back through the views but does not cause the data changes
+                    of the Activity to revert back.
+
+                    The inner state of a restored fragment depends on the way they are saved and restored.
+
+                    You could choose to implement to restore Activity state when on restoring a fragment.
                  */
 
                 FragmentTransaction fragmentTransaction =
