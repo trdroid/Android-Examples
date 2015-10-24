@@ -36,4 +36,9 @@ A Client in Application B broadcasts a message of type MSG.
 Application B's Broadcast Receiver runs in Application B's main thread, where as Application A's Broadcast Receiver runs in its own main thread. 
 
 
+### Flag to start an Application in "stopped" state
+
+After API 12 (Android 3.1), the SDK introduced a launch model for security concerns. In this model, an application when installed will be in a "stopped" state. 
+
+The system adds a flag to an intent by default to exclude applications that are in stopped state. However, a client can explicitly set a flag on the message i.e. the broadcast intent to include these "stopped" applications. 
 
