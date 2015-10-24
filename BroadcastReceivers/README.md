@@ -21,3 +21,19 @@ The Broadcast Receivers that belong to a process are executed in the main thread
 A client calls sendBroadcast() to broadcast a message which is enqueued in a queue. The messages in the queue are processed by one or more registered Broadcast Receivers that run on the main thread.
 
 If more than one Broadcast Receiver responds to a message, the order of execution of the Broadcast Receivers (i.e. their onReceive() methods) is not certain. 
+
+
+### Execution of an "outsider" Broadcast Receiver
+
+Consider the following scenario:
+
+Application A has a Broadcast Receiver that can respond to a message of Type MSG.
+
+Application B has a Broadcast Receiver that can respond to the same message type.
+
+A Client in Application B broadcasts a message of type MSG. 
+
+Application B's Broadcast Receiver runs in Application B's main thread, where as Application A's Broadcast Receiver runs in its own main thread. 
+
+
+
