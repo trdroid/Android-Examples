@@ -99,6 +99,18 @@ public class RecipesActivity extends Activity
                     attach the fragment to the container with id R.id.recipe_steps_container
 
                     Use FragmentTransaction to swap one fragment with another
+
+                    But why use many Fragments?
+                    ---------------------------
+
+                    A single fragment could just have been used to display content of the selected item, but
+                        by using multiple fragments with a FragmentTransaction we get the following benefits:
+
+                           a) Fragments can be added to the back stack just like Activities, so pressing back button
+                              enables rolling back fragments while staying within the Activity
+                              (although it is not required to add fragments to the back stack, in which case
+                              pressing back button pops an Activity from the back stack)
+                           b) Can perform transitions from an old fragment to a new one using transitions and animations
                  */
                 getFragmentManager()
                         .beginTransaction()
