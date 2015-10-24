@@ -2,6 +2,7 @@ package com.konceptsandcode.list_detailview_fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -111,10 +112,34 @@ public class RecipesActivity extends Activity
                               (although it is not required to add fragments to the back stack, in which case
                               pressing back button pops an Activity from the back stack)
                            b) Can perform transitions from an old fragment to a new one using transitions and animations
+                           c) Can save transition details in a fragment transaction that can be reversed later
                  */
-                getFragmentManager()
-                        .beginTransaction()
-                        .replace(R.id.recipe_steps_container, recipeStepsFragment)
+
+                FragmentTransaction fragmentTransaction =
+                        getFragmentManager().beginTransaction();
+
+                /*
+                    can use transition with setTransition method as:
+                    fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
+
+                    fragmentTransaction.hide() and show() can be used to hide and show fragments after they are
+                    attached to the view hierarchy of an Activity
+                 */
+
+                /*
+                    arg1: applies to fragment entering
+                    arg2: applies to fragment exiting
+                 */
+                fragmentTransaction.setCustomAnimations(R.animator.fade_in, R.animator.fade_out);
+
+                /*
+                    fragmentTransaction.replace() is same as
+                        fragmentTransaction.remove() followed by fragmentTransaction.add()
+
+                    fragmentTransaction.commit() schedules the work to be executed on the UI thread when it is ready
+                    to do it
+                 */
+                fragmentTransaction.replace(R.id.recipe_steps_container, recipeStepsFragment)
                         .commit();
             }
         }
