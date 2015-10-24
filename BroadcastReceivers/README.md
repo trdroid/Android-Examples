@@ -23,7 +23,7 @@ A client calls sendBroadcast() to broadcast a message which is enqueued in a que
 If more than one Broadcast Receiver responds to a message, the order of execution of the Broadcast Receivers (i.e. their onReceive() methods) is not certain. 
 
 
-### Execution of an "outsider" Broadcast Receiver
+### Execution of an "outside" Broadcast Receiver
 
 Consider the following scenario:
 
