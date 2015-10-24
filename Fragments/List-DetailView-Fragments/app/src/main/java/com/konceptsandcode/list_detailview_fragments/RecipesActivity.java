@@ -80,6 +80,17 @@ public class RecipesActivity extends Activity
         if(isInLandscapeMode()) {
             /*
                 Get the instance of RecipeStepsFragment, if any, with fragment id R.id.recipe_steps_container
+
+                Retrieve a FragmentManager by calling getFragmentManager() on an Activity or an attached fragment
+
+                A fragment can be retrieved from the FragmentManager using either
+                    a) the fragment's id (fragment's resource ID if inflated from XML with <fragment> tag
+                        (or) container's resource ID if fragment is placed in the view hierarchy
+                        using a fragment transaction
+                    b) fragment's tag (String that can be assigned in the fragment's XML definition
+                        (or) when placed in the view hierarchy using a fragment transaction
+                    c) a combination of bundle and key (only works for fragments persisted using putFragment() method)
+
              */
             RecipeStepsFragment recipeStepsFragment =
                     (RecipeStepsFragment) getFragmentManager().findFragmentById(R.id.recipe_steps_container);
