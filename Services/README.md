@@ -22,3 +22,4 @@ A partial wake lock has to be obtained before the execution of the onStartComman
 
 If a service is torn-down and recreated, the wake lock has to be obtained again. 
 
+After the worker thread completes its task, it can intimate the service to stop either directly or through a handler.
