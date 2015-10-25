@@ -16,12 +16,17 @@ to send a broadcast message.
 
 ### Execution
 
-The Broadcast Receivers that belong to a process are executed in the main thread.
+The Broadcast Receivers that belong to a process are executed in the main thread. 
+
+Unlike an Activity that gets 5 seconds to run on the main thread, a Broadcast Receiver gets 10 seconds before getting an ANR.
 
 A client calls sendBroadcast() to broadcast a message which is enqueued in a queue. The messages in the queue are processed by one or more registered Broadcast Receivers that run on the main thread.
 
 If more than one Broadcast Receiver responds to a message, the order of execution of the Broadcast Receivers (i.e. their onReceive() methods) is not certain. 
 
+If the process ONLY runs a Broadcast receiver and no other component, then the process will start and terminate along with the Broadcast Receiver. Unlike a service process, a process that runs a Broadcast Receiver will not be restarted. If the Broadcast Receiver were to spawn threads, they would be abruptly terminated after the receiver returns back to the main thread. 
+
+Android acquires a partial wake lock (a way in the SDK to keep the device from going to sleep or wake up if sleeping) when invoking a Broadcast Receiver and releases it when it returns to the main thread.
 
 ### Execution of an "outside" Broadcast Receiver
 
