@@ -81,7 +81,13 @@ public class RecipesActivity extends Activity
             /*
                 Get the instance of RecipeStepsFragment, if any, with fragment id R.id.recipe_steps_container
 
-                Retrieve a FragmentManager by calling getFragmentManager() on an Activity or an attached fragment
+                Retrieve a FragmentManager by calling getFragmentManager() on an Activity or an attached fragment.
+                getFragmentManager() cannot be used on a Fragment which is not attached to an activity yet. However,
+                it can be used on fragment that is attached but not visible to the user. This can be achieved by
+                 using the add method of FragmentTransaction: public FragmentTransaction(Fragment fragment, String tag)
+                 and associating a String tag to the fragment so it can be retrieved later. Such invisible fragments
+                 can just contain certain logic without having any view at all. It can be made to persist configuration
+                 changes by retaining it using setRetainInstance() method.
 
                 A fragment can be retrieved from the FragmentManager using either
                     a) the fragment's id
@@ -95,6 +101,8 @@ public class RecipesActivity extends Activity
                         (or) when placed in the view hierarchy using a fragment transaction
                     c) a combination of bundle and key
                         a fragment persisted with putFragment() method can be retrieved using getFragment()
+
+
              */
             RecipeStepsFragment recipeStepsFragment =
                     (RecipeStepsFragment) getFragmentManager().findFragmentById(R.id.recipe_steps_container);
@@ -135,7 +143,7 @@ public class RecipesActivity extends Activity
 
                     The inner state of a restored fragment depends on the way they are saved and restored.
 
-                    You could choose to implement to restore Activity state when on restoring a fragment.
+                    You could choose to implement to restore Activity state when restoring a fragment.
                  */
 
                 FragmentTransaction fragmentTransaction =

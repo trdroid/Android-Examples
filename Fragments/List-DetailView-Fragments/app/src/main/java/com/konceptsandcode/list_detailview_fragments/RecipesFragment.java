@@ -48,6 +48,11 @@ public class RecipesFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         Log.v(TAG, "onCreateView");
+
+        /*
+            Nothing to be done here as the fragment inherits from ListFragment which already has a ListView
+            The onCreateView of ListFragment creates the ListView and returns it
+         */
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
@@ -63,6 +68,10 @@ public class RecipesFragment extends ListFragment {
         Log.v(TAG, "onActivityCreated");
         super.onActivityCreated(savedInstanceState);
 
+        /*
+            NOTE: An adapter is not attached to the ListView directly as the ListFragment manages it by itself, so
+            just use setListAdapter() method of ListFragment
+         */
         setListAdapter(new ArrayAdapter<>(getActivity(),
                 android.R.layout.simple_expandable_list_item_1,
                 RecipesModel.RECIPES));
