@@ -104,6 +104,8 @@ public class Fragment1 extends android.support.v4.app.Fragment
 
         A background thread can be created at this point, if the fragment needs some data and has to make a 
         blocking call.
+        
+        getFragment(Bundle, String key) could be used here to retrieve the fragment saved using putFragment()
      */
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -220,6 +222,9 @@ public class Fragment1 extends android.support.v4.app.Fragment
 
         If a reference to a Fragment has to be saved, just save the Fragment's identifier
         and re-establish connections in the onViewStateRestored() callback
+        
+        putFragment(Bundle, String key, Fragment) can be used here to save the state of the current 
+        activity or another fragment
         
         QUESTION
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
