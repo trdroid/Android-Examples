@@ -50,6 +50,11 @@ public class RecipeStepsActivity extends Activity {
             RecipeStepsFragment recipeStepsFragment =
                     RecipeStepsFragment.newFragmentInstance(getIntent().getExtras());
 
+            /*
+                android.R.id.content is the top-level view container for an activity
+                add the fragment view hierarchy to the top-level view container of this activity making the
+                fragment's view hierarchy the only view hierarchy for this activity
+             */
             getFragmentManager().
                     beginTransaction().
                     add(android.R.id.content, recipeStepsFragment).
