@@ -3,6 +3,7 @@ package com.konceptsandcode.list_detailview_fragments;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
 
@@ -14,6 +15,18 @@ public class RecipeStepsActivity extends Activity {
     {
         Log.v(TAG, "onCreate");
         super.onCreate(savedInstanceState);
+
+        if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            /*
+                When in portrait mode, if an item is tapped, the details of the item are shown in another activity
+                (RecipeStepsActivity), different from the main activity (RecipesActivity)
+
+                If the device is changed to be in landscape mode, close this activity and let the MainActivity
+                take care of the landscape orientation
+             */
+            finish();
+            return;
+        }
 
         /*
             Question (I think I have an answer):
