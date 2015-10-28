@@ -219,9 +219,13 @@ public class Fragment1 extends android.support.v4.app.Fragment
         A Fragment can save its state just like an Activity in a Bundle.
         This bundle gets passed to other callbacks like
         onInflate(), onCreate(), onCreateView(), onViewCreated(), onActivityCreated()
-
+        
         If a reference to a Fragment has to be saved, just save the Fragment's identifier
-        and re-establish connections in the onViewStateRestored() callback
+        and re-establish connections in the onViewStateRestored() callback,
+        but be aware of when a fragment gets saved away by the Android platform.
+        
+        If a fragment reference has to be saved when an activity goes through a configuration change, 
+        use putFragment(Bundle, String key, Fragment) with the appropriate Bundle, usually the savedState bundle.
         
         putFragment(Bundle, String key, Fragment) can be used here to save the state of the current 
         activity or another fragment
