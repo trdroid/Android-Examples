@@ -1,0 +1,54 @@
+<!--
+  Enclose the original layout in a "layout" tag
+-->
+<layout>
+    <!-- In the data element declare a variable that can be used to bind against -->
+    <data>
+        <variable
+            name="studentModel"
+            type="com.konceptsandcode.basicdatabinding.StudentModel" />
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <!--
+            In the TextView tag,
+            The id attribute can be removed as it does not have to be referenced from an
+            Activity using findViewById() method
+
+            android:id="@+id/firstName"
+        -->
+
+        <!--
+            The Binding Library will find the first public member in the following order:
+
+            public String getFirstName();
+
+            public String firstName();
+
+            public String firstName;
+
+            If none of the above matches, there would be a data binding error on compilation
+            saying that it cannot find an accessor
+        -->
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{studentModel.firstName}" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{studentModel.lastName}" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@{studentModel.grade}" />
+
+    </LinearLayout>
+</layout>
