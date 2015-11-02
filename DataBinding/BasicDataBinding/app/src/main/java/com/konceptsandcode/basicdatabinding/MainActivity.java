@@ -56,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
         /*
             Bind the data to the view
 
-            The method is created by the plugin based on the name of the data variable in the layout file
+            The method setStudentModel is created by the plugin
+            based on the name of the data variable in the layout file
          */
         binding.setStudentModel(studentModel);
 
