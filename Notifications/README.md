@@ -3,6 +3,13 @@
 ## Creating a Notification
 
 
+### Flags to control persistence of Notifications
+
+Various flags are available that control the persistence of Notifications. 
+* FLAG_AUTO_CANCEL
+* FLAG_FOREGROUND_SERVICE
+* FLAG_NO_CLEAR
+* FLAG_ONGOING_EVENT
 
 ## Setting a content view for a Notification
 The content view of a Notification is an instance of RemoteViews. 
