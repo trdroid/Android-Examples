@@ -1,6 +1,14 @@
 # Services
 
-A service is an Android component that runs in the background without any user interaction. 
+A Service is an Android component that runs invisibly in the background without a user interface. 
+
+### Priority of a Service
+
+*The priority of a started Service is greater than the priority of an inactive Activity*
+
+A Service's priority can be raised to be the same as the priority of a foreground Activity in cases when the termination of a Service is unacceptable. 
+
+The Runtime could terminate a Service prematurely to provide additional resources to a foreground component (like an Activity). A Service can be configured to restart as soon as the resources become available.
 
 The *onBind()* method allows the service to be bound to an activity which allows the activity to directly access members and methods of the service.
 
@@ -10,14 +18,15 @@ The *onDestroy()* method is called when the service is stopped using the stopSer
 
 ### Execution
 
-A service runs on the main thread. It should not run for more than 5 seconds. 
+A service runs on the main thread of the application process. It should not run for more than 5 seconds. 
 
 ## NonSticky Services
 
+When a Service returns the nonsticky flag, Service.START_NOT_STICKY, from its onStartCommand() method, Android does not restart the Service ONLY if there are no pending intents. This means to say that Android will restart the Service if there are any pending intents for the Service. 
 
 ## Sticky Services
 
-The sticky flag, Service.START_STICKY, allows the service to be restarted by Android even if there are no pending intents.
+When a Service returns the sticky flag, Service.START_STICKY, from its *onStartCommand()* method, Android restarts the service even if there are no pending intents.
 
 When a service is restarted, the onCreate() and onStartCommand() methods are called with a null intent.
 
