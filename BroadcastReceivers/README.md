@@ -28,7 +28,7 @@ If the process ONLY runs a Broadcast receiver and no other component, then the p
 
 Android acquires a partial wake lock (a way in the SDK to keep the device from going to sleep or wake up if sleeping) when invoking a Broadcast Receiver and releases it when it returns to the main thread.
 
-### Execution of an "outside" Broadcast Receiver
+### Execution of an "out-of-application" Broadcast Receiver
 
 Consider the following scenario:
 
