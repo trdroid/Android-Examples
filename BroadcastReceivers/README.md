@@ -1,10 +1,10 @@
 # Broadcast Receivers
 
-A Broadcast Receiver is a component that can respond to a broadcast message from a client.
+A Broadcast Receiver is a component that can respond to broadcast messages from the clients.
 
 > Broadcast Receiver
 
-A Broadcast Receiver inherits from BroadcastReceiver of the Android SDK and registers itself in the 
+A Broadcast Receiver inherits from BroadcastReceiver of the Android SDK and is registered in the 
 manifest file through a *receiver* tag. A *receiver* tag is way that a component (a Broadcast Receiver) advertises to the Android system that it can handle messages of a certain type.
 
 A message can be responded by more than one Broadcast Receiver if they register to respond to messages of that type.
