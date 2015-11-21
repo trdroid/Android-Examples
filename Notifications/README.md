@@ -1,6 +1,6 @@
 # Notifications
 
-## Steps involved in creating a Notification
+## Creating a Notification
 
 
 
