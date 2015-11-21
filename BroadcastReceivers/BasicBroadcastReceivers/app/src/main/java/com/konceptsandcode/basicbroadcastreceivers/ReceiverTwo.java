@@ -71,7 +71,7 @@ public class ReceiverTwo extends BroadcastReceiver{
             Send notification.
 
             arg1: is unique ID (with in the application) that can be used to cancel the notification at a later point
-            in time or to updating the notification by creating a new notification and resending it against this id
+            in time or to update the notification by creating a new notification and resending it against this id
          */
         notificationManager.notify(1, notification);
     }
