@@ -20,7 +20,7 @@ The Broadcast Receivers that belong to an application are executed in the main t
 
 Unlike an Activity that gets 5 seconds to run on the main thread, a Broadcast Receiver gets 10 seconds before getting an ANR.
 
-A client calls sendBroadcast() to broadcast a message which is enqueued in a queue. The messages in the queue are processed by one or more registered Broadcast Receivers that run on the main thread.
+A client calls sendBroadcast() to broadcast a message. The broadcasted messages are enqueued in a queue and are processed by one or more registered Broadcast Receivers that run on the main thread.
 
 If more than one Broadcast Receiver responds to a message, the order of execution of the Broadcast Receivers (i.e. their onReceive() methods) is not certain. 
 
