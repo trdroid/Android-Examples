@@ -26,7 +26,7 @@ If more than one Broadcast Receiver responds to a message, the order of executio
 
 If the process ONLY runs a Broadcast receiver and no other component, then the process will start and terminate along with the Broadcast Receiver i.e. after the execution of its onReceive() method. Unlike a service process, a process that runs a Broadcast Receiver will not be restarted. If the Broadcast Receiver were to spawn threads, they would be abruptly terminated after the receiver returns back to the main thread. 
 
-Android acquires a partial wake lock (a way in the SDK to keep the device from going to sleep or wake up if sleeping) when invoking a Broadcast Receiver and releases it when it returns to the main thread.
+Android acquires a partial wake lock (an API class offered by the SDK to keep the device from going to sleep or wake up if sleeping and allow the device to run code without turning on the screen to allow for longer battery life) when invoking a Broadcast Receiver and releases it when it returns to the main thread.
 
 ### Execution of an "out-of-application" Broadcast Receiver
 
