@@ -48,13 +48,13 @@ After API 12 (Android 3.1), the SDK introduced a launch model for security conce
 The system adds a flag to an intent by default to exclude applications that are in stopped state. However, a client can explicitly set a flag on the message i.e. the broadcast intent to include these "stopped" applications. 
 
 
-## Starting an Activity in a Broadcast Receiver
+## Launching an Activity from a Broadcast Receiver
 
 Android allows an Activity to be spwaned from a Broadcast Receiver, although Notifications are the preferred way to inform users about the occurrence of certain events. 
 
 To launch an Activity from a Broadcast Receiver, add the following flags to the intent and pass it as an argument to the startActivity() method
 * Intent.FLAG_ACTIVITY_NEW_TASK
-* Intent.FlAG_FROM_BACKGROUND
+* Intent.FLAG_FROM_BACKGROUND
 * Intent.FLAG_ACTIVITY_SINGLE_TOP
 
 
