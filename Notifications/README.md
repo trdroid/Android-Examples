@@ -15,8 +15,7 @@ and sets it on the notification.
 However, the Content View (a RemoteViews instance) for a Notification can be set explicitly by
 * Creating a layout file 
 * Creating a RemoteViews instance by passing in the package name and the resource ID of the layout file as arguments
-* Create the Notification object by calling setContent() on the Notification.Builder object prior to calling the
-build() method
+* Create the Notification object by calling *setContent()* on the *Notification.Builder* object prior to calling the *build()* method
 
 ### Valid RemoteViews Controls
 * Button
