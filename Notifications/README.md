@@ -2,9 +2,12 @@
 
 ## Steps involved in creating a Notification
 
-The Content View of a Notification is an instance of RemoteViews. 
 
-The Content View of a Notification is displayed when the notification is expanded.
+
+## Setting a content view for a Notification
+The content view of a Notification is an instance of RemoteViews. 
+
+The content view of a Notification is displayed when the notification is expanded.
 
 When a Notificaiton's Builder is used to create a Notification, the Builder creates an appropriate Content View 
 and sets it on the notification.
