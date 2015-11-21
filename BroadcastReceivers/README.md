@@ -16,7 +16,7 @@ to send a broadcast message.
 
 ### Execution
 
-The Broadcast Receivers that belong to an application are executed in the main thread of the application process. 
+The Broadcast Receivers that belong to an application are *<b>executed on the main thread</b> of the application process. 
 
 Unlike an Activity that gets 5 seconds to run on the main thread, a Broadcast Receiver gets 10 seconds before getting an ANR.
 
