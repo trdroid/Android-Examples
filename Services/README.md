@@ -2,17 +2,24 @@
 
 A service is an Android component that runs in the background without any user interaction. 
 
-onBind() allows to bind an activity to a service. This allows the activity to directly access members and methods of the service.
+The *onBind()* method allows the service to be bound to an activity which allows the activity to directly access members and methods of the service.
 
-onStartCommand() is called when the service is explicitly started using the startService() method
+The *onStartCommand()* method is called when the service is explicitly started using the *startService()* method
 
-onDestroy() is called when the service is stopped using the stopService() method
-
-The service code runs in the main thread.
+The *onDestroy()* method is called when the service is stopped using the stopService() method
 
 ### Execution
 
 A service runs on the main thread. It should not run for more than 5 seconds. 
+
+## NonSticky Services
+
+
+## Sticky Services
+
+The sticky flag, Service.START_STICKY, allows the service to be restarted by Android even if there are no pending intents.
+
+When a service is restarted, the onCreate() and onStartCommand() methods are called with a null intent.
 
 > Executing a long running task
 
