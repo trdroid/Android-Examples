@@ -16,19 +16,19 @@ to send a broadcast message.
 
 ### Execution
 
-The Broadcast Receivers that belong to a process are executed in the main thread. 
+The Broadcast Receivers that belong to an application are *<b>executed on the main thread</b>* of the application process. 
 
 Unlike an Activity that gets 5 seconds to run on the main thread, a Broadcast Receiver gets 10 seconds before getting an ANR.
 
-A client calls sendBroadcast() to broadcast a message which is enqueued in a queue. The messages in the queue are processed by one or more registered Broadcast Receivers that run on the main thread.
+A client calls sendBroadcast() to broadcast a message. The broadcasted messages are enqueued in a queue and are processed by one or more registered Broadcast Receivers that run on the main thread.
 
 If more than one Broadcast Receiver responds to a message, the order of execution of the Broadcast Receivers (i.e. their onReceive() methods) is not certain. 
 
-If the process ONLY runs a Broadcast receiver and no other component, then the process will start and terminate along with the Broadcast Receiver. Unlike a service process, a process that runs a Broadcast Receiver will not be restarted. If the Broadcast Receiver were to spawn threads, they would be abruptly terminated after the receiver returns back to the main thread. 
+If the process ONLY runs a Broadcast receiver and no other component, then the process will start and terminate along with the Broadcast Receiver i.e. after the execution of its onReceive() method. Unlike a service process, a process that runs a Broadcast Receiver will not be restarted. If the Broadcast Receiver were to spawn threads, they would be abruptly terminated after the receiver returns back to the main thread. 
 
-Android acquires a partial wake lock (a way in the SDK to keep the device from going to sleep or wake up if sleeping) when invoking a Broadcast Receiver and releases it when it returns to the main thread.
+Android acquires a partial wake lock (an API class offered by the SDK to keep the device from going to sleep or wake up if sleeping and allow the device to run code without turning on the screen to allow for longer battery life) when invoking a Broadcast Receiver and releases it when it returns to the main thread.
 
-### Execution of an "outside" Broadcast Receiver
+### Execution of an "out-of-application" Broadcast Receiver
 
 Consider the following scenario:
 
@@ -46,4 +46,17 @@ Application B's Broadcast Receiver runs in Application B's main thread, where as
 After API 12 (Android 3.1), the SDK introduced a launch model for security concerns. In this model, an application when installed will be in a "stopped" state. 
 
 The system adds a flag to an intent by default to exclude applications that are in stopped state. However, a client can explicitly set a flag on the message i.e. the broadcast intent to include these "stopped" applications. 
+
+
+## Launching an Activity from a Broadcast Receiver
+
+Android allows an Activity to be spwaned from a Broadcast Receiver, although Notifications are the preferred way to inform users about the occurrence of certain events. 
+
+To launch an Activity from a Broadcast Receiver, add the following flags to the intent and pass it as an argument to the startActivity() method
+* Intent.FLAG_ACTIVITY_NEW_TASK
+* Intent.FLAG_FROM_BACKGROUND
+* Intent.FLAG_ACTIVITY_SINGLE_TOP
+
+
+
 
