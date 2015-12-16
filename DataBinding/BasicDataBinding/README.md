@@ -54,7 +54,7 @@ If none of the above matches, a data binding error occurs on compilation indicat
 ```
 
 
-2) Get the data (in this case, lets just initiaialize a model)
+2) Get the data (in this case, lets just initialize a model)
 
 ```java
         StudentModel studentModel = new StudentModel("Keith", "Koncepts", 12);
