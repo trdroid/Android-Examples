@@ -36,7 +36,7 @@ If none of the above matches, a data binding error occurs on compilation indicat
 
 ## Changes to the main Activity
 
-1. Inflate the layout
+1) Inflate the layout
 ```java
         /*
             Inflate the layout using DataBindingUtil class to create a binding class instance. 
@@ -53,13 +53,14 @@ If none of the above matches, a data binding error occurs on compilation indicat
                 DataBindingUtil.setContentView(this, R.layout.activity_main);
 ```
 
-2. Get the data (in this case, lets just initiaialize a model)
+
+2) Get the data (in this case, lets just initiaialize a model)
 
 ```java
         StudentModel studentModel = new StudentModel("Keith", "Koncepts", 12);
 ```
 
-3. Binding the data to the view
+3) Binding the data to the view
 
 ```java
         binding.setStudentModel(studentModel);
