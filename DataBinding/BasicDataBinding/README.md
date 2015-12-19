@@ -165,7 +165,7 @@ public class ActivityMainBinding extends android.databinding.ViewDataBinding {
     private final android.widget.TextView mboundView2;
     private final android.widget.TextView mboundView3;
     // variables
-    private com.konceptsandcode.basicdatabinding.StudentModel mStudentModel;
+    private com.konceptsandcode.basicdatabinding.StudentModel mAStudentModelInstance;
     // values
     // listeners
     
@@ -208,22 +208,22 @@ public class ActivityMainBinding extends android.databinding.ViewDataBinding {
     
     public boolean setVariable(int variableId, Object variable) {
         switch(variableId) {
-            case BR.studentModel :
-                setStudentModel((com.konceptsandcode.basicdatabinding.StudentModel) variable);
+            case BR.aStudentModelInstance :
+                setAStudentModelInstance((com.konceptsandcode.basicdatabinding.StudentModel) variable);
                 return true;
         }
         return false;
     }
     
-    public void setStudentModel(com.konceptsandcode.basicdatabinding.StudentModel studentModel) {
-        this.mStudentModel = studentModel;
+    public void setAStudentModelInstance(com.konceptsandcode.basicdatabinding.StudentModel aStudentModelInstance) {
+        this.mAStudentModelInstance = aStudentModelInstance;
         synchronized(this) {
             mDirtyFlags |= 0b1L;
         }
         super.requestRebind();
     }
-    public com.konceptsandcode.basicdatabinding.StudentModel getStudentModel() {
-        return mStudentModel;
+    public com.konceptsandcode.basicdatabinding.StudentModel getAStudentModelInstance() {
+        return mAStudentModelInstance;
     }
     
     @Override
@@ -240,44 +240,44 @@ public class ActivityMainBinding extends android.databinding.ViewDataBinding {
             dirtyFlags = mDirtyFlags;
             mDirtyFlags = 0;
         }
-        java.lang.String lastNameStudentModel = null;
-        java.lang.String firstNameStudentModel = null;
-        com.konceptsandcode.basicdatabinding.StudentModel studentModel = mStudentModel;
-        java.lang.String gradeStudentModel = null;
+        java.lang.String lastNameAStudentModelInstance = null;
+        com.konceptsandcode.basicdatabinding.StudentModel aStudentModelInstance = mAStudentModelInstance;
+        java.lang.String firstNameAStudentModelInstance = null;
+        java.lang.String gradeAStudentModelInstance = null;
     
         if ((dirtyFlags & 0b11L) != 0) {
         
         
         
-            // read lastName~.~studentModel~
-            if ( studentModel != null) {
-                lastNameStudentModel = studentModel.getLastName();
+            // read lastName~.~aStudentModelInstance~
+            if ( aStudentModelInstance != null) {
+                lastNameAStudentModelInstance = aStudentModelInstance.getLastName();
             }
         
         
-            // read firstName~.~studentModel~
-            if ( studentModel != null) {
-                firstNameStudentModel = studentModel.getFirstName();
+            // read firstName~.~aStudentModelInstance~
+            if ( aStudentModelInstance != null) {
+                firstNameAStudentModelInstance = aStudentModelInstance.getFirstName();
             }
         
         
-            // read grade~.~studentModel~
-            if ( studentModel != null) {
-                gradeStudentModel = studentModel.getGrade();
+            // read grade~.~aStudentModelInstance~
+            if ( aStudentModelInstance != null) {
+                gradeAStudentModelInstance = aStudentModelInstance.getGrade();
             }
         }
         // batch finished
         if ((dirtyFlags & 0b11L) != 0) {
             // api target 1
-            this.mboundView1.setText(firstNameStudentModel);
+            this.mboundView1.setText(firstNameAStudentModelInstance);
         }
         if ((dirtyFlags & 0b11L) != 0) {
             // api target 1
-            this.mboundView2.setText(lastNameStudentModel);
+            this.mboundView2.setText(lastNameAStudentModelInstance);
         }
         if ((dirtyFlags & 0b11L) != 0) {
             // api target 1
-            this.mboundView3.setText(gradeStudentModel);
+            this.mboundView3.setText(gradeAStudentModelInstance);
         }
     }
     // Listener Stub Implementations
@@ -298,7 +298,7 @@ public class ActivityMainBinding extends android.databinding.ViewDataBinding {
     }
 }
     /* flag mapping
-        flag 0: studentModel~
+        flag 0: aStudentModelInstance~
         flag 1: INVALIDATE ANY
     flag mapping end*/
     //end
