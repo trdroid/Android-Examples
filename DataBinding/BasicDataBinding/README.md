@@ -51,7 +51,7 @@
 3) Binding the data to the view
 
 ```java
-        binding.setStudentModel(studentModel);
+        binding.setAStudentModelInstance(studentModel);
 ```
 
 ## Block diagram
