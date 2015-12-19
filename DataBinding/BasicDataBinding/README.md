@@ -209,7 +209,9 @@ Notice that addition of android:tag attributes.
 > The file generated: app/build/intermediates/classes/debug/com/konceptsandcode/basicdatabinding/databinding/ActivityMainBinding.java
 
 Things to Notice
+
 1) The elements in the layout file are represented by fields, mboundView1, mboundView2.. 
+
 2) the executeBindings() method 
 
 
