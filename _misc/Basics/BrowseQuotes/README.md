@@ -10,3 +10,6 @@ as it manages user interactions with the View.
 A layout file defines the view of an application. It is an XML file that defines a set of UI objects (buttons, images, text)
 and their layouts.
 
+# Block Diagram
+
+<img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/MVC.png">
