@@ -6,6 +6,9 @@
 * Get a reference to the element from the layout to be updated with the data (using findViewById() method)
 * Assign data to it from one or more data-sources
 
+<img src="https://github.com/konceptsandcode/Android/blob/master/DataBinding/_misc/TraditionalDataBinding.png">
+
+
 *Drawbacks*
 A lot of boilerplate code which obscures the intent of the Activity or the Fragment class
 
