@@ -7,9 +7,11 @@ as it manages user interactions with the View.
 
 ### Layout
 
-A layout file defines the view of an application. It is an XML file that defines a set of UI objects (buttons, images, text) and their layouts commonly referred to as Widgets. Every widget has a corresponding XML element in the layout file where the name of the element is the widget type. 
+A layout file defines the view of an application. It is an XML file that defines a set of UI objects (buttons, images, text) and their layouts commonly referred to as Widgets. 
 
 A Widget is an instance of the <b>View</b> class or one of its subclasses.
+
+Every widget has a corresponding XML element in the layout file where the name of the element is the widget type. Each widget could be configured with a set of XML attributes.
 
 The following layout contains 5 widgets; 2 LinearLayouts, 2 Buttons and a TextView
 
@@ -45,8 +47,9 @@ The following layout contains 5 widgets; 2 LinearLayouts, 2 Buttons and a TextVi
     </LinearLayout>
 </LinearLayout>
 ```
-
 As of ADT 21, the following line is not required in the layout files
+
+The widgets provided in the layout file exist in a hierarchy of View objects, referred to as the view hierarchy. 
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?> 
