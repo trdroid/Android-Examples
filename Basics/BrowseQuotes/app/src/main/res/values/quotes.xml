@@ -1,8 +1,0 @@
-<resources>
-    <string name="quote1">Reality is merely an illusion, albeit a very persistent one.</string>
-    <string name="quote2">Peace cannot be kept by force; it can only be achieved by understanding.</string>
-    <string name="quote3">Gravitation cannot be held responsible for people falling in love.</string>
-    <!-- The following cannot be done
-        <quote name="quote4">To be or not to be, that is the question</quote>
-    -->
-</resources>

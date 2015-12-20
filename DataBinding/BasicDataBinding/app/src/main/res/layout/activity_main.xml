@@ -14,7 +14,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
-gmail
         <!--
             In the TextView tag,
             The id attribute can be removed as it does not have to be referenced from an
