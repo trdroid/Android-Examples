@@ -7,7 +7,7 @@ as it manages user interactions with the View.
 
 ### Layout
 
-A layout file defines the view of an application. It is an XML file that defines a set of UI objects (buttons, images, text) and their layouts. The building blocks of the UI are referred to as Widgets. 
+A layout file defines the view of an application. It is an XML file that defines a set of UI objects (buttons, images, text) and their layouts commonly referred to as Widgets. Every widget has a corresponding XML element in the layout file where the name of the element is the widget type. 
 
 A Widget is an instance of the <b>View</b> class or one of its subclasses.
 
