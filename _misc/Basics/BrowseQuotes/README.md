@@ -11,7 +11,7 @@ A layout file defines the view of an application. It is an XML file that defines
 
 A Widget is an instance of the <b>View</b> class or one of its subclasses.
 
-The following layout contains 5 widgets; 2 LinearLayouts, 2 Buttons and a TextView
+The following layout file contains 5 widgets; 2 LinearLayouts, 2 Buttons and a TextView
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -56,6 +56,8 @@ Every widget has a corresponding XML element in the layout file where the name o
 <img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/layout_file.png">
 
 The widgets provided in the layout file exist in a hierarchy of View objects, referred to as the view hierarchy. 
+
+<img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/ViewHierarchy.png">
 
 
 # Block Diagram
