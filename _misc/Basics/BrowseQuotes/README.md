@@ -59,6 +59,8 @@ Every widget has a corresponding XML element in the layout file where the name o
 
 <img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/layout_file.png">
 
+### View Hierarchy
+
 The widgets provided in the layout file exist in a hierarchy of View objects, referred to as the view hierarchy. 
 
 <img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/ViewHierarchy.png">
