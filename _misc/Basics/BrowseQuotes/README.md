@@ -65,6 +65,8 @@ The widgets provided in the layout file exist in a hierarchy of View objects, re
 
 <img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/ViewHierarchy.png">
 
+### Inflating a View
+
 <img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/layout_to_view_objects.png">
 
 # Block Diagram
