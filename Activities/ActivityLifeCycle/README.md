@@ -90,7 +90,7 @@ Since an activity is destroyed and recreated on runtime device configuration cha
 
 When an activity is paused or stopped, the Android system could possibly destroy the activity to reclaim memory, if needed. That said, a running activity is never destroyed by the Android system to reclaim memory. 
 
-In such cases, the onPause() method is reliably called. The onDestroy() method may not be called at all times. Usually, the onSaveInstanceState() method is used to save and stash the state and the onPause() method to pausing tasks.
+In such cases, the onPause() method is reliably called. The onDestroy() method may not be called at all times. Usually, the onSaveInstanceState() method is used to save and stash the state and the onPause() method for pausing tasks.
 
 ```java
     @Override
@@ -127,7 +127,18 @@ The state can be saved in the Bundle argument outState which is handed back to t
 
 ### Where is the Bundle stored?
 
-Android stashes the Bundle in the the Activity's <b><i>Activity Record</i></b>. The Activity Record for an activity lives on beyond the activity instance.  
+Android stashes the Bundle in the the Activity's <b><i>Activity Record</i></b>. The Activity Record for an activity lives on beyond the activity instance and even beyond the app process. 
+
+### When are Activity Records discarded?
+
+Activity Records are discarded when 
+* the user presses the back button
+* the device is rebooted
+* unused for a long time
+ 
+
+
+
 
 
 
