@@ -56,11 +56,12 @@ API level y are ignored and the app appears and behaves as it is still running o
 Whenever there is a new version of Android (for eg. level y), the app has to be tested against it to see if it works 
 as expected. 
 
-The following link contains changes between API levels: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html
+The following link contains changes to APIs across API levels: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html
 
 The code has to be modified accordingly to ensure it runs on latest android versions as well. 
 
+<i> Both the Minimum SDK and Target SDK versions are added to the manifest file to convey these values to the Android OS </i>
 
-
+> <i> Compile SDK Version (Build Target) </i>
 
 
