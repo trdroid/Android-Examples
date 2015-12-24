@@ -17,7 +17,7 @@
 
 12-24 00:21:17.425 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onDestroy()
 
-> On pressing the back button, Android destroys the Activity. The onDestroy() method is not necessarily called at times. However, the onPause() method is always called.
+> On pressing the back button, Android destroys the Activity. The onDestroy() method is not necessarily called at all times. However, the onPause() method is always called reliably.
 
 
 ### Launch the App again
@@ -107,23 +107,6 @@ The state can be saved in the Bundle argument outState which is handed back to t
         super.onCreate(savedInstanceState);
     }
 ```
-> When an activity is , onSaveInstanceState() method is called to save the state
-
-<b><i> On screen rotation after implementing onSaveInstanceState() </i></b>
-
-12-24 02:57:45.205 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
-
-12-24 02:57:45.205 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onSaveInstanceState()
-
-12-24 02:57:45.205 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
-
-12-24 02:57:45.205 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onDestroy()
-
-12-24 02:57:45.265 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onCreate()
-
-12-24 02:57:45.270 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStart()
-
-12-24 02:57:45.270 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
 
 ### Where is the Bundle stored?
 
@@ -135,8 +118,57 @@ Activity Records are discarded when
 * the user presses the back button
 * the device is rebooted
 * unused for a long time
- 
 
+## In Summary...
+
+The state can be retained i.e. Android stashes and retrieves the Bundle in/from Activity Record when
+ 
+ 1) The home button is pressed where the Activity is only paused and stopped but not destroyed
+ 
+ 2) On runtime device configuration changes, where the Activity is destroyed and recreated
+ 
+ 3) Android kills the application process and the user relaunches the app
+
+The state cannot be retained i.e. the Activity Records are discarded when 
+
+ 1) The back button is pressed which destroys the Activity
+ 
+ 2) The device is rebooted
+ 
+ 3) The Activity Records are not used for a long time
+
+## The log after implementing onSaveInstanceState() method
+
+<b><i>The home button is pressed where the Activity is only paused and stopped but not destroyed</i></b>
+
+12-24 05:17:20.037 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
+
+12-24 05:17:20.070 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onSaveInstanceState()
+
+12-24 05:17:20.070 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Saving data, IS_SAVED to true
+
+12-24 05:17:20.070 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
+
+
+<b><i> On a device orientation change, where the Activity is destroyed and recreated </i></b>
+
+12-24 04:36:45.107 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
+
+12-24 04:36:45.107 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onSaveInstanceState()
+
+12-24 04:36:45.107 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Saving data, IS_SAVED to true
+
+12-24 04:36:45.107 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
+
+12-24 04:36:45.109 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onDestroy()
+
+12-24 04:36:45.189 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onCreate()
+
+12-24 04:36:45.191 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Retrieving data, IS_SAVED istrue
+
+12-24 04:36:45.192 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStart()
+
+12-24 04:36:45.192 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
 
 
 
