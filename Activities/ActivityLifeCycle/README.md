@@ -94,7 +94,7 @@ Since an activity is destroyed and recreated on runtime device configuration cha
         super.onSaveInstanceState(outState);
     }
 ```
-The state can be saved in the Bundle argument outState which is handed back to the onCreate() method as savedInstanceState argument on recreating the activity. 
+The state can be saved in the Bundle argument outState which is handed back to the onCreate() method as savedInstanceState argument when the activity is recreated.
 
 ```java
     @Override
