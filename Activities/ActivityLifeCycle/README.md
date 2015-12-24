@@ -52,7 +52,9 @@
 When a pop-up appears, the Activity is partially obscured, in which case it is paused. After the pop-up is dismissed, the Activity is resumed.
 
 
-### On Configuration Changes
+### On Device Configuration Changes
+
+> On a device configuration change, the activity is destroyed and a new activity is created.
 
 <b><i> On Device Rotation </i></b>
 
@@ -69,7 +71,7 @@ When a pop-up appears, the Activity is partially obscured, in which case it is p
 
 12-24 01:11:14.106 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
 
-> On a configuration change, the Activity is destroyed and a new Activity is created
+> On device rotation, the Activity is destroyed and a new Activity is created. On setContentView(R.layout.activity_main) call in the onCreate() method, Android attempts to inflate the view from res/layout-land/activity_main.xml. If it is not found, then res/layout/activity_main.xml is inflated as usual. 
 
 
 
