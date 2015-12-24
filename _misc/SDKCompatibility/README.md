@@ -44,7 +44,7 @@ where x > y
 
 Choose a minimum SDK that allows your app to be available for a wider audience. 
 
-For example, choosing 
+For example, choosing Minimum SDK Version to be 16, ensures that the app runs on API levels 4.1.x or higher. 
 
 > <i> Target SDK Version </i>
 
@@ -69,4 +69,6 @@ This information is used by the compiler to resolve the classes and methods (inc
 Each API level has classes and methods in its SDK. The Compile SDK version determines which SDK to be used to resolve 
 the classes used in the app.
 
-<i> When any of these parameters are modified in the app's build.gradle file, the project must be synchronized with the changes in the gradle file. This could be done in Android Studio by Tools -> Android -> Sync Project with Gradle Files
+<i> When any of the aforementioned parameters are modified in the app's build.gradle file, the project must be synchronized with the changes in the gradle file. This can be done in Android Studio by Tools -> Android -> Sync Project with Gradle Files </i>
+
+
