@@ -86,7 +86,9 @@ Device configuration includes
 
 ### Implementing onSaveInstanceState() callback
 
-Since an activity is destroyed and recreated on runtime device configuration changes, the onSaveInstanceState() method can be implemented to retain the state across activity destruction and recreation.
+Since an activity is destroyed and recreated on runtime device configuration changes, the onSaveInstanceState() method can be implemented to retain the state across activity destruction and recreation. The onSaveInstanceState() method can also be implemented to save state when an activity is paused or stopped. 
+
+When an activity is paused or stopped, the Android system could possibly destroy the activity to reclaim memory, if needed. That said, a running activity is never destroyed by the Android system to reclaim memory. 
 
 ```java
     @Override
@@ -94,6 +96,9 @@ Since an activity is destroyed and recreated on runtime device configuration cha
         super.onSaveInstanceState(outState);
     }
 ```
+
+Android stashes the in the the Activity's <b><i>Activity Record</i></b> 
+
 The state can be saved in the Bundle argument outState which is handed back to the onCreate() method as savedInstanceState argument when the activity is recreated.
 
 ```java
