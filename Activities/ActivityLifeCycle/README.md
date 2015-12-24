@@ -71,7 +71,15 @@ When a pop-up appears, the Activity is partially obscured, in which case it is p
 
 12-24 01:11:14.106 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
 
-> On device rotation, the Activity is destroyed and a new Activity is created. On setContentView(R.layout.activity_main) call in the onCreate() method, Android attempts to inflate the view from res/layout-land/activity_main.xml. If it is not found, then res/layout/activity_main.xml is inflated as usual. 
+> On device rotation, from portrait to landscape, the Activity is destroyed and a new Activity is created. On setContentView(R.layout.activity_main) call in the onCreate() method, Android attempts to inflate the view from res/layout-land/activity_main.xml. If it is not found, then res/layout/activity_main.xml is inflated as usual. 
 
+Applications can provide different resources for different device configurations. 
 
+Device configuration includes
+* Screen Orientation, which is not fixed and can change at runtime
+* Screen Size, which is fixed for a device
+* Screen Density
+* Language
+* Keyboard type
+* Dock Mode
 
