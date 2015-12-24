@@ -103,7 +103,7 @@ The state can be saved in the Bundle argument outState which is handed back to t
     }
 ```
 
-> on screen rotation 
+<b><i> On screen rotation after implementing onSaveInstanceState() </i></b>
 
 12-24 02:57:45.205 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
 
