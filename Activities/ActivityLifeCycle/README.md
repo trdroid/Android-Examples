@@ -54,7 +54,7 @@ When a pop-up appears, the Activity is partially obscured, in which case it is p
 
 ### On Device Configuration Changes
 
-> On a device configuration change, the activity is destroyed and a new activity is created.
+> Android destroys the activity and creates a new one when the device configuration changes at "runtime".
 
 <b><i> On Device Rotation </i></b>
 
@@ -77,9 +77,46 @@ Applications can provide different resources for different device configurations
 
 Device configuration includes
 * Screen Orientation, which is not fixed and can change at runtime
-* Screen Size, which is fixed for a device
-* Screen Density
-* Language
-* Keyboard type
+* Screen Size
+* Screen Density, which is fixed for a device
+* Language, which could be changed at runtime
+* Keyboard type, which could be chagned at runtime
 * Dock Mode
+
+
+### Implementing onSaveInstanceState() callback
+
+Since an activity is destroyed and recreated on runtime device configuration changes, the onSaveInstanceState() method can be implemented to retain the state across activity destruction and recreation.
+
+```java
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+```
+The state can be saved in the Bundle argument outState which is handed back to the onCreate() method as savedInstanceState argument on recreating the activity. 
+
+```java
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
+```
+
+> on screen rotation 
+
+12-24 02:57:45.205 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
+
+12-24 02:57:45.205 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onSaveInstanceState()
+
+12-24 02:57:45.205 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
+
+12-24 02:57:45.205 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onDestroy()
+
+12-24 02:57:45.265 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onCreate()
+
+12-24 02:57:45.270 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStart()
+
+12-24 02:57:45.270 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
+
 
