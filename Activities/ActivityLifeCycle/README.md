@@ -54,7 +54,7 @@ When a pop-up appears, the Activity is partially obscured, in which case it is p
 
 ### On Configuration Changes
 
-<b><i> On Device Rotation </i>
+<b><i> On Device Rotation </i></b>
 
 12-24 01:11:14.047 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
 
