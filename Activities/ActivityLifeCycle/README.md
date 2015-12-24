@@ -17,7 +17,7 @@
 
 12-24 00:21:17.425 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onDestroy()
 
-> On pressing the back button, Android destroys the Activity.
+> On pressing the back button, Android destroys the Activity. The onDestroy() method is not necessarily called at times. However, the onPause() method is always called.
 
 
 ### Launch the App again
@@ -90,14 +90,14 @@ Since an activity is destroyed and recreated on runtime device configuration cha
 
 When an activity is paused or stopped, the Android system could possibly destroy the activity to reclaim memory, if needed. That said, a running activity is never destroyed by the Android system to reclaim memory. 
 
+In such cases, the onPause() method is reliably called. The onDestroy() method may not be called at all times. Usually, the onSaveInstanceState() method is used to save and stash the state and the onPause() method to pausing tasks.
+
 ```java
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
     }
 ```
-
-Android stashes the in the the Activity's <b><i>Activity Record</i></b> 
 
 The state can be saved in the Bundle argument outState which is handed back to the onCreate() method as savedInstanceState argument when the activity is recreated.
 
@@ -107,6 +107,7 @@ The state can be saved in the Bundle argument outState which is handed back to t
         super.onCreate(savedInstanceState);
     }
 ```
+> When an activity is , onSaveInstanceState() method is called to save the state
 
 <b><i> On screen rotation after implementing onSaveInstanceState() </i></b>
 
@@ -123,5 +124,10 @@ The state can be saved in the Bundle argument outState which is handed back to t
 12-24 02:57:45.270 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStart()
 
 12-24 02:57:45.270 8816-8816/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
+
+### Where is the Bundle stored?
+
+Android stashes the Bundle in the the Activity's <b><i>Activity Record</i></b>. The Activity Record for an activity lives on beyond the activity instance.  
+
 
 
