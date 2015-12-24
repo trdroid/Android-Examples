@@ -71,4 +71,6 @@ the classes used in the app.
 
 <i> When any of the aforementioned parameters are modified in the app's build.gradle file, the project must be synchronized with the changes in the gradle file. This can be done in Android Studio by Tools -> Android -> Sync Project with Gradle Files </i>
 
+### Android Lint
+
 
