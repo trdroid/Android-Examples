@@ -73,4 +73,10 @@ the classes used in the app.
 
 ### Android Lint
 
+> What if the Minimum SDK Version (x) is < Compile SDK Version (y) ?
 
+The app can refer to classes new to API level y because at compile time the SDK version y is used to resolve classes used in the app. If the app is run on an Android device with API level x, it crashes when the app attempts to access a class that is available only in API level y.
+
+In such scenarios, Android Lint would report a warning as the Lint uses the Minimum SDK Version to evaluate the code whereas the compiler uses the Compile SDK Version. 
+
+To explicitly run the Lint in Android Studio, Analyze -> Inspect Code ...
