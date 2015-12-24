@@ -52,7 +52,9 @@
 When a pop-up appears, the Activity is partially obscured, in which case it is paused. After the pop-up is dismissed, the Activity is resumed.
 
 
-### On Rotation
+### On Configuration Changes
+
+<b><i> On Device Rotation </i>
 
 12-24 01:11:14.047 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
 
@@ -66,5 +68,8 @@ When a pop-up appears, the Activity is partially obscured, in which case it is p
 12-24 01:11:14.106 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStart()
 
 12-24 01:11:14.106 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
+
+> On a configuration change, the Activity is destroyed and a new Activity is created
+
 
 
