@@ -85,15 +85,13 @@ Device configuration includes
 
 # Saving State
 
-## Retaining state between Activity destruction and construction
+## Retaining state between Activity destruction and reconstruction
 
 <b><i>Implementing onSaveInstanceState() callback</i></b>
 
 Since an activity is destroyed and recreated on runtime device configuration changes, the onSaveInstanceState() method can be implemented to retain the state across activity destruction and reconstruction. However, the onSaveInstanceState() method is not helpful for saving state when an activity is paused or stopped. onSaveInstanceState() is only useful when an activity instance is reconstructed, not when an activity is paused and resumed. 
 
-When an activity is paused or stopped, the Android system could possibly destroy the activity to reclaim memory, if needed. That said, a running activity is never destroyed by the Android system to reclaim memory. 
-
-In such cases, the onPause() method is reliably called. The onDestroy() method may not be called at all times. Usually, the onSaveInstanceState() method is used to save and stash the state and the onPause() method for pausing tasks.
+When an activity is destroyed, the onPause() method is reliably called. The onDestroy() method may not be called at all times.
 
 ```java
     @Override
@@ -124,11 +122,12 @@ Activity Records are discarded when
 
 <b><i> In Summary... </b></i>
 
-The state can be retained i.e. Android stashes and retrieves the Bundle in/from Activity Record when
+The state can be retained on onSaveInstanceState() when i.e. Android stashes and retrieves the Bundle in/from Activity Record when
  
- 2) On runtime device configuration changes, where the Activity is destroyed and recreated
- 
- 3) Android kills the application process and the user relaunches the app
+ 1) On runtime device configuration changes, where the Activity is destroyed and recreated
+    
+    ~~~~~~~Question~~~~~~~~~~~~
+ 2) Android kills the application process and the user relaunches the app??
 
 The state cannot be retained i.e. the Activity Records are discarded when 
 
@@ -174,6 +173,19 @@ The state cannot be retained i.e. the Activity Records are discarded when
 
 ## Retaining state when Activity pauses and resumes
 
+When an activity is paused or stopped, the Android system could possibly destroy the activity to reclaim memory because as the activity would be deep in the stack. That said, a running activity is never destroyed by the Android system to reclaim memory. 
+
+In such cases, the onPause() method is reliably called. The onDestroy() method may not be called at all times. 
+
+As there is a chance for the activity to be destroyed, it makes sense to save the state or stop tasks like playing music in the onPause() method. The state can be retained by any of the following means
+ * Shared Preferences
+ * Files
+ * Databases
+ * Content Providers
+
+The saved state can be retrieved in the onResume() method
+
+<b><i> Save state in onPause() and retrieve the saved state in onResume() when </b></i>
 
  1) The home button is pressed where the Activity is only paused and stopped but not destroyed
 
