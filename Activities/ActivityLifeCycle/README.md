@@ -2,11 +2,11 @@
 
 ### On Application Launch
 
-12-23 23:57:49.756 17670-17670/? D/MainActivity: onCreate()
+12-25 16:31:26.569 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onCreate(Bundle savedInstanceState)
 
-12-23 23:57:49.791 17670-17670/? D/MainActivity: onStart()
+12-25 16:31:26.573 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStart()
 
-12-23 23:57:49.791 17670-17670/? D/MainActivity: onResume()
+12-25 16:31:26.573 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
 
 
 ### Pressing Back Button
@@ -19,23 +19,29 @@
 
 > On pressing the back button, Android destroys the Activity. The onDestroy() method is not necessarily called at all times. However, the onPause() method is always called reliably.
 
+    ~~~~Question~~~~
+> The app still shows in the recent apps. What does it mean? When an Activity is destroyed, should it not be removed from the Activity stack? Does the list of recent apps reflect the activities on the Activity stack?
 
 ### Launch the App again
 
-12-24 00:55:44.551 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onCreate()
+12-25 16:32:05.913 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onCreate(Bundle savedInstanceState)
 
-12-24 00:55:44.557 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStart()
+12-25 16:32:05.915 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStart()
 
-12-24 00:55:44.557 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
+12-25 16:32:05.915 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
 
 
 ### Pressing Home Button
 
-12-24 00:56:00.510 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
+12-25 16:32:37.429 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
 
-12-24 00:56:00.532 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
+12-25 16:32:37.436 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onSaveInstanceState(Bundle outState)
 
-> On pressing the home button, Android pauses and stops the activity and tries not to destroy it in case if the user decides to come back to the app again. However if the system needs to reclaim memory, stopped activities might be destroyed because they are deep in the Activity stack.
+12-25 16:32:37.436 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Saving data, IS_SAVED to true
+
+12-25 16:32:37.436 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
+
+> On pressing the home button, Android pauses and stops the activity and tries not to destroy it in case if the user decides to come back to the app again. However if the system needs to reclaim memory, stopped activities might be destroyed because they are further down in the Activity stack.
 
 
 ### Launch the App again
@@ -120,9 +126,7 @@ Activity Records are discarded when
 * the device is rebooted
 * unused for a long time
 
-<b><i> In Summary... </b></i>
-
-The state can be retained on onSaveInstanceState() when 
+<b><i> The state can be retained on onSaveInstanceState() when </b></i>
  
  1) the runtime device configuration changes, where the Activity is destroyed and recreated
     
@@ -130,25 +134,29 @@ The state can be retained on onSaveInstanceState() when
  2) Android kills the application process and the user relaunches the app??
 
 
-<b><i> On a device orientation change, where the Activity is destroyed and recreated </i></b>
+### On a device orientation change, where the Activity is destroyed and recreated </i></b>
 
-12-24 04:36:45.107 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
+12-25 16:34:01.287 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
 
-12-24 04:36:45.107 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onSaveInstanceState()
+12-25 16:34:01.287 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onSaveInstanceState(Bundle outState)
 
-12-24 04:36:45.107 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Saving data, IS_SAVED to true
+12-25 16:34:01.287 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Saving data, IS_SAVED to true
 
-12-24 04:36:45.107 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
+12-25 16:34:01.287 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
 
-12-24 04:36:45.109 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onDestroy()
+12-25 16:34:01.288 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onDestroy()
 
-12-24 04:36:45.189 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onCreate()
+12-25 16:34:01.335 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onCreate(Bundle savedInstanceState)
 
-12-24 04:36:45.191 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Retrieving data, IS_SAVED istrue
+12-25 16:34:01.337 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Retrieving data in onCreate(), IS_SAVED istrue
 
-12-24 04:36:45.192 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStart()
+12-25 16:34:01.338 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStart()
 
-12-24 04:36:45.192 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
+12-25 16:34:01.339 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onRestoreInstanceState(Bundle savedInstanceState)
+
+12-25 16:34:01.339 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Retrieving data in onRestoreInstanceState(), IS_SAVED istrue
+
+12-25 16:34:01.339 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
 
 
 ## Retaining state when Activity pauses and resumes
@@ -169,12 +177,22 @@ The saved state can be retrieved in the onResume() method
 
  1) The home button is pressed where the Activity is only paused and stopped but not destroyed
 
-<b><i>The home button is pressed where the Activity is only paused and stopped but not destroyed</i></b>
 
-12-24 05:17:20.037 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
+### The home button is pressed where the Activity is only paused and stopped but not destroyed
 
-12-24 05:17:20.070 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onSaveInstanceState()
+12-25 16:43:46.415 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
 
-12-24 05:17:20.070 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Saving data, IS_SAVED to true
+12-25 16:43:46.426 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onSaveInstanceState(Bundle outState)
 
-12-24 05:17:20.070 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
+12-25 16:43:46.426 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Saving data, IS_SAVED to true
+
+12-25 16:43:46.426 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
+
+
+### Launch the App again
+
+12-25 16:44:49.935 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStart()
+
+12-25 16:44:49.935 8751-8751/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
+
+
