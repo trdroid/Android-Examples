@@ -35,7 +35,7 @@
 
 12-24 00:56:00.532 17670-17670/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
 
-> On pressing the home button, Android pauses and stops the activity and tries not to destroy it in case if the user decides to come back to the app again. However if the system needs to reclaim memory, stopped activities might be destroyed.
+> On pressing the home button, Android pauses and stops the activity and tries not to destroy it in case if the user decides to come back to the app again. However if the system needs to reclaim memory, stopped activities might be destroyed because they are deep in the Activity stack.
 
 
 ### Launch the App again
@@ -83,10 +83,13 @@ Device configuration includes
 * Keyboard type, which could be chagned at runtime
 * Dock Mode
 
+# Saving State
 
-### Implementing onSaveInstanceState() callback
+## Retaining state between Activity destruction and construction
 
-Since an activity is destroyed and recreated on runtime device configuration changes, the onSaveInstanceState() method can be implemented to retain the state across activity destruction and recreation. The onSaveInstanceState() method can also be implemented to save state when an activity is paused or stopped. 
+<b><i>Implementing onSaveInstanceState() callback</i></b>
+
+Since an activity is destroyed and recreated on runtime device configuration changes, the onSaveInstanceState() method can be implemented to retain the state across activity destruction and reconstruction. However, the onSaveInstanceState() method is not helpful for saving state when an activity is paused or stopped. onSaveInstanceState() is only useful when an activity instance is reconstructed, not when an activity is paused and resumed. 
 
 When an activity is paused or stopped, the Android system could possibly destroy the activity to reclaim memory, if needed. That said, a running activity is never destroyed by the Android system to reclaim memory. 
 
@@ -108,22 +111,20 @@ The state can be saved in the Bundle argument outState which is handed back to t
     }
 ```
 
-### Where is the Bundle stored?
+<b><i> Where is the Bundle stored? </b></i>
 
 Android stashes the Bundle in the the Activity's <b><i>Activity Record</i></b>. The Activity Record for an activity lives on beyond the activity instance and even beyond the app process. 
 
-### When are Activity Records discarded?
+<b><i> When are Activity Records discarded? </b></i>
 
 Activity Records are discarded when 
 * the user presses the back button
 * the device is rebooted
 * unused for a long time
 
-## In Summary...
+<b><i> In Summary... </b></i>
 
 The state can be retained i.e. Android stashes and retrieves the Bundle in/from Activity Record when
- 
- 1) The home button is pressed where the Activity is only paused and stopped but not destroyed
  
  2) On runtime device configuration changes, where the Activity is destroyed and recreated
  
@@ -171,6 +172,9 @@ The state cannot be retained i.e. the Activity Records are discarded when
 12-24 04:36:45.192 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onResume()
 
 
+## Retaining state when Activity pauses and resumes
 
+
+ 1) The home button is pressed where the Activity is only paused and stopped but not destroyed
 
 
