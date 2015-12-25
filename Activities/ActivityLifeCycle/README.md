@@ -122,32 +122,12 @@ Activity Records are discarded when
 
 <b><i> In Summary... </b></i>
 
-The state can be retained on onSaveInstanceState() when i.e. Android stashes and retrieves the Bundle in/from Activity Record when
+The state can be retained on onSaveInstanceState() when 
  
- 1) On runtime device configuration changes, where the Activity is destroyed and recreated
+ 1) the runtime device configuration changes, where the Activity is destroyed and recreated
     
     ~~~~~~~Question~~~~~~~~~~~~
  2) Android kills the application process and the user relaunches the app??
-
-The state cannot be retained i.e. the Activity Records are discarded when 
-
- 1) The back button is pressed which destroys the Activity
- 
- 2) The device is rebooted
- 
- 3) The Activity Records are not used for a long time
-
-## The log after implementing onSaveInstanceState() method
-
-<b><i>The home button is pressed where the Activity is only paused and stopped but not destroyed</i></b>
-
-12-24 05:17:20.037 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
-
-12-24 05:17:20.070 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onSaveInstanceState()
-
-12-24 05:17:20.070 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Saving data, IS_SAVED to true
-
-12-24 05:17:20.070 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
 
 
 <b><i> On a device orientation change, where the Activity is destroyed and recreated </i></b>
@@ -189,4 +169,12 @@ The saved state can be retrieved in the onResume() method
 
  1) The home button is pressed where the Activity is only paused and stopped but not destroyed
 
+<b><i>The home button is pressed where the Activity is only paused and stopped but not destroyed</i></b>
 
+12-24 05:17:20.037 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onPause()
+
+12-24 05:17:20.070 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onSaveInstanceState()
+
+12-24 05:17:20.070 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: Saving data, IS_SAVED to true
+
+12-24 05:17:20.070 25865-25865/com.lifecycle.activity.droid.activitylifecycle D/MainActivity: onStop()
