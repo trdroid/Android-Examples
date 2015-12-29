@@ -8,7 +8,9 @@ A better solution is to use Fragments which allow for the creation of the user i
 
 ### Availability
 
-The Fragment class was released with Android 3.0 (API Level 11). Android provided a support library to make the Fragments available to devices running Android 1.6 (API Level 4) or higher. 
+The Fragment class was released with Android 3.0 (API Level 11). The Activity class in and above API Level 11 is aware of the Fragment class. 
+
+Android provided a support library to make the Fragments available to devices running Android 1.6 (API Level 4) or higher. The Activity class below API Level 11 has no knowledge of the Fragment class. Therefore for API Level < 11, Android provided a Fragment-aware Activity class in the support library android.support.v4.app.FragmentActivity.
 
 ### Details
 
@@ -25,12 +27,6 @@ A Fragment is extended from android.app.Object.
 A Fragment has access to the Activity it is tied to and its resources. A Fragment also has access to its FragmentManager through the Activity. 
 
 Fragments have a life cycle like any other Android component. 
-
-
-### Benefits of Fragments
-
- Simplify the creation of UI across various form factors
-* 
 
 ### A Scenario for using Fragments
 Consider a scenario:
@@ -67,6 +63,8 @@ c) Screen1: Top of Screen1, Fragment A displays a List (Clicking on an element s
 ### Benefits
 
 Activities are killed and recreated on configuration changes. This requires their state to be saved before termination and restored on recreation. 
+
+Simplify the creation of UI across various form factors
 
 The saving and restoration can be overcome with Fragments as they can be retained across orientation changes.
 
