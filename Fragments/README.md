@@ -28,7 +28,7 @@ A Fragment is extended from android.app.Object.
 
 A Fragment has access to the Activity it is tied to and its resources. A Fragment also has access to its FragmentManager through the Activity. 
 
-Fragments have a life cycle like any other Android component. 
+A Fragment have a life cycle like any other Android component and its lifecycle is tightly coupled with the lifecyle of the containing Activity. 
 
 ### A Scenario for using Fragments
 
