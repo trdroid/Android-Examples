@@ -63,7 +63,7 @@ c) Screen1: Top of Screen1, Fragment A displays a List (Clicking on an element s
    Screen1: Bottom of Screen1, Fragment B shows Details
    
 
-<i>Tips<i>
+<i>Tips</i>
 
 Assess if the scenario actually needs Fragments. Adding Fragments 'later' is not a good idea. 
 
