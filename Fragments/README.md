@@ -18,13 +18,13 @@ To use Fragments in devices running API Level > 4, including API Level > 11, the
 
 To use fragments in devices running Android with API Level > 4, use the following classes 
 
-For Activity, use android.support.v4.app.FragmentActivity class
-For Fragment, use android.support.v4.app.Fragment class
+* For Activity, use android.support.v4.app.FragmentActivity class
+* For Fragment, use android.support.v4.app.Fragment class
 
 To use fragments in devices running Android with API Level >= 11, use the following classes 
 
-For Activity, use android.app.Activity class
-For Fragment, use android.app.Fragment class
+* For Activity, use android.app.Activity class
+* For Fragment, use android.app.Fragment class
 
 
 ### Containing Activity
