@@ -18,7 +18,7 @@ To use Fragments in devices running API Level > 4, including API Level > 11, the
 
 A Fragment has an associated view hierarchy just like an Activity. It can be inflated from an XML file or created in code. 
 
-A Fragment has a bundle that can be assigned its initialization arguments. This should be done before it is attached to the Activity that it is bound to i.e. immediately after constructing the fragment. These arguments are retained across fragment tear-down and recreation. 
+A Fragment has a bundle that can be assigned as its initialization arguments. This should be done before it is attached to the Activity that it is bound to i.e. immediately after constructing the fragment. These arguments are retained across fragment tear-down and recreation. 
 
 An Activity specifies Fragments as containers in its layout. The internal structure of each Fragment is laid out in its own layout file that specifies the Fragment's view hierarchy, which has to be attached to the view hiearchy of the enclosing Activity.
 
@@ -31,6 +31,7 @@ A Fragment has access to the Activity it is tied to and its resources. A Fragmen
 Fragments have a life cycle like any other Android component. 
 
 ### A Scenario for using Fragments
+
 Consider a scenario:
 
 a) Portrait Mode on a Phone:
@@ -61,6 +62,14 @@ c) Screen1: Top of Screen1, Fragment A displays a List (Clicking on an element s
 
    Screen1: Bottom of Screen1, Fragment B shows Details
    
+
+<i>Tips<i>
+
+Assess if the scenario actually needs Fragments. Adding Fragments 'later' is not a good idea. 
+
+Do not use Fragments just for the sake of using them. 
+
+DO NOT overuse Fragments. 
 
 ### Benefits
 
