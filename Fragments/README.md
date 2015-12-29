@@ -14,21 +14,27 @@ Android provided a <b><i>support library</b></i> to make the Fragments available
 
 To use Fragments in devices running API Level > 4, including API Level > 11, the activity class should extend FragmentActivity (android.support.v4.app.FragmentActivity) rather than Activity (andoird.app.Activity). 
 
-### Details
-
-A Fragment has an associated view hierarchy just like an Activity. It can be inflated from an XML file or created in code. 
-
-A Fragment has a bundle that can be assigned as its initialization arguments. This should be done before it is attached to the Activity that it is bound to i.e. immediately after constructing the fragment. These arguments are retained across fragment tear-down and recreation. 
-
-An Activity specifies Fragments as containers in its layout. The internal structure of each Fragment is laid out in its own layout file that specifies the Fragment's view hierarchy, which has to be attached to the view hiearchy of the enclosing Activity.
+### Containing Activity
 
 Fragments are contained within an activity and only exist within the context of an activity. 
 Fragments could be thought of as "fragmented" or "mini" activities. 
-A Fragment is extended from android.app.Object.
+
+An Activity specifies Fragments as containers in its layout. The internal structure of each Fragment is laid out in its own layout file that specifies the Fragment's view hierarchy, which has to be attached to the view hiearchy of the enclosing Activity.
 
 A Fragment has access to the Activity it is tied to and its resources. A Fragment also has access to its FragmentManager through the Activity. 
 
 A Fragment have a life cycle like any other Android component and its lifecycle is tightly coupled with the lifecyle of the containing Activity. 
+
+
+### Fragment's View
+
+A Fragment has an associated view hierarchy just like an Activity. It can be inflated from an XML file or created in code. 
+
+
+### Initial Arguments
+
+A Fragment has a bundle that can be assigned as its initialization arguments. This should be done before it is attached to the Activity that it is bound to i.e. immediately after constructing the fragment. These arguments are retained across fragment tear-down and recreation. 
+
 
 ### A Scenario for using Fragments
 
