@@ -4,9 +4,13 @@
 
 More than one activtiy is needed to accommodate user interfaces for a wide variety of device form factors. The device form factors could be categorized into subset of devices with similar user interface requirements. The user inteface for each subset of devices can be handled by an activity, resulting in multiple activities to cover the whole range of user interface requirements. This could possibly result in duplication of business logic across all these activities, or an effort in factoring out the common code and making it available across these activities. 
 
-A better solution is to use Fragments which allow for the creation of the user interfaces in a modular way. A user interface can be modularized with fragments, with each fragment encapsulating a portion of the user interface along with the control logic. 
+A better solution is to use Fragments which allow for the creation of the user interfaces in a modular way. A user interface can be modularized with fragments, with each fragment encapsulating a portion of the user interface along with the control logic. The modularity implies that the fragments can be be arranged in an Activity as needed. 
 
-The modularity allows for the fragments to be arranged in an Activity as needed. 
+### Availability
+
+The Fragment class was released with Android 3.0 (API Level 11). Android provided a support library to make the Fragments available to devices running Android 1.6 (API Level 4) or higher. 
+
+### Details
 
 A Fragment has an associated view hierarchy just like an Activity. It can be inflated from an XML file or created in code. 
 
@@ -22,7 +26,6 @@ A Fragment has access to the Activity it is tied to and its resources. A Fragmen
 
 Fragments have a life cycle like any other Android component. 
 
-The Fragment class was released with Android 3.0 (API Level 11). Android provided a support library to make the Fragments available to devices running Android 1.6 (API Level 4) or higher. 
 
 ### Benefits of Fragments
 
