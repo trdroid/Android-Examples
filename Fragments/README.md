@@ -4,13 +4,13 @@
 
 More than one activtiy is needed to accommodate user interfaces for a wide variety of device form factors. The device form factors could be categorized into subset of devices with similar user interface requirements. The user inteface for each subset of devices can be handled by an activity, resulting in multiple activities to cover the whole range of user interface requirements. This could possibly result in duplication of business logic across all these activities, or an effort in factoring out the common code and making it available across these activities. 
 
-A better solution is to use Fragments which allow for the creation of the user interfaces in a modular way. A user interface can be modularized with fragments, with each fragment encapsulating a portion of the user interface along with the control logic. The modularity implies that the fragments can be be arranged in an Activity as needed. 
+A better solution is to use Fragments which allow for the creation of the user interfaces in a modular way. A user interface can be modularized with fragments, with each fragment encapsulating a portion of the user interface along with the control logic. The modularity implies that the fragments can be arranged in an Activity as needed. 
 
 ### Availability
 
 The Fragment class was released with Android 3.0 (API Level 11). The Activity class in and above API Level 11 is aware of the Fragment class. 
 
-Android provided a support library to make the Fragments available to devices running Android 1.6 (API Level 4) or higher. The Activity class (android.app.Activity) below API Level 11 has no knowledge of the Fragment class. Therefore to use Fragments in devices running API Level < 11, including API Level > 11, Android provided a Fragment-aware Activity class in the support library called FragmentActivity (android.support.v4.app.FragmentActivity). 
+Android provided a <b><i>support library</b></i> to make the Fragments available to devices running Android 1.6 (API Level 4) or higher. The Activity class (android.app.Activity) below API Level 11 has no knowledge of the Fragment class. Therefore to use Fragments in devices running API Level < 11, including API Level > 11, Android provided a Fragment-aware Activity class in the support library called FragmentActivity (android.support.v4.app.FragmentActivity). 
 
 To use Fragments in devices running API Level > 4, including API Level > 11, the activity class should extend FragmentActivity (android.support.v4.app.FragmentActivity) rather than Activity (andoird.app.Activity). 
 
@@ -64,13 +64,15 @@ c) Screen1: Top of Screen1, Fragment A displays a List (Clicking on an element s
 
 ### Benefits
 
-Activities are killed and recreated on configuration changes. This requires their state to be saved before termination and restored on recreation. 
+Fragments simplify the creation of the UI across various form factors.
 
-Simplify the creation of UI across various form factors
+Activities are killed and recreated on configuration changes. This requires their state to be saved before termination and restored on recreation. 
 
 The saving and restoration can be overcome with Fragments as they can be retained across orientation changes.
 
 Fragments can be added to the backstack in a way that pressing the Back button steps backward through the fragments while saying inside the current activity. 
+
+Fragments provide a consistent way to create built-in Android UI components which prior to Fragments had to be created in disparate ways. These UI components include lists, dialog boxes, tabs etc.
 
 # Creation
 
