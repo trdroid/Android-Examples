@@ -10,7 +10,7 @@ A better solution is to use Fragments which allow for the creation of the user i
 
 The Fragment class (android.app.Fragment) was released with Android 3.0 (API Level 11). The Activity class (android.app.Activity) in and above API Level 11 is aware of the Fragment class. 
 
-Android provided a <b><i>support library</b></i> to make the Fragment class (android.support.v4.app.Fragment) available to devices running Android 1.6 (API Level 4) or higher. The Activity class (android.app.Activity) below API Level 11 has no knowledge of the Fragment class. Therefore to use Fragments in devices running API Level < 11, including API Level > 11, Android provided a Fragment-aware Activity class in the support library called FragmentActivity (android.support.v4.app.FragmentActivity). 
+Android provided a <b><i>support library</b></i> to make the Fragment class (as android.support.v4.app.Fragment) available to devices running Android 1.6 (API Level 4) or higher. The Activity class (android.app.Activity) below API Level 11 has no knowledge of the Fragment class. Therefore to use Fragments in devices running API Level < 11, including API Level > 11, Android provided a Fragment-aware Activity class in the support library called FragmentActivity (android.support.v4.app.FragmentActivity). 
 
 To use Fragments in devices running API Level > 4, including API Level > 11, the activity class should extend FragmentActivity (android.support.v4.app.FragmentActivity) rather than Activity (andoird.app.Activity). 
 
