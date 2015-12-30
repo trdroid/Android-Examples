@@ -1,6 +1,7 @@
 package com.lifecycle.activity.droid.activitylifecycle;
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,9 +38,13 @@ public class MainActivity extends Activity {
         /*
             Log.d(<source of message>, <message itself>)
          */
-        Log.d(TAG, "onCreate()");
+        Log.d(TAG, "onCreate(Bundle savedInstanceState)");
 
         setContentView(R.layout.activity_main);
+
+        if(savedInstanceState != null) {
+            Log.d(TAG, "Retrieving data in onCreate(Bundle savedInstanceState), IS_SAVED is" + savedInstanceState.getBoolean("IS_SAVED"));
+        }
     }
 
     @Override
@@ -71,4 +76,33 @@ public class MainActivity extends Activity {
         super.onDestroy();
         Log.d(TAG, "onDestroy()");
     }
+
+    /*
+        Android calls this onSaveInstanceState() before onPause(), onStop() and onDestroy()
+     */
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        /*
+
+         */
+        super.onSaveInstanceState(outState);
+
+        outState.putBoolean("IS_SAVED", true);
+
+        Log.d(TAG, "onSaveInstanceState(Bundle outState)");
+        Log.d(TAG, "Saving data, IS_SAVED to true");
+    }
+
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        Log.d(TAG, "onRestoreInstanceState(Bundle savedInstanceState)");
+
+        if(savedInstanceState != null) {
+            Log.d(TAG, "Retrieving data in onRestoreInstanceState(Bundle savedInstanceState), IS_SAVED is" + savedInstanceState.getBoolean("IS_SAVED"));
+        }
+    }
+
+
 }

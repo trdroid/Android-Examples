@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ActivityCallingActivity</string>
+    <string name="launch_button">Launch Second Activity</string>
+</resources>
