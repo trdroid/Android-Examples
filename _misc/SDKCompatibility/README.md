@@ -40,21 +40,29 @@ dependencies {
 > <i> Minimum SDK Version </i>
 
 If a device runs on Android of API level x, then an app set to a minimum SDK version of y cannot be installed on the device,
-where x > y
+where x < y
+
+An app with a minimum SDK version of 16 cannot be installed on devices running Android of API level < 16
 
 Choose a minimum SDK that allows your app to be available for a wider audience. 
 
 For example, choosing Minimum SDK Version to be 16, ensures that the app runs on API levels 4.1.x or higher. 
 
+> <i>How about setting Minimum SDK to 1?</i>
+
+Cost of creating the app to support different execution paths suitable for all API levels would be higher. 
+
+Also, if your app relies on a hardware feature that only a later API level of Android supports, it is not possible to support the prior versions.
+
 > <i> Target SDK Version </i>
 
-Target SDK specifies the API level that the app is designed to run on. 
+Target SDK specifies the API level that the app is designed to run on and tested against. 
 
-If an app is released for API level x and the Android OS has released API level y, where x < y, the new features of 
-API level y are ignored and the app appears and behaves as it is still running on Android API level x. 
+Apps with a certain target SDK are forward compatible with the future SDK versions of Android. If an app is released for API level x and the Android OS has released API level y, where x < y, Android ignores the new features of 
+API level y and the app appears and behaves as if it is still running on Android API level x. 
 
 Whenever there is a new version of Android (for eg. level y), the app has to be tested against it to see if it works 
-as expected. 
+as expected and to take advantage of the new features and optimizations of the latest SDK version. 
 
 The following link contains changes to APIs across API levels: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html
 
