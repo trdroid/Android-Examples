@@ -62,7 +62,7 @@ Apps with a certain target SDK are forward compatible with the future SDK versio
 API level y and the app appears and behaves as if it is still running on Android API level x. 
 
 Whenever there is a new version of Android (for eg. level y), the app has to be tested against it to see if it works 
-as expected. 
+as expected and to take advantage of the new features and optimizations of the latest SDK version. 
 
 The following link contains changes to APIs across API levels: http://developer.android.com/reference/android/os/Build.VERSION_CODES.html
 
