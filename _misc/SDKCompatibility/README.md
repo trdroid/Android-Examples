@@ -52,7 +52,7 @@ For example, choosing Minimum SDK Version to be 16, ensures that the app runs on
 
 Cost of creating the app to support different execution paths suitable for all API levels would be higher. 
 
-Also, if your app relies on a hardware feature that was only released in a later API level of Android, then it is not possible to support the prior versions.
+Also, if your app relies on a hardware feature that only a later API level of Android supports, it is not possible to support the prior versions.
 
 > <i> Target SDK Version </i>
 
