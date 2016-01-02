@@ -56,10 +56,10 @@ Also, if your app relies on a hardware feature that only a later API level of An
 
 > <i> Target SDK Version </i>
 
-Target SDK specifies the API level that the app is designed to run on. 
+Target SDK specifies the API level that the app is designed to run on and tested against. 
 
-If an app is released for API level x and the Android OS has released API level y, where x < y, the new features of 
-API level y are ignored and the app appears and behaves as it is still running on Android API level x. 
+Apps with a certain target SDK are forward compatible with the future SDK versions of Android. If an app is released for API level x and the Android OS has released API level y, where x < y, Android ignores the new features of 
+API level y and the app appears and behaves as if it is still running on Android API level x. 
 
 Whenever there is a new version of Android (for eg. level y), the app has to be tested against it to see if it works 
 as expected. 
