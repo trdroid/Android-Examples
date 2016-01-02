@@ -48,7 +48,7 @@ Choose a minimum SDK that allows your app to be available for a wider audience.
 
 For example, choosing Minimum SDK Version to be 16, ensures that the app runs on API levels 4.1.x or higher. 
 
-<i>How about setting Minimum SDK to 1?</i>
+> <i>How about setting Minimum SDK to 1?</i>
 
 Cost of creating the app to support different execution paths suitable for all API levels would be higher. 
 
