@@ -40,11 +40,19 @@ dependencies {
 > <i> Minimum SDK Version </i>
 
 If a device runs on Android of API level x, then an app set to a minimum SDK version of y cannot be installed on the device,
-where x > y
+where x < y
+
+An app with a minimum SDK version of 16 cannot be installed on devices running Android of API level < 16
 
 Choose a minimum SDK that allows your app to be available for a wider audience. 
 
 For example, choosing Minimum SDK Version to be 16, ensures that the app runs on API levels 4.1.x or higher. 
+
+<i>How about setting Minimum SDK to 1?</i>
+
+Cost of creating the app to support different execution paths suitable for all API levels would be higher. 
+
+Also, if your app relies on a hardware feature that was only released in a later API level of Android, then it is not possible to support the prior versions.
 
 > <i> Target SDK Version </i>
 
