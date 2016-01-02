@@ -73,3 +73,36 @@ The widgets provided in the layout file exist in a hierarchy of View objects, re
 
 <img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/MVC.png">
 
+# Running the app
+
+1) Navigate to the root of the project directory
+
+2) Give execute permission to gradle
+
+```sh
+chmod +x gradlew
+```
+
+3) Compile the code
+
+```sh
+./gradlew assembleDebug
+```
+
+4) Install the apk using ADB
+
+```
+adb install -r app/build/outputs/apk/app-debug-unaligned.apk
+```
+
+The -r switch will overwrite on an existing app
+
+5) Run the app
+
+```
+adb shell am start -n <package name>/<fully qualified class name of the main activity>
+```
+
+Use adb with the Activity Manager (am) tool to run the main activity
+
+
