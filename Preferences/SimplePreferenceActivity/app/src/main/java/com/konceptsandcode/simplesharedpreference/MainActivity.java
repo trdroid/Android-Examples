@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity
 
             PreferenceManager prefManager = getPreferenceManager();
             prefManager.setSharedPreferencesName("connectivitySettings");
-
             "connectivitySettings.xml" is used as the preference file
          */
 
