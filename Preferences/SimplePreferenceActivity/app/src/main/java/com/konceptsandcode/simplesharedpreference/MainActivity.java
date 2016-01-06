@@ -29,8 +29,10 @@ public class MainActivity extends AppCompatActivity
             MODE_PRIVATE indicates that the preference file can only be opened by the application that created it
          */
 
-        preferences = getSharedPreferences("com.konceptsandcode.simplesharedpreference_preferences",
-                MODE_PRIVATE);
+        /*preferences = getSharedPreferences("com.konceptsandcode.simplesharedpreference_preferences",
+                MODE_PRIVATE);*/
+
+        preferences = getSharedPreferences("sample", MODE_PRIVATE);
 
         /*
             A custom name can be assigned to a preference file using a PreferenceManager
