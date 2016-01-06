@@ -1,3 +1,5 @@
+
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 
@@ -54,3 +56,7 @@
     <boolean name="allowBluetooth" value="true" />
 </map>
 ```
+
+### Flow
+
+<img src="https://github.com/konceptsandcode/Android/blob/master/Preferences/SimplePreferenceActivity/_misc/flow.png"/>
