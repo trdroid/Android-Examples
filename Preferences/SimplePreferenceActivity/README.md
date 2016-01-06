@@ -1,0 +1,7 @@
+```xml
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <boolean name="allowWiFi" value="false" />
+    <boolean name="allowBluetooth" value="false" />
+</map>
+```
