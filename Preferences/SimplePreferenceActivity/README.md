@@ -11,9 +11,9 @@
 
 4) The addPreferencesFromResources() method displays the UI for these preferences in (3)
 
-5) The addPreferencesFromResources() method also creates a data/data/<package name>/shared_prefs/<package name>_preferences.xml file and writes the values of preferences specified in res/xml/preferences.xml (3). 
+5) The addPreferencesFromResources() method also creates a data/data/\<package name\>/shared_prefs/<package name>_preferences.xml file and writes the values of preferences specified in res/xml/preferences.xml (3). 
 
-6) The contents of data/data/<package name>/shared_prefs/<package name>_preferences.xml created by the addPreferencesFromResources() method are
+6) The contents of data/data/\<package name\>/shared_prefs/<package name>_preferences.xml created by the addPreferencesFromResources() method are
 
 ```xml
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
