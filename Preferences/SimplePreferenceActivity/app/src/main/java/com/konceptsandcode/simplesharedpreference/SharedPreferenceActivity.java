@@ -1,4 +1,4 @@
-package konceptsandcode.com.simplesharedpreference;
+package com.konceptsandcode.simplesharedpreference;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

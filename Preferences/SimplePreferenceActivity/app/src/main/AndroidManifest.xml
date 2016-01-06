@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="konceptsandcode.com.simplesharedpreference" >
+    package="com.konceptsandcode.simplesharedpreference" >
 
     <application
         android:allowBackup="true"
@@ -19,11 +19,6 @@
         <activity
             android:name=".SharedPreferenceActivity"
             android:label="@string/pref_activity_name" >
-            <intent-filter>
-                <action android:name="com.example.sharedpreference" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
     </application>
 

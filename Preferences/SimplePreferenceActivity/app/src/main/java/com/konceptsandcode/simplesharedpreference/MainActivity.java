@@ -1,4 +1,4 @@
-package konceptsandcode.com.simplesharedpreference;
+package com.konceptsandcode.simplesharedpreference;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -25,11 +25,11 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
 
         /*
-            Preferences file is saved by default as: <package name>_preferences
+            Preferences file is saved by default as: <package name>_preferences.xml
             MODE_PRIVATE indicates that the preference file can only be opened by the application that created it
          */
 
-        preferences = getSharedPreferences("konceptsandcode.com.simplesharedpreference_preferences",
+        preferences = getSharedPreferences("com.konceptsandcode.simplesharedpreference_preferences",
                 MODE_PRIVATE);
 
         /*
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onSetPreferencesButtonClick(View view) {
-        startActivity(new Intent("com.example.sharedpreference"));
+        startActivity(new Intent(MainActivity.this, SharedPreferenceActivity.class));
     }
 
     public void onReadPreferencesButtonClick(View view) {
