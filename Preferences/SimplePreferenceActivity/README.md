@@ -45,3 +45,12 @@
     <boolean name="allowBluetooth" value="false" />
 </map>
 ```
+
+```xml
+<?xml version='1.0' encoding='utf-8' standalone='yes' ?>
+<map>
+    <string name="SSIDName">stickynotes</string>
+    <boolean name="allowWiFi" value="true" />
+    <boolean name="allowBluetooth" value="true" />
+</map>
+```
