@@ -9,7 +9,7 @@
 
 2a) The addPreferencesFromResources() method is passed the preferences XML file resource ID (res/xml/preferences.xml) (3). 
 
-4) The addPreferencesFromResources() method displays the UI for these preferences in (3)
+4) The addPreferencesFromResources() method displays the UI for the preferences in (3)
 
 5) The addPreferencesFromResources() method also creates a data/data/\<package name\>/shared_prefs/<package name>_preferences.xml file and writes the values of preferences specified in res/xml/preferences.xml (3). 
 
