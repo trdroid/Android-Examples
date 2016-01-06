@@ -32,7 +32,21 @@ public class MainActivity extends AppCompatActivity
         /*preferences = getSharedPreferences("com.konceptsandcode.simplesharedpreference_preferences",
                 MODE_PRIVATE);*/
 
-        preferences = getSharedPreferences("sample", MODE_PRIVATE);
+        /*
+            preferences = getSharedPreferences("sample", MODE_PRIVATE);
+
+            onSetPreferencesButtonClick invokes the SharedPreferenceActivity, which
+            displays the UI from the preferences files (R.xml.preferences)
+            and creates a file data/data/<package name>/shared_prefs/<package name>_preferences.xml
+
+            onReadPreferencesButtonClick attempts to read a preference with key allowBluetooth
+            from the file data/data/<package name>/shared_prefs/sample.xml, which does not exist,
+            so the attempt returns the default value mentioned, which is false
+
+            onEditPreferencesButtonClick does preferences.edit() WHICH IS WHEN THE FILE
+            (data/data/<package name>/shared_prefs/sample.xml) IS CREATED and the preference value
+            for allowBlueTooth is written and commited to sample.xml file. 
+         */
 
         /*
             A custom name can be assigned to a preference file using a PreferenceManager
