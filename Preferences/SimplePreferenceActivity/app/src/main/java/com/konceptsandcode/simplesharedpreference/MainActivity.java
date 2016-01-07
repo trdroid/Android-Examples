@@ -2,6 +2,7 @@ package com.konceptsandcode.simplesharedpreference;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -18,6 +19,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity
 {
     private SharedPreferences preferences;
+    private Resources resources;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -25,15 +27,30 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        resources = this.getResources();
+
         /*
             Preferences file is saved by default as: <package name>_preferences.xml
             MODE_PRIVATE indicates that the preference file can only be opened by the application that created it
          */
 
+        // There are two ways to get to the preferences
+
+        /*
+            1) getSharedPreferences() retrieves the preferences using a package name.
+         */
         preferences = getSharedPreferences("com.konceptsandcode.simplesharedpreference_preferences",
                 MODE_PRIVATE);
 
-        Log.d("Shared", "Nothing");
+        /*
+            2) PreferenceManager.getDefaultSharedPreferences() gets the default preferences for the current context
+         */
+        SharedPreferences preferences1 = PreferenceManager.getDefaultSharedPreferences(this);
+
+        /*
+            Once a reference to the preference is obtained, call getter method with an appropriate key to
+            get the value of the preference.
+         */
 
         /*
             preferences = getSharedPreferences("sample", MODE_PRIVATE);
@@ -48,14 +65,14 @@ public class MainActivity extends AppCompatActivity
 
             onEditPreferencesButtonClick does preferences.edit() WHICH IS WHEN THE FILE
             (data/data/<package name>/shared_prefs/sample.xml) IS CREATED and the preference value
-            for allowBlueTooth is written and commited to sample.xml file.
+            for allowBlueTooth is written and committed to sample.xml file.
          */
 
         /*
             A custom name can be assigned to a preference file using a PreferenceManager
 
-            A PreferenceManager instance can be obtained from getPreferenceManager() method
-            that is NOT AVAILABLE when our Activity inherits from AppCompatActivity.
+            To get a PreferenceManager instance, use getPreferenceManager() method
+            getPreferenceManager() is NOT AVAILABLE when our Activity inherits from AppCompatActivity.
 
             To use getPreferenceManager, inherit from Activity.
 
@@ -71,7 +88,11 @@ public class MainActivity extends AppCompatActivity
     }
 
     public void onReadPreferencesButtonClick(View view) {
-        String settingsInText = "BlueTooth:" + preferences.getBoolean("allowBluetooth", false);
+        /*
+            A good approach is to use a key name which is defined as a string resource.
+            This avoids any unintended results because of typos
+         */
+        String settingsInText = "BlueTooth:" + preferences.getBoolean(resources.getString(R.string.bluetooth_pref), false);
 
         Toast.makeText(this, settingsInText, Toast.LENGTH_LONG).show();
     }
@@ -79,7 +100,7 @@ public class MainActivity extends AppCompatActivity
     public void onEditPreferencesButtonClick(View view) {
         CheckBox bluetoothCheckBox = (CheckBox)findViewById(R.id.enableBluetoothCheckBox);
         SharedPreferences.Editor preferencesEditor = preferences.edit();
-        preferencesEditor.putBoolean("allowBluetooth", bluetoothCheckBox.isChecked());
+        preferencesEditor.putBoolean(resources.getString(R.string.bluetooth_pref), bluetoothCheckBox.isChecked());
         preferencesEditor.commit();
     }
 }

@@ -11,6 +11,11 @@ public class SharedPreferenceActivity extends PreferenceActivity {
     public void onCreate(Bundle savedInstaceState) {
         super.onCreate(savedInstaceState);
 
+        /*
+            Generates preferences UI from res/xml/preferences.xml
+            and a file data/data/<package name>/shared_prefs/<package name>_preferences.xml
+            to persist the preference values
+         */
         addPreferencesFromResource(R.xml.preferences);
     }
 }

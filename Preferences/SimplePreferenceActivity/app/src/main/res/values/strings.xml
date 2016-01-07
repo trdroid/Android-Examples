@@ -7,5 +7,7 @@
     <string name="set_preference_button">Set Preferences</string>
     <string name="read_preference_button">Display Preferences</string>
     <string name="edit_preference_button">Edit Preferences</string>
+
+    <string name="bluetooth_pref">bluetooth_pref</string>
 </resources>
 

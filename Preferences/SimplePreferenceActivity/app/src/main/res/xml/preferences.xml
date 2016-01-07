@@ -5,12 +5,23 @@
 
         <!--
             android:key specifies the key that could be used in the code to read/write values
+
+            android:summaryOff is the summary that is displayed when the value of the CheckBoxPreference is false
+            android:summaryOn is the summary shown when the value of the CheckBoxPreference is true
         -->
         <CheckBoxPreference
+            android:key="bluetooth_pref"
             android:title="Bluetooth"
             android:defaultValue="false"
             android:summary="Use Bluetooth?"
-            android:key="allowBluetooth" />
+            android:summaryOff="Why not turn on the Bluetooth?"
+            android:summaryOn="Great! Bluetooth on!"/>
+
+        <SwitchPreference
+            android:key="rfid_switch"
+            android:title="RFID"
+            android:summaryOff="Why not turn on RFID?"
+            android:summaryOn="Great! RFID on!"/>
 
         <!--
             Brings up another screen
