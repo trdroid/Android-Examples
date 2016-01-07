@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity
 
         preferences = getSharedPreferences("com.konceptsandcode.simplesharedpreference_preferences",
                 MODE_PRIVATE);
+
+        Log.d("Shared", "Nothing");
 
         /*
             preferences = getSharedPreferences("sample", MODE_PRIVATE);
