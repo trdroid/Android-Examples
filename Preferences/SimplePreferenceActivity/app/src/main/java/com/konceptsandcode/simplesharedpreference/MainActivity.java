@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity
 
             onEditPreferencesButtonClick does preferences.edit() WHICH IS WHEN THE FILE
             (data/data/<package name>/shared_prefs/sample.xml) IS CREATED and the preference value
-            for allowBlueTooth is written and commited to sample.xml file. 
+            for allowBlueTooth is written and commited to sample.xml file.
          */
 
         /*
