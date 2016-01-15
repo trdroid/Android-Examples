@@ -25,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
 
                     Context informs the ActivityManager the package that the class object (SecondActivity) is in
                     cls informs the ActivityManager which class to start i.e. the class to instantiate and call onCreate() method on
+
+                    An explicit intent is used to start an Activity within the application
+
+                    In contrast, an Implicit intent is used to start an Activity in another application
                  */
                 Intent startSecondActivityIntent = new Intent(MainActivity.this, SecondActivity.class);
 
