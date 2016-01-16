@@ -58,10 +58,10 @@ Specified in RecipesActivity using a FragmentTransaction
 
 ### Block Diagram for Portrait Mode
 
-![](https://github.com/gruprog/Android/blob/master/Fragments/List-DetailView-Fragments/block%20diagrams/PortraitMode.jpg)
+![](https://github.com/gruprog/Android-Examples/tree/master/Fragments/List-DetailView-Fragments/block%20diagrams/PortraitMode.jpg)
 
 
 ### Block Diagram for Landscape Mode
 
-![](https://github.com/gruprog/Android/blob/master/Fragments/List-DetailView-Fragments/block%20diagrams/LandscapeMode.jpg)
+![](https://github.com/gruprog/Android-Examples/tree/master/Fragments/List-DetailView-Fragments/block%20diagrams/LandscapeMode.jpg)
 
