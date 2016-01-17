@@ -11,7 +11,7 @@ A layout file defines the view of an application. It is an XML file that defines
 
 A Widget is an instance of the <b>View</b> class or one of its subclasses.
 
-<img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/ViewClassGeneralHierarchy.png">
+<img src="https://github.com/gruprog/Android-Examples/blob/master/_misc/Basics/BrowseQuotes/_misc/ViewClassGeneralHierarchy.png">
 
 Some examples of Widgets are ListView, TableLayout, LinearLayout, FrameLayout, RelativeLayout, TextView, Button etc.
 
@@ -57,21 +57,21 @@ As of ADT 21, the following line is not required in the layout files
 
 Every widget has a corresponding XML element in the layout file where the name of the element is the widget type. Each widget could be configured with a set of XML attributes.
 
-<img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/layout_file.png">
+<img src="https://github.com/gruprog/Android-Examples/blob/master/_misc/Basics/BrowseQuotes/_misc/layout_file.png">
 
 ### View Hierarchy
 
 The widgets provided in the layout file exist in a hierarchy of View objects, referred to as the view hierarchy. 
 
-<img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/ViewHierarchy.png">
+<img src="https://github.com/gruprog/Android-Examples/blob/master/_misc/Basics/BrowseQuotes/_misc/ViewHierarchy.png">
 
 ### Inflating a View
 
-<img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/layout_to_view_objects.png">
+<img src="https://github.com/gruprog/Android-Examples/blob/master/_misc/Basics/BrowseQuotes/_misc/layout_to_view_objects.png">
 
 # Block Diagram
 
-<img src="https://github.com/konceptsandcode/Android/blob/master/_misc/Basics/BrowseQuotes/_misc/MVC.png">
+<img src="https://github.com/gruprog/Android-Examples/blob/master/_misc/Basics/BrowseQuotes/_misc/MVC.png">
 
 # Running the app
 
