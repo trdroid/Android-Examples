@@ -16,7 +16,7 @@
 
     <Button
         android:id="@+id/return_result_button"
-        android:text="Return Result"
+        android:text="Set Result"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"/>
 
