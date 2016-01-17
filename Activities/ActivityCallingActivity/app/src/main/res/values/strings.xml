@@ -2,4 +2,8 @@
     <string name="app_name">ActivityCallingActivity</string>
     <string name="intro_message">Welcome to Second Activity</string>
     <string name="launch_button">Launch Second Activity</string>
+    <string name="launch_button_for_result">Launch Second Activity For Result</string>
+    <string name="message1">Message1 from MainActivity</string>
+    <string name="inform_message">Information from MainActivity</string>
+    <string name="message2">Hi, I am data sent from MainActivity</string>
 </resources>
