@@ -46,7 +46,11 @@ public class MainActivity extends AppCompatActivity {
                  */
                 startActivity(startSecondActivityIntent);
 
-                Log.d(TAG, "startActivity() is a synchronous call");
+                /*
+                    startActivity() method is an asynchronous call i.e.
+                    the execution continues after the method call
+                 */
+                Log.d(TAG, "startActivity() is a is an ASYNCHRONOUS call");
             }
         });
 
@@ -91,7 +95,11 @@ public class MainActivity extends AppCompatActivity {
                  */
                 startActivityForResult(startSecondActivityForResultIntent, 0);
 
-                Log.d(TAG, "startActivityForResult() is a synchronous call");
+                /*
+                    startActivityForResult() method is an asynchronous call i.e.
+                    the execution continues after the method call
+                 */
+                Log.d(TAG, "startActivityForResult() is an ASYNCHRONOUS call");
             }
         });
     }
