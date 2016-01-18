@@ -3,6 +3,7 @@
 > MainActivity.java
 
 ```java
+        launchButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent startSecondActivityIntent = new Intent(MainActivity.this, SecondActivity.class);
@@ -48,7 +49,46 @@
 > SecondActivity.java
 
 ```java
+    public static final String EXTRA_MESSAGE = "com.lifecycle.activity.droid.activitycallingactivity.message";
+    public static final String INFORM_MESSAGE = "com.lifecycle.activity.droid.activitycallingactivity.inform";
 
+    public static final String RESULT = "com.lifecycle.activity.droid.activitycallingactivity.result";
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_second);
+
+        int message1ResourceId = getIntent().getIntExtra(EXTRA_MESSAGE, -1);
+        int message2ResourceId = getIntent().getIntExtra(INFORM_MESSAGE, -1);
+
+        String message1 = getResources().getString(message1ResourceId);
+        String message2 = getResources().getString(message2ResourceId);
+
+        Toast.makeText(getApplicationContext(), message1 + "\n" + message2, Toast.LENGTH_LONG).show();
+
+        Button closeButton = (Button)findViewById(R.id.close_button);
+
+        closeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SecondActivity.this.finish();
+            }
+        });
+
+        Button returnResultButton = (Button)findViewById(R.id.return_result_button);
+
+        returnResultButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent result = new Intent();
+
+                result.putExtra(RESULT, 10);
+
+                setResult(RESULT_OK, result);
+            }
+        });
+    }
 ```
 
 ### Flow Diagram
