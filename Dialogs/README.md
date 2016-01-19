@@ -15,3 +15,7 @@ Custom Dialogs can be coded apart from the built-in dialogs, a few of which are:
 * Multiple Choice
 * Pick List
 
+Dialog based fragments were added in Android 3.0. However, they are made available for pre-Android 3.0 by the Fragment-Compatibility library.
+
+
+
