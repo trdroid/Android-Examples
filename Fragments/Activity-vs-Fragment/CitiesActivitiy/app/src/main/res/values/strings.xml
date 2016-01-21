@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">CitiesActivitiy</string>
+    <string name="default_message">The description goes here ...</string>
+
+    <string name="beijing">Welcome to Beijing</string>
+    <string name="brussels">Welcome to Brussels</string>
+    <string name="london">Welcome to London</string>
+    <string name="montreal">Welcome to Montreal</string>
+    <string name="newdelhi">Welcome to New Delhi</string>
+    <string name="newyork">Welcome to New York</string>
+    <string name="sydney">Welcome to Sydney</string>
+    <string name="tokyo">Welcome to Tokyo</string>
+    <string name="toronto">Welcome to Toronto</string>
+    <string name="vancouver">Welcome to Vancouver</string>
+</resources>
