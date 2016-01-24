@@ -11,11 +11,7 @@ Android categorizes the screen sizes in <b>size constants</b> and provides the f
 |       | normal      |    |
 |  | large      |     |
 | XHDPI | extra large      |     |
-| XXHDPI | extra extra large      |  4.2.2   |
-| XXXHDPI | extra extra extra large      |  4.3   |
 
-
-XXXHDPI was added in 4.3 to support 4K iTVs.
 
 <b>Screen Density</b>:
   The number of physical pixels contained in one inch area of the display screen. A physical pixel is an element of the 
@@ -27,4 +23,16 @@ XXXHDPI was added in 4.3 to support 4K iTVs.
   
   Screen Density is also given in DPI (Dots Per Inch)
   
-  
+Android categorizes the screen densities into the following <b>density constants</b>
+
+| Qualifier        | Description           | Version  |
+| ------------- |:-------------:| -----:|
+|  LDPI     | low |  |
+|  MDPI      | medium      |    |
+|  HDPI  | high      |     |
+| XHDPI | extra high      |     |
+| XXHDPI | extra extra high      |  4.2.2   |
+| XXXHDPI | extra extra extra large      |  4.3   |
+
+XXXHDPI was added in 4.3 to support 4K iTVs.
+
