@@ -10,7 +10,7 @@ Android categorizes the screen sizes in <b>size constants</b> and provides the f
 |       | small |  |
 |       | normal      |    |
 |  | large      |     |
-| XHDPI | extra large      |     |
+|  | extra large      |     |
 
 
 <b>Screen Density</b>:
@@ -35,4 +35,11 @@ Android categorizes the screen densities into the following <b>density constants
 | XXXHDPI | extra extra extra large      |  4.3   |
 
 XXXHDPI was added in 4.3 to support 4K iTVs.
+
+<b>Screen Resolution</b>:
+  The total number of physical pixels along the X and Y axes specified as X x Y
+  
+  The screen resolution is generally specified with the parameters of the landscape orientation. For eg. 800x480 is 800 pixels along the X axis and 480 pixels along the Y axis in the landscape mode. If the device is changed to portrait orientation, the resolution specification changes to 400x800 (the new X x Y)
+  
+An Android application takes into account only the screen size and the screen density (through the use of the constants provided), but not the screen resolution. 
 
