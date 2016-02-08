@@ -112,6 +112,10 @@ listview.setAdapter(adapter1);
         listview.setChoiceMode(listview.CHOICE_MODE_MULTIPLE);
 ```
 
+### Block Diagram
+
+<img src="_misc/ArrayAdapter.png"/>
+
 ### Snapshots
 
 <img src="_misc/simple_list_item_checked.png"/>
