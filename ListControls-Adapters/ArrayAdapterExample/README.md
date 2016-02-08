@@ -84,3 +84,36 @@ listview.setAdapter(adapter1);
             }
         });
 ```
+
+<hr>
+
+### Using a custom layout with ArrayAdapter
+
+Define a custom layout (res/layout/custom_list_row.xml)
+
+```xml
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rowText"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:textSize="20sp">
+</TextView>
+```
+Notice that the root element is a TextView.
+
+### Create an adapter
+
+```java
+        /*
+            Create an adapter
+
+            The responsibility of an adapter is to manage data and provide child views to the list control
+
+            R.layout.custom_list_row is a custom layout for the child layout
+
+            list is the data source
+         */
+
+        final ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this,
+                R.layout.custom_list_row, carsList);
+```
