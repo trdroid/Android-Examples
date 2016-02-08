@@ -54,6 +54,8 @@ res/ directory.
 
 The Adapter maps each data element from the data source to each instantiation of the child view, which in this case is android.R.layout.simple_list_item_checked. 
 
+CheckedTextView extends TextView, intended to be used with ListViews.
+
 ### Get a reference to ListView
 
 The Main Activity Layout's file res/layout/activity_main.xml is:
@@ -110,6 +112,10 @@ listview.setAdapter(adapter1);
         listview.setChoiceMode(listview.CHOICE_MODE_MULTIPLE);
 ```
 
+### Snapshots
+
+<img src="_misc/simple_list_item_checked.png"/>
+
 ### Set Event Handler
 
 ```java
@@ -131,3 +137,21 @@ listview.setAdapter(adapter1);
         });
 ```
 
+<i>sdk/platforms/\<platform-version\>/res/layout/simple_list_item_single_choice.xml</i>
+
+```xml
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/listPreferredItemHeightSmall"
+    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+    android:gravity="center_vertical"
+    android:checkMark="?android:attr/listChoiceIndicatorSingle"
+    android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd" />
+
+```
+
+### Snapshots
+
+<img src="_misc/simple_list_item_single_choice.png"/>
