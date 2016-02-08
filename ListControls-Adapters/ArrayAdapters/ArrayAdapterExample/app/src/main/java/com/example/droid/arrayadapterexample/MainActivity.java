@@ -10,6 +10,7 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,9 +27,8 @@ public class MainActivity extends AppCompatActivity {
         };
 
         final ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < makes.length; ++i) {
-            list.add(makes[i]);
-        }
+
+        list.addAll(Arrays.asList(makes));
 
         /*
             Create an adapter
