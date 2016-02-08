@@ -189,7 +189,7 @@ same as above
 ```java
 /*
         an apt choice for this would be to use listview.CHOICE_MODE_SINGLE,
-        as the appearance would be like that of radio buttons
+        as the they appear to be radio buttons
         
         However, CHOICE_MODE_MULTIPLE and CHOICE_MODE_NONE can still be used
 */
