@@ -117,3 +117,13 @@ Notice that the root element is a TextView.
         final ArrayAdapter<String> adapter2 = new ArrayAdapter<>(this,
                 R.layout.custom_list_row, carsList);
 ```
+
+### Set the adapter
+
+```java
+/*
+The list control calls getView() method of the adapter by passing in the index of the row that it wants to display
+*/
+
+listview.setAdapter(adapter1);
+```
