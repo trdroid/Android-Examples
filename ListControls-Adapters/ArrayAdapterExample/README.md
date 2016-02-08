@@ -51,6 +51,8 @@ The Main Activity Layout's file res/layout/activity_main.xml is:
     android:layout_height="wrap_content" />
 ```
 
+Notice, ListView is the root element (not LinearLayout). Also, adding xmlns:android="http://schemas.android.com/apk/res/android" to the root element is a MUST.
+
 Get a reference to ListView
 
 ```java
