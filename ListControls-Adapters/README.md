@@ -7,4 +7,7 @@ It splits the responsibilities of managing the display and the data to <b>List C
 
 <img src="_misc/Class%20Hierarchy.png"/>
 
+### AdapterView, Adapter
+
 <img src="_misc/Adapter-AdapterView.png"/>
+
