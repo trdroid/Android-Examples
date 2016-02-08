@@ -73,6 +73,14 @@ public class MainActivity extends AppCompatActivity {
         listview.setAdapter(adapter2);
 
         listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            /*
+                view: the view that received the click
+                position: the position of item clicked in the ListView
+                id: id of the data which depends on the adapter and the data source
+                    In this case of using an array of strings, it would just be the index of the data element in the array
+                    In case of a SimpleCursorAdapter that has read its values from the system's Contacts database, the id would
+                        be the _ID of the record
+             */
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String value = (String) listview.getItemAtPosition(position);
