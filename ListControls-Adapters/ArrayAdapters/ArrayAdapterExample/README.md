@@ -9,9 +9,7 @@
         };
         
         final ArrayList<String> list = new ArrayList<>();
-        for (int i = 0; i < makes.length; ++i) {
-            list.add(makes[i]);
-        }
+        list.addAll(Arrays.asList(makes));
 ```
 
 ### Create an adapter
