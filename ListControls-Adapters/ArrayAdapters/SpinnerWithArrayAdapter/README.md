@@ -4,6 +4,8 @@
 
 The data source file in this example is a string resource file (res/values/cars.xml)
 
+Remember, externalized 
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
@@ -17,12 +19,45 @@ The data source file in this example is a string resource file (res/values/cars.
 
 ### Create an adapter
 
+An ArrayAdapter can be created from a data source defined in a string resource file using the "createFromResource" method.
+
 ```java
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.cars, android.R.layout.simple_spinner_item);
+        
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 ```
 
-The resource ID for the Child Layout is <i>android.R.layout.simple_spinner_item</i>, which is one of the predefined layouts 
+The resource ID for the Child Layout is <i>android.R.layout.simple_spinner_item</i>, which is one of the predefined layouts
 in Android (it could be said from the prefix "android"). 
+
+<i>sdk/platforms/\<platform-version\>/res/layout/simple_spinner_item.xml</i>
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:id="@android:id/text1"
+    style="?android:attr/spinnerItemStyle"
+    android:singleLine="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:ellipsize="marquee"
+    android:textAlignment="inherit"/>
+```
+
+<i>sdk/platforms/\<platform-version\>/res/layout/simple_spinner_dropdown_item.xml</i>
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<CheckedTextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    style="?android:attr/spinnerDropDownItemStyle"
+    android:singleLine="true"
+    android:layout_width="match_parent"
+    android:layout_height="?android:attr/dropdownListPreferredItemHeight"
+    android:ellipsize="marquee"/>
+```
 
 Instead of finding the resource files from local res/ directory, the predefined layouts are searched for in Android's 
 res/ directory.
