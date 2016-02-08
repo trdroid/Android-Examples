@@ -37,6 +37,24 @@ res/ directory.
 
 <img src="_misc/Android%20predefined%20layouts.png"/>
 
+<i>sdk/platforms/\<platform-version\>/res/layout/simple_list_item_1.xml</i>
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/text1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceListItemSmall"
+    android:gravity="center_vertical"
+    android:paddingStart="?android:attr/listPreferredItemPaddingStart"
+    android:paddingEnd="?android:attr/listPreferredItemPaddingEnd"
+    android:minHeight="?android:attr/listPreferredItemHeightSmall" />
+
+```
+
+The Adapter maps each data element from the data source to each instantiation of the child view. In this case, each data element is set to the TextView (android.R.id.text1) of the ChildView.
 
 ### Get a reference to ListView
 
