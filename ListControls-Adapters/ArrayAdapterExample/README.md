@@ -1,8 +1,8 @@
-### ArrayAdapter
-
 http://developer.android.com/reference/android/widget/ArrayAdapter.html
 
-Define a data source
+## Steps to follow
+
+### Define a data source
 
 ```java
         // data source
@@ -16,7 +16,7 @@ Define a data source
         }
 ```
 
-Create an adapter
+### Create an adapter
 
 ```java
         /*
@@ -42,7 +42,7 @@ res/ directory.
 <img src="_misc/Android%20predefined%20layouts.png"/>
 
 
-<b>Get a reference to ListView from the Main Activity's layout file</b>
+### Get a reference to ListView
 
 The Main Activity Layout's file res/layout/activity_main.xml is:
 
@@ -64,6 +64,8 @@ final ListView listview = (ListView) findViewById(R.id.listview);
 ```java
 listview.setAdapter(adapter1);
 ```
+
+### Block Diagram
 
 <img src="_misc/ArrayAdapter.png"/>
 
