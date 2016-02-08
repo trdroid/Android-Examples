@@ -1,5 +1,3 @@
-http://developer.android.com/reference/android/widget/ArrayAdapter.html
-
 ## Steps to follow
 
 ### Define a data source
@@ -59,7 +57,7 @@ Get a reference to ListView
 final ListView listview = (ListView) findViewById(R.id.listview);
 ```
 
-<b>Set the adapter</b>
+### Set the adapter
 
 ```java
 listview.setAdapter(adapter1);
