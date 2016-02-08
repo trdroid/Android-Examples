@@ -141,6 +141,10 @@ listview.setAdapter(adapter1);
         });
 ```
 
+<hr>
+
+### Using another child view (android.R.layout.simple_list_item_single_choice)
+
 <i>sdk/platforms/\<platform-version\>/res/layout/simple_list_item_single_choice.xml</i>
 
 ```xml
