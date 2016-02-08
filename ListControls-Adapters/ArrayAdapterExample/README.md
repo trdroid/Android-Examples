@@ -60,6 +60,10 @@ final ListView listview = (ListView) findViewById(R.id.listview);
 ### Set the adapter
 
 ```java
+/*
+The list control calls getView() method of the adapter by passing in the index of the row that it wants to display
+*/
+
 listview.setAdapter(adapter1);
 ```
 
@@ -67,3 +71,16 @@ listview.setAdapter(adapter1);
 
 <img src="_misc/ArrayAdapter.png"/>
 
+
+### Set Event Handler
+
+```java
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String value = (String) listview.getItemAtPosition(position);
+
+                Toast.makeText(getApplicationContext(), value, Toast.LENGTH_LONG).show();
+            }
+        });
+```
