@@ -143,7 +143,23 @@ listview.setAdapter(adapter1);
 
 <hr>
 
-### Using another child view (android.R.layout.simple_list_item_single_choice)
+## Using another child view (android.R.layout.simple_list_item_single_choice)
+
+### Create an adapter
+
+```java
+        /*
+            Create an adapter
+
+            The responsibility of an adapter is to manage data and provide child views to the list control
+
+            android.R.layout.simple_list_item_checked is a predefined layout for the child layout
+
+            list is the data source
+         */
+        final ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_single_choice, list);
+```
 
 <i>sdk/platforms/\<platform-version\>/res/layout/simple_list_item_single_choice.xml</i>
 
@@ -158,6 +174,26 @@ listview.setAdapter(adapter1);
     android:paddingStart="?android:attr/listPreferredItemPaddingStart"
     android:paddingEnd="?android:attr/listPreferredItemPaddingEnd" />
 
+```
+
+### Get a reference to ListView
+
+same as above
+
+### Set the adapter
+
+same as above
+
+### Set selection mode
+
+```java
+/*
+        an apt choice for this would be to use listview.CHOICE_MODE_SINGLE,
+        as the appearance would be like that of radio buttons
+        
+        However, CHOICE_MODE_MULTIPLE and CHOICE_MODE_NONE can still be used
+*/
+listview.setChoiceMode(listview.CHOICE_MODE_SINGLE);
 ```
 
 ### Snapshots
