@@ -42,6 +42,28 @@ res/ directory.
 <img src="_misc/Android%20predefined%20layouts.png"/>
 
 
+<b>Get a reference to ListView from the Main Activity's layout file</b>
 
+The Main Activity Layout's file res/layout/activity_main.xml is:
 
+```xml
+<ListView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/listview"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" />
+```
+
+Get a reference to ListView
+
+```java
+final ListView listview = (ListView) findViewById(R.id.listview);
+```
+
+<b>Set the adapter</b>
+
+```java
+listview.setAdapter(adapter1);
+```
+
+<img src="_misc/ArrayAdapter.png"/>
 
