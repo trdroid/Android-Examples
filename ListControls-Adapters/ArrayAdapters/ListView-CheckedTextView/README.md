@@ -110,11 +110,6 @@ listview.setAdapter(adapter1);
         listview.setChoiceMode(listview.CHOICE_MODE_MULTIPLE);
 ```
 
-### Block Diagram
-
-<img src="_misc/ArrayAdapter.png"/>
-
-
 ### Set Event Handler
 
 ```java
@@ -135,49 +130,4 @@ listview.setAdapter(adapter1);
             }
         });
 ```
-
-
-
-<hr>
-
-### Using a custom layout with ArrayAdapter
-
-Define a custom layout (res/layout/custom_list_row.xml)
-
-```xml
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/rowText"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"
-    android:textSize="20sp">
-</TextView>
-```
-Notice that the root element is a TextView.
-
-### Create an adapter
-
-```java
-        /*
-            Create an adapter
-
-            The responsibility of an adapter is to manage data and provide child views to the list control
-
-            android.R.layout.simple_list_item_checked is a predefined layout for the child layout
-
-            list is the data source
-         */
-        final ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
-                android.R.layout.simple_list_item_checked, list);
-```
-
-### Set the adapter
-
-```java
-/*
-The list control calls getView() method of the adapter by passing in the index of the row that it wants to display
-*/
-
-listview.setAdapter(adapter1);
-```
-
 
