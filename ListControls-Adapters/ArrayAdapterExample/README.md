@@ -9,6 +9,11 @@ Define a data source
         String[] makes = new String[] {
                 "Lexus", "Hyundai", "Toyota", "BMW"
         };
+        
+        final ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < makes.length; ++i) {
+            list.add(makes[i]);
+        }
 ```
 
 Create an adapter
