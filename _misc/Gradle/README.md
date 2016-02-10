@@ -4,7 +4,7 @@
 
 <b>Tasks</b>: Every project contains one or more tasks. Tasks are defined in a build script and contain a list of Actions to perform.
 
-<b>Actions</b>: An Action is a block of code and is analagous to a method in Java. Actions are contained in Tasks and are executed in order. 
+<b>Actions</b>: An Action is a block of code, analagous to a method in Java. Actions are contained in Tasks and are executed in order. 
 
 ### Build configuration file
 
@@ -15,15 +15,62 @@ A build file for Android, at a minimum requires the following elements.
 * a repositories block
 * a dependencies block
 
-```groovy
-buildscript {
-	repositories {
-		jcenter()
-	}
+<i>\<project\>/build.gradle</i>
 
-	dependencies {
-		classpath 'com.android.tools.build:gradle:1.2.3'
-	}
+```groovy
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.3.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+```
+
+<i>\<project\>/app/build.gradle</i>
+
+```groovy
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.example.droid.arrayadapterexample"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.1.1'
 }
 ```
 
