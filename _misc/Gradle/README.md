@@ -17,7 +17,7 @@ A build file for Android, at a minimum requires the following elements.
 
 <i>\<project\>/build.gradle</i>
 
-```groovy
+```gradle
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
@@ -43,9 +43,17 @@ task clean(type: Delete) {
 }
 ```
 
+In the repositories block, a preconfigured Maven repository, JCenter acts as a source of dependencies for the build script.
+Like JCenter, several other repositories are provided by Gradle which are preconfigured and requires no extra setup.
+
+Custom local or remote repositories can be configured as well.
+
+In the dependencies block, a dependency on Android build tools is defined as a classpath Maven Artifact. This is the source for the the Android plugin, which provides support for building and testing of applications and MUST be applied in EVERY android project. 
+
+
 <i>\<project\>/app/build.gradle</i>
 
-```groovy
+```gradle
 apply plugin: 'com.android.application'
 
 android {
@@ -74,9 +82,11 @@ dependencies {
 }
 ```
 
-In the repositories block, a preconfigured Maven repository, JCenter acts as a source of dependencies for the build script.
-Like JCenter, several other repositories are provided by Gradle which requires no extra setup.
+### Plugins
 
-Custom local or remote repositories can be configured as well.
+Plugins extend build scripts by providing the properties, blocks and tasks defined in the plugin available to the build scripts. The defaults provided by the plugins can be configured in the build script. 
+
+Every Android project requires to apply the Android plugin in the following way, as it provides everything required to build and test the applications.
+
 
 
