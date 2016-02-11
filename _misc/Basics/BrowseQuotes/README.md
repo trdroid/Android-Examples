@@ -140,4 +140,10 @@ The .apk file is uniquely identified by the package name that follows java's pac
 The package name gets reserved for a developer when the developer signs and registers the app with various app publishers. 
 This implies that the developer alone can update the app once it is deployed.
 
+<b> Process name and User ID </b>
+
+Android uses the package name for the name of the process that runs the components (activities, services, broadcast receivers) of an app. 
+
+Android assigns a unique user ID for the process which is the user ID for the underlying Linux OS.
+
 <img src="_misc/package%20summary.png"/>
