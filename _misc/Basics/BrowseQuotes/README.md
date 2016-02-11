@@ -106,3 +106,37 @@ adb shell am start -n <package name>/<fully qualified class name of the main act
 Use adb with the Activity Manager (am) tool to run the main activity
 
 
+<i>app/src/main/AndroidManifest.xml</i>
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.droid.browsequotes" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name="com.example.droid.browsequotes.MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
+```
+
+The .apk file of this app is signed and deployed to a device/emulator. 
+
+<b> Significance of the package name </b>
+
+The .apk file is uniquely identified by the package name that follows java's package naming convention. The package name defines the application's identity and cannot be changed once the app is published.
+
+The package name gets reserved for a developer when the developer signs and registers the app with various app publishers. 
+This implies that the developer alone can update the app once it is deployed.
+
