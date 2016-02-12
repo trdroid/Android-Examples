@@ -136,9 +136,9 @@ Use adb with the Activity Manager (am) tool to run the main activity
 
 The .apk file of this app is signed and deployed to a device/emulator. The signature is associated with the package name and secures data that belongs to the package. 
 
-A package is generally signed with a self-signed PKI (Public Key Infrastructure) certificate, which identifies the developer of the package. As there is no certificate authority involved to validate and approve the certificate, the developer can fill any information, but should be aware that the package name should be unique in the whole app store/marketplace to be reserved to the developer. 
+A package is generally signed with a self-signed PKI (Public Key Infrastructure) certificate, which identifies the developer of the package. As there is no certificate authority involved to validate and approve the certificate, the developer can fill any information, but should be aware that to reserve the package name, it should be unique in the whole app store/marketplace.
 
-Only the developer who published the app after signing it can update the app and is identified by the certificate.
+After publishing the app, only the developer, identified by the certificate, can update the app.
 
 <b> Significance of the package name </b>
 
@@ -151,7 +151,7 @@ The developer alone can update the app once it is deployed.
 
 Android assigns a process to run the components of an app (an apk package) and names it after the package name.
 
-Android assigns a unique user ID for the process/apk package (used interchangeably, as the apk package is associated with a process), which is the user ID for the underlying Linux OS. The user ID is determined when the app is installed on a device and needless to say the user ID could be different on each device where it is installed. Any resources created by the process/apk package are secured under the assigned Linux user ID, but can also be shared by explicitly specifying a unique user ID in the manifest file with <i>sharedUserId</i> attribute for the <i>manifest</i> tag.
+Android assigns a unique user ID for the process/apk package (used interchangeably, as the apk package is associated with a process), which is the user ID for the underlying Linux OS. The user ID is determined when the app is installed on a device and needless to say the user ID could be different on each device where it is installed. Any resources created by the process/apk package are secured under the assigned Linux user ID, but can also be shared by explicitly specifying a unique user ID in the manifest file with <i>sharedUserId</i> attribute in the <i>manifest</i> tag.
 
 The process name and the user id of an app can be found from Dev Tools as shown below.
 
