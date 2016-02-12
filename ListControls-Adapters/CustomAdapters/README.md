@@ -7,5 +7,5 @@ Custom Adapters are needed
 * to implement techniques like caching for improving performance
 * to manage data in a customized way
 
-To implement a custom adapter, extend the abstract class BaseAdapter and provide custom implementation.
+To implement a custom adapter, extend the abstract class <b>BaseAdapter</b> and provide custom implementation.
 
