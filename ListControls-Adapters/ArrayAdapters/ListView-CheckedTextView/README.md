@@ -141,6 +141,64 @@ listview.setAdapter(adapter1);
         });
 ```
 
+### 'Submit' button's onClick Handler
+
+<i>app/res/layout/activit_main.xml</i>
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <ListView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/listview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+    <Button android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onSubmitClicked"  <------
+        android:text="Submit" />
+</LinearLayout>
+```
+
+\>=Android 1 
+
+supports ListView:getCheckedItemPositions()
+
+<i>MainActivity.java</i>
+```java
+    public void onSubmitClicked(View view) {
+        int numElements  = listview.getCount();
+
+        //Get indices of selected items
+        SparseBooleanArray selectedIndices = listview.getCheckedItemPositions();
+
+        //Read items from the ListView based on indices of selected items
+        for(int iter = 0; iter < numElements; iter++) {
+            if(selectedIndices.get(iter)) {
+                String carSelected = (String) listview.getItemAtPosition(iter);
+
+                Log.v(TAG, carSelected + " at position " + iter + " is selected");
+            }
+        }
+    }
+```
+
+\>=Android 1.6 - \<Android 2.2
+
+supports ListView:getCheckItemIds()
+
+\>=Android 2.2
+
+supports ListView:getCheckedItemIds()
+
 <hr>
 
 ## Using another child view (android.R.layout.simple_list_item_single_choice)
