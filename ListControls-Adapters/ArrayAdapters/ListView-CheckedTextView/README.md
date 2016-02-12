@@ -199,6 +199,28 @@ supports ListView:getCheckItemIds()
 
 supports ListView:getCheckedItemIds()
 
+```java
+    public void onSubmitClicked(View view) {
+        //~~~~Question~~~~ hasStableIds always returns false?
+        if(!adapter1.hasStableIds()) {
+            Log.v(TAG, "Data is unstable");
+            return;
+        }
+
+        /*
+            returns an array of ids of the records from the adapter that were checked in the ListView.
+            The ids can be directly used to take actions, bypassing ListView and cursor
+         */
+        long[] itemIds = listview.getCheckedItemIds();
+
+        for(int iter = 0; iter < itemIds.length; iter++) {
+            String carSelected = (String) listview.getItemAtPosition((int)itemIds[iter]);
+
+            Log.v(TAG, carSelected + " at position " + iter + " is selected");
+        }
+    }
+```
+
 <hr>
 
 ## Using another child view (android.R.layout.simple_list_item_single_choice)
