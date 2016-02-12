@@ -15,7 +15,8 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
-    private  ListView listview;
+    private ListView listview;
+    private ArrayAdapter<String> adapter1;
     private final static String TAG = "MainActivity";
 
     @Override
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
             list is the data source
          */
-        final ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
+        adapter1 = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_checked, list);
 
         listview.setAdapter(adapter1);
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
          */
 
         /*
-            final ArrayAdapter<String> adapter1 = new ArrayAdapter<>(this,
+            adapter1 = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_single_choice, list);
 
             listview.setChoiceMode(listview.CHOICE_MODE_SINGLE);
@@ -93,17 +94,51 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    public void onSubmitClicked(View view) {
-        int numElements  = listview.getCount();
+    /*
+    >=Android 1
 
+        supports ListView:getCheckedItemPositions()
+
+    >=Android 1.6 - \<Android 2.2
+
+        supports ListView:getCheckItemIds()
+
+    >=Android 2.2
+
+        supports ListView:getCheckedItemIds()
+     */
+    public void onSubmitClicked(View view) {
+        /*int numElements  = listview.getCount();
+
+        //Get indices of selected items
         SparseBooleanArray selectedIndices = listview.getCheckedItemPositions();
 
+        //Read items from the ListView based on indices of selected items
         for(int iter = 0; iter < numElements; iter++) {
             if(selectedIndices.get(iter)) {
                 String carSelected = (String) listview.getItemAtPosition(iter);
 
                 Log.v(TAG, carSelected + " at position " + iter + " is selected");
             }
+        }*/
+
+        //~~~~Question~~~~ hasStableIds always returns false?
+        if(!adapter1.hasStableIds()) {
+            Log.v(TAG, "Data is unstable");
+            return;
         }
+
+        /*
+            returns an array of ids of the records from the adapter that were checked in the ListView.
+            The ids can be directly used to take actions, bypassing ListView and cursor
+         */
+        long[] itemIds = listview.getCheckedItemIds();
+
+        for(int iter = 0; iter < itemIds.length; iter++) {
+            String carSelected = (String) listview.getItemAtPosition((int)itemIds[iter]);
+
+            Log.v(TAG, carSelected + " at position " + iter + " is selected");
+        }
+
     }
 }
