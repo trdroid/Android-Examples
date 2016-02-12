@@ -158,5 +158,10 @@ Notice how the process name matches the package name given in the manifest file.
 
 The .apk file of this app is signed and deployed to a device/emulator. The signature is associated with the package name and secures data that belongs to the package. 
 
-A package is generally signed with a self-signed PKI (Public Key Infrastructure) certificate, which identifies the developer of the package. 
+A package is generally signed with a self-signed PKI (Public Key Infrastructure) certificate, which identifies the developer of the package. As there is no certificate authority involved to validate and approve the certificate, the developer can fill any information, but should be aware that the package name should be unique in the whole app store/marketplace to be reserved to the developer. 
 
+Only the developer who published the app after signing it can update the app and is identified by the certificate. 
+
+### Block Diagram
+
+<img src="_misc/process%20apk%20package%20relationship.png"/>
