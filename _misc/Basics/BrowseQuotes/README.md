@@ -132,14 +132,20 @@ Use adb with the Activity Manager (am) tool to run the main activity
 </manifest>
 ```
 
+### Deployment
 
+The .apk file of this app is signed and deployed to a device/emulator. The signature is associated with the package name and secures data that belongs to the package. 
+
+A package is generally signed with a self-signed PKI (Public Key Infrastructure) certificate, which identifies the developer of the package. As there is no certificate authority involved to validate and approve the certificate, the developer can fill any information, but should be aware that the package name should be unique in the whole app store/marketplace to be reserved to the developer. 
+
+Only the developer who published the app after signing it can update the app and is identified by the certificate.
 
 <b> Significance of the package name </b>
 
 The .apk file is uniquely identified by the package name that follows java's package naming convention. The package name defines the application's identity and cannot be changed once the app is published.
 
 The package name gets reserved for a developer when the developer signs and registers the app with various app publishers. 
-This implies that the developer alone can update the app once it is deployed.
+The developer alone can update the app once it is deployed.
 
 <b> Process name and User ID </b>
 
@@ -152,15 +158,6 @@ The process name and the user id of an app can be found from Dev Tools as shown 
 Notice how the process name matches the package name given in the manifest file. The package summary also displays the components inside the package (apk package). 
 
 <img src="_misc/package%20summary.png"/>
-
-
-### Deployment
-
-The .apk file of this app is signed and deployed to a device/emulator. The signature is associated with the package name and secures data that belongs to the package. 
-
-A package is generally signed with a self-signed PKI (Public Key Infrastructure) certificate, which identifies the developer of the package. As there is no certificate authority involved to validate and approve the certificate, the developer can fill any information, but should be aware that the package name should be unique in the whole app store/marketplace to be reserved to the developer. 
-
-Only the developer who published the app after signing it can update the app and is identified by the certificate. 
 
 ### Block Diagram
 
