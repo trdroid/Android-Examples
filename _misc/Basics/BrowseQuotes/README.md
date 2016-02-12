@@ -145,7 +145,7 @@ This implies that the developer alone can update the app once it is deployed.
 
 Android assigns a process to run the components of an app (an apk package) and names it after the package name.
 
-Android assigns a unique user ID for the process/apk package (used interchangeably, as the apk package is associated with a process), which is the user ID for the underlying Linux OS. The user ID is determined when the app is installed on a device and needless to say the user ID could be different on each device where it is installed. Any resources created by the process/apk package are secured under the assigned Linux user ID. 
+Android assigns a unique user ID for the process/apk package (used interchangeably, as the apk package is associated with a process), which is the user ID for the underlying Linux OS. The user ID is determined when the app is installed on a device and needless to say the user ID could be different on each device where it is installed. Any resources created by the process/apk package are secured under the assigned Linux user ID, but can also be shared by explicitly specifying a unique user ID in the manifest file with <i>sharedUserId</i> attribute for the <i>manifest</i> tag.
 
 The process name and the user id of an app can be found from Dev Tools as shown below.
 
