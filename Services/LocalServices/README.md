@@ -1,3 +1,5 @@
+# Local Services
+
   Local services are a great model for implementing background tasks. By default, a service runs on the main thread, so threading capabilities have to be augmented explicitly. 
   
   A local service is accessible ONLY to the application hosting the service.
