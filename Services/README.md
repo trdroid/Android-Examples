@@ -12,7 +12,23 @@ A Service is an Android component that runs invisibly in the background without 
   
   A local service gets initialized when a client starts it using <i>startService()</i> or binds to it using <i>bindService()</i>
 
+ <b> Services started by <i>startService()</i> </b>
+ 
   A service started using <i>startService()</i> is great for performing background tasks as it keeps running even after the Activity/Broadcast Receiver which started it goes away. It runs until it stops itself or is asked by a client to stop. To regain control of the service after the Activity goes away, implement the <i>onBind()</i> method in the service so that a new Activity can bind to the service and invoke methods on it.   
+
+<b> Services that gets bound by <i>bindService()</i> </b>
+
+ A service that gets bound is instantiated when the first client binds to it by calling <i>bindService()</i> and is destroyed when the last client unbinds from it.
+ 
+ Binding to a service is allowed only from 
+ * An Activity
+ * Another Service
+ * A Content Provider
+ * An Application Context
+ 
+but not from
+ * A Fragment
+ * A Broadcast Receiver
 
 ### Priority of a Service
 
