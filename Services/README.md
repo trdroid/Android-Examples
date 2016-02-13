@@ -1,6 +1,10 @@
 # Services
 
-A Service is an Android component that runs invisibly in the background without a user interface. 
+A Service is an Android component that runs invisibly in the background without a user interface. It has its own life cycle separate from other components. Services are similar in spirits to services in Windows or daemons in Linux, which means they can be available at all times without necessarily doing anything actively, just waiting to serve.
+
+### Types of services
+
+
 
 ### Priority of a Service
 
@@ -44,5 +48,7 @@ If a service is torn-down and recreated, the wake lock has to be obtained again.
 
 After the worker thread completes its task, it can intimate the service to stop either directly or through a handler.
 
+### Scenarios
 
+1) On pausing, stopping or destroying an Activity, any outstanding processing that has to be continued can be delegated to a service.
 
