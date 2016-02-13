@@ -4,7 +4,15 @@ A Service is an Android component that runs invisibly in the background without 
 
 ### Types of services
 
+1) Local Services
+  
+  Local services are a great model for implementing background tasks. By default, a service runs on the main thread, so threading capabilities have to be augmented explicitly. 
+  
+  A local service is accessible ONLY to the application hosting the service.
+  
+  A local service gets initialized when a client starts it using <i>startService()</i> or binds to it using <i>bindService()</i>
 
+  A service started using <i>startService()</i> is great for performing background tasks as it keeps running even after the Activity/Broadcast Receiver which started it goes away. It runs until it stops itself or is asked by a client to stop. To regain control of the service after the Activity/Broadcast Receiver goes away, implement the <i>onBind()</i>  method in the service so that a new Activity can bind to the service and invoke methods on it.  
 
 ### Priority of a Service
 
