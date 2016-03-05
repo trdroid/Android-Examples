@@ -33,7 +33,7 @@ Loaders simplify the process of loading data in an activity or a fragment asynch
 
 ### LoaderManager: Key Points
 
-
+The LoaderManager inherent to an Activity generates events that the Activity handles in its callback implementations by implementing *LoaderManager.LoaderCallbacks*.
 
 ### Using loaders in Activities/Fragments
 
