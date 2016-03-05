@@ -22,7 +22,7 @@ Loaders simplify the process of loading data in an activity or a fragment asynch
 
 ### Key Points
 
-* An Activity/Fragment can be associated with multiple Loaders, each associated with a different data source. 
+* An Activity/Fragment can be associated with multiple Loaders, each associated with its own data source. 
 * A Loader monitors its data source for changes and provides the data updates back to the Activity or Fragment it is associated with.
 * Loaders are not destroyed and reconstructed on configuration changes, which eliminates the need for requerying the dataset after configuration changes.
 
