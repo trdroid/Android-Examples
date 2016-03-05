@@ -20,16 +20,26 @@ Loaders simplify the process of loading data in an activity or a fragment asynch
 * Loaders handle the ANR problem by performing the data loading tasks on worker threads
 * Loaders provide callbacks to Activities and Fragments to respond to various events related to data loading tasks. 
 
-### Key Points
+### Loaders: Key Points
 
 * An Activity/Fragment can be associated with multiple Loaders, each associated with its own data source. 
 * A Loader monitors its data source for changes and provides the data updates back to the Activity or Fragment it is associated with.
 * Loaders are not destroyed and reconstructed on configuration changes, which eliminates the need for requerying the dataset after configuration changes.
+* Loaders can pause data access
+* Loaders associated with an Activity/Fragment understand the component's lifecycle events through the component's LoaderManager.
+* The interaction between the LoaderManager and the Loaders registered with it occur on the main thread.
+* Custom loaders can be implemented by "implementing" the Loader API. Typically, loaders implement AsyncTaskLoader which implements the Loader API asynchronously to run on a worker thread.
+* The SDK offers predefined Loaders. For example, a CursorLoader -> AsyncTaskLoader -> Loader, is defined to load cursors from Content Providers.
 
-### Using loaders in Activities and Fragments
+### LoaderManager: Key Points
 
-An Activity or a Fragment uses a *LoaderManager* object to manage the loaders associated with it. 
 
-* The loaders have to be registered with the LoaderManager.
+
+### Using loaders in Activities/Fragments
+
+An Activity/Fragment uses a *LoaderManager* object to manage the loaders associated with it. 
+
+* The loaders that have to be used with an Activity/Fragment have to be first registered with the LoaderManager.
+* 
 * The Activity/Fragment 
 
