@@ -55,14 +55,13 @@ While the data is being loaded asynchronously, a ProgressBar is displayed to the
 
 **On Launch**
 
-![](_misc/Displaying%20Contacts.png)
-
 ```
 03-08 11:26:25.832 20058-20058/com.gruprog.simplecursorloader D/MainActivity: onCreate()
 03-08 11:26:25.832 20058-20058/com.gruprog.simplecursorloader D/MainActivity: SDK < 23
 03-08 11:26:25.873 20058-20058/com.gruprog.simplecursorloader D/MainActivity: onCreateLoader() for id:1
 03-08 11:26:26.005 20058-20058/com.gruprog.simplecursorloader D/MainActivity: onLoadFinished() for id: 1, Cursor:android.content.ContentResolver$CursorWrapperInner@387b8d67, Count:5
 ```
+![](_misc/Displaying%20Contacts.png)
 
 **After adding a contact**
 
