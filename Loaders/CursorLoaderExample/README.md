@@ -149,6 +149,8 @@ of the LoaderManager that conveys data loading events.
 
 **On Launch**
 
+Notice the cursor instance is *android.content.ContentResolver$CursorWrapperInner@387b8d67*
+
 ```
 03-08 11:26:25.832 20058-20058/com.gruprog.simplecursorloader D/MainActivity: onCreate()
 03-08 11:26:25.832 20058-20058/com.gruprog.simplecursorloader D/MainActivity: SDK < 23
@@ -164,6 +166,9 @@ This implies that adding a new contact triggerred the CursorLoader to requery th
 The LoaderManager then made a call to onLoadFinished() callback and passed in the cursor. In the onLoadFinished() callback, the old cursor is swapped out with the new one, thereby the ListView displaying 
 the updated data source.
 
+Notice the cursor instance is *android.content.ContentResolver$CursorWrapperInner@3da74080*, which is different from above, implying that a change in the data source has caused the CursorLoader to requery it,
+resulting in a new cursor instance that the LoaderManager passes to the callback.
+
 ```
 03-08 11:31:55.655 20058-20058/com.gruprog.simplecursorloader D/MainActivity: onLoadFinished() for id: 1, Cursor:android.content.ContentResolver$CursorWrapperInner@3da74080, Count:6
 ```
@@ -174,6 +179,9 @@ the updated data source.
 
 Changing Orientation is one of the configuration changes that causes an Activity to be reconstructed, which calls the Activiti's onCreate() method. The following log is printed. 
 Notice, that the LoaderManager did not issue a call to onCreateLoader() method.
+
+Notice that the cursor instance is *android.content.ContentResolver$CursorWrapperInner@3da74080*, which is same as above, implying that a configuration change DOES NOT cause the CursorLoader to requery 
+the data source and generate a new cursor.
 
 ```
 03-08 11:42:47.567 20058-20058/com.gruprog.simplecursorloader D/MainActivity: onCreate()
@@ -201,3 +209,9 @@ Hitting back button destroys the Activity which prints the following to the log.
 ```
 
 ![](_misc/No%20Contacts%20Available.png)
+
+
+### Block Diagram
+
+![](_misc/High%20Level%20Block%20Diagram.png)
+
