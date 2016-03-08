@@ -35,6 +35,7 @@ Loaders simplify the process of loading data in an activity or a fragment asynch
 
 The LoaderManager inherent to an Activity generates events that the Activity handles in its callback implementations by implementing *LoaderManager.LoaderCallbacks*. 
 These events are generated to:
+
 * Allow an Activity/Fragment to create and initialize loaders
 * Notify an Activity/Fragment when the loader finishes loading data. With a Loader of type AsyncTaskLoader, the LoaderManager is notified when the worker thread returns after loading data. 
 	The LoaderManager then invokes a callback on the Activity/Fragment to notify that the data is available.
