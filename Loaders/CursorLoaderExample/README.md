@@ -66,8 +66,6 @@ While the data is being loaded asynchronously, a ProgressBar is displayed to the
 
 **After adding a contact**
 
-![](_misc/New%20Contact%20Displayed.png)
-
 Click home, browse to the Phone app and add a new contact. Then go back to the home screen and hit the recent Activities button and select this app, which prints the following to the log.
 This implies that adding a new contact triggerred the CursorLoader to requery the data source and pass in the new cursor to the LoaderManager. 
 The LoaderManager then made a call to onLoadFinished() callback and passed in the cursor. In the onLoadFinished() callback, the old cursor is swapped out with the new one, thereby the ListView displaying 
@@ -77,9 +75,9 @@ the updated data source.
 03-08 11:31:55.655 20058-20058/com.gruprog.simplecursorloader D/MainActivity: onLoadFinished() for id: 1, Cursor:android.content.ContentResolver$CursorWrapperInner@3da74080, Count:6
 ```
 
-**Change Orientation**
+![](_misc/New%20Contact%20Displayed.png)
 
-![](_misc/display%20in%20landscape%20mode.png)
+**Change Orientation**
 
 Changing Orientation is one of the configuration changes that causes an Activity to be reconstructed, which calls the Activiti's onCreate() method. The following log is printed. 
 Notice, that the LoaderManager did not issue a call to onCreateLoader() method.
@@ -89,6 +87,8 @@ Notice, that the LoaderManager did not issue a call to onCreateLoader() method.
 03-08 11:42:47.567 20058-20058/com.gruprog.simplecursorloader D/MainActivity: SDK < 23
 03-08 11:42:47.570 20058-20058/com.gruprog.simplecursorloader D/MainActivity: onLoadFinished() for id: 1, Cursor:android.content.ContentResolver$CursorWrapperInner@3da74080, Count:6
 ```
+
+![](_misc/display%20in%20landscape%20mode.png)
 
 **Hitting back button**
 
@@ -100,11 +100,11 @@ Hitting back button destroys the Activity which prints the following to the log.
 
 **Relaunch app after deleting all contacts**
 
-![](_misc/No%20Contacts%20Available.png)
-
 ```
 03-08 11:56:38.513 20058-20058/com.gruprog.simplecursorloader D/MainActivity: onCreate()
 03-08 11:56:38.513 20058-20058/com.gruprog.simplecursorloader D/MainActivity: SDK < 23
 03-08 11:56:38.594 20058-20058/com.gruprog.simplecursorloader D/MainActivity: onCreateLoader() for id:1
 03-08 11:56:38.826 20058-20058/com.gruprog.simplecursorloader D/MainActivity: onLoadFinished() for id: 1, Cursor:android.content.ContentResolver$CursorWrapperInner@287d3fe6, Count:0
 ```
+
+![](_misc/No%20Contacts%20Available.png)
