@@ -18,7 +18,7 @@ Managed Cursors were used prior to the introduction of Loaders in Android 3.0/AP
 Loaders simplify the process of loading data in an activity or a fragment asynchronously. 
 
 * Loaders handle the ANR problem by performing the data loading tasks on worker threads
-* Loaders provide callbacks to Activities and Fragments to respond to various events related to data loading tasks. 
+* Activities/Fragments can implement callbacks to handle various events related to data loading tasks. 
 
 ### Loaders: Key Points
 
@@ -39,6 +39,8 @@ These events are generated to:
 * Notify an Activity/Fragment when the loader finishes loading data. With a Loader of type AsyncTaskLoader, the LoaderManager is notified when the worker thread returns after loading data. 
 	The LoaderManager then invokes a callback on the Activity/Fragment to notify that the data is available.
 * Allow an Activity/Fragment to close the resource just before the loader is destroyed when the component has to be taken down. 
+
+![](_misc/High%20Level%20Block%20Diagram.png)
 
 ### Using loaders in Activities/Fragments
 
