@@ -47,8 +47,8 @@ While the data is being loaded asynchronously, a ProgressBar is displayed to the
 
 ### Initialize the Loader
 
-Register an id for a Loader that would be created in the future. Also pass in args bundle that would be passed to the Loader when it is created and a reference to an object that implements the callbacks 
-of the LoaderManager that conveys data loading events. 
+Register an id for a Loader that would be created in the future, when the LoaderManager calls onCreateLoader() callback. 
+Also pass in args bundle that would be passed to the Loader when it is created and a reference to an object that implements the callbacks of the LoaderManager that conveys data loading events. 
 
 ```java
     /*
@@ -144,6 +144,155 @@ of the LoaderManager that conveys data loading events.
     }
 
 ```
+
+We have decided to implement the LoaderManager callbacks within the Activity as implied by the following line in our custom initializeLoader() method.
+
+```java
+LoaderManager.LoaderCallbacks<Cursor> callback = this;
+```
+
+Therefore, add the implements to MyActivity definition, as shown below
+
+```java
+public class MainActivity extends ListActivity implements LoaderManager.LoaderCallbacks<Cursor> {  <------------------------
+```
+
+### Implement the Interface methods (callbacks)
+
+```java
+    /*
+        Implementing LoaderManager callbacks.
+
+        All callbacks run on the main thread
+     */
+
+    /*
+        The LoaderManager schedules a call to this method and with the arguments: id and args bundle passed to it in the call
+            this.getLoaderManager().initLoader(LOADER_ID, args, callback);
+
+        Therefore, the onCreateLoader() method receives two arguments: id and the args bundle and returns a Loader to the LoaderManager
+
+        The inference here is, the component that registers with the LoaderManager's events by implementing the callbacks is responsible for creating
+            and returning a loader to the LoaderManager from its onCreateLoader() method's implementation.
+
+        Once a CursorLoader is returned to the LoaderManager, it caches the Loader and asks it to start loading data on a worker thread.
+
+        Once the data loading is finished, the LoaderManager invokes the callback method, onLoadFinished()
+     */
+    @Override
+    public Loader onCreateLoader(int id, Bundle args) {
+        Log.d(TAG, "onCreateLoader() for id:" + id);
+
+        /*
+            Use the content URIs provided by the Contacts content provider.
+         */
+        Uri baseUri = ContactsContract.Contacts.CONTENT_URI;
+
+        String[] projection = new String[] {
+                ContactsContract.Data._ID,
+                ContactsContract.Data.DISPLAY_NAME
+        };
+
+        String selection = "((" + ContactsContract.Data.DISPLAY_NAME + " NOTNULL ) AND (" +
+                ContactsContract.Data.DISPLAY_NAME + " != ''))";
+
+        String[] selectionArgs = null;
+        String sortOrder = null;
+
+        /*
+            CursorLoader(
+                Context context,
+                Uri uri,
+                String[] projection,
+                String selection,
+                String[] selectionArgs,
+                String sortOrder)
+
+            It could be noticed that the CursorLoader requires arguments similar to that of a database query method.
+            The arguments provide details to identify the data source and to perform queries against the data source.
+
+            The CursorLoader uses the URI to identify a database and a table within it to perform the queries against.
+         */
+        return new CursorLoader(this, baseUri, projection, selection, selectionArgs, sortOrder);
+    }
+
+    /*
+        This callback is called
+            when the loader finishes loading the data.
+            anytime the data underneath changes, which implies that this callback can be called multiple times
+            after a rotation, without having to re-query the cursor
+
+        Once the onCreateLoader() method returns a CursorLoader to the LoaderManager, it caches the Loader and asks it to start loading data on a worker thread.
+
+        Once the data loading is finished, the LoaderManager invokes the callback method, onLoadFinished() with the populated cursor.
+
+        In the method, the null cursor that was initially assigned to the SimpleCursorAdapter is swapped out with the populated one.
+
+        As the CursorLoader registers itself with the data source, it will be notified whenever the data source changes, which results in the LoaderManager invoking this callback method.
+        Therefore, any time the underlying data source changes, the Loader gets notified which results in the LoaderManager invoking this callback with the cursor pointing to the updated
+            data source.
+
+        Whenever the underlying data source changes, the old cursor is swapped out with the new cursor, which displays up-to-date information in the ListView.
+
+        When the device configuration changes, the Activity is recreated, which results in the calling of the onCreate() method, which ends up reinitializing the loader. The LoaderManager
+            silently ignores this request (and does not schedule a call to onCreateLoader() method) as there is a loader already associated with the id, however it calls the onLoadFinished() callback.
+            As the LoaderManager does not call onCreateLoader(), RE-QUERYING THE DATA SOURCE IS AVOIDED.
+
+        So a configuration change DOES NOT RE-QUERY THE DATA SOURCE but just ends up calling onLoadFinished()
+     */
+    @Override
+    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
+        Log.d(TAG, "onLoadFinished() for id: " + loader.getId() + ", Cursor:" + cursor + ", Count:" + (cursor == null ? 0 : cursor.getCount()));
+        showProgressBar(false);
+        this.mSimpleCursorAdapter.swapCursor(cursor);
+    }
+
+    /*
+        This callback is called
+            when the loader is about to be destroyed, say when the Activity is about to be taken down (for eg. when hitting the back button or by calling finish() in the code)
+            or by calling LoaderManager.destroyLoader(loaderId) explicitly
+
+        This callback is NOT called
+            because of loader restart i.e. the call, LoaderManager.restartLoader(), makes the LoaderManager schedule a call to onCreateLoader() to get a new Loader.
+            Once it gets the new loader, it destroys the old loader. Destroying the old loader DOES NOT INVOKE the onLoaderReset() callback
+
+        Any resources can be closed with the exception of cursors. Cursors SHOULD NOT be closed as they are managed by the loaders and are closed by the framework.
+     */
+    @Override
+    public void onLoaderReset(Loader<Cursor> loader) {
+        Log.d(TAG, "onLoaderReset() for id: " + loader.getId());
+        showProgressBar(true);
+        this.mSimpleCursorAdapter.swapCursor(null);
+    }
+```
+
+### Add permission to read Contacts in AndroidManifest.xml
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.gruprog.simplecursorloader" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+        <activity android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>    ------------------------
+</manifest>
+```
+
+
 
 ### Snapshots and Log Messages
 
