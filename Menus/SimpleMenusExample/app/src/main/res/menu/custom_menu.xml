@@ -1,23 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <group android:id="@+id/menu_group">
-        <item android:id="@+id/menu_item1"
+    <group android:id="@+id/menu_group1">
+        <item android:id="@+id/group1_menu_item1"
             android:orderInCategory="1"
             android:title="Menu Item 1"
             />
 
-        <item android:id="@+id/menu_item2"
+        <item android:id="@+id/group1_menu_item2"
             android:orderInCategory="2"
             android:title="Menu Item 2"
             android:enabled="true"
             android:icon="@drawable/ic_launcher"
+            android:onClick="group1MenuItem2ClickHandler"
             />
 
-        <item android:id="@+id/menu_item3"
+        <item android:id="@+id/group1_menu_item3"
             android:orderInCategory="3"
             android:title="Menu Item 3"
-            android:onClick="menuItem3ClickHandler"
+            android:onClick="group1MenuItem3ClickHandler"
             />
 
+        <item android:id="@+id/group1_menu_item4"
+            android:orderInCategory="4"
+            android:title="Launch MenusInCodeActivity"
+            />
     </group>
+
+    <group android:id="@+id/menu_group2">
+        <item android:id="@+id/group2_menu_item1"
+            android:orderInCategory="1"
+            android:title="Group 2 Menu Item 1"
+            />
+
+        <item android:id="@+id/group2_menu_item2"
+            android:orderInCategory="2"
+            android:title="Group 2 Menu Item 2"
+            android:enabled="true"
+            android:icon="@drawable/ic_launcher"
+            android:onClick="group2MenuItem2ClickHandler"
+            />
+
+        <item android:id="@+id/group2_menu_item3"
+            android:orderInCategory="3"
+            android:title="Group 2 Menu Item 3"
+            android:onClick="group2MenuItem3ClickHandler"
+            />
+    </group>
+
 </menu>
