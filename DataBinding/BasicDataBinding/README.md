@@ -56,7 +56,7 @@
 
 ## Block diagram
 
-<img src="https://github.com/konceptsandcode/Android/blob/master/DataBinding/BasicDataBinding/_misc/DataBinding.png">
+![](_misc/DataBinding.png)
 
 ## How it works
 
