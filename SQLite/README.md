@@ -44,16 +44,16 @@ The following SQL statement
 is equivalent to calling the following *query()* method on an instance of *SQLiteDatabase* class.
 
 ```java
-	SQLiteDatabase db = ..
+SQLiteDatabase db = ..
 	
-	Cursor cursor = db.query(
-						"publisher",
-						new String[] {"name", "address"},
-						"country = ?",
-						new String[] {"USA"},
-						null, //groupBy
-						null, //having
-						"id ASC");
+Cursor cursor = db.query(
+	"publisher",
+	new String[] {"name", "address"},
+	"country = ?",
+	new String[] {"USA"},
+	null, //groupBy
+	null, //having
+	"id ASC");
 ```
 
 
