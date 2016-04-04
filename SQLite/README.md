@@ -47,13 +47,13 @@ is equivalent to calling the following *query()* method on an instance of *SQLit
 SQLiteDatabase db = ..
 	
 Cursor cursor = db.query(
-	"publisher",
-	new String[] {"name", "address"},
-	"country = ?",
-	new String[] {"USA"},
-	null, //groupBy
-	null, //having
-	"id ASC");
+					"publisher",
+					new String[] {"name", "address"},
+					"country = ?",
+					new String[] {"USA"},
+					null, //groupBy
+					null, //having
+					"id ASC");
 ```
 
 
