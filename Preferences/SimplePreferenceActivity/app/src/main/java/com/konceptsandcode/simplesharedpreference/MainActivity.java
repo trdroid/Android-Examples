@@ -89,8 +89,11 @@ public class MainActivity extends AppCompatActivity
 
     public void onReadPreferencesButtonClick(View view) {
         /*
-            A good approach is to use a key name which is defined as a string resource.
-            This avoids any unintended results because of typos
+            A good approach is to define the key name as a string resource and use it with getters
+            This avoids any unintended results that could occur because of typos,
+
+            The same goes with the default values, whenever possible define default values in the
+            string resource file and use it in getters
          */
         String settingsInText = "BlueTooth:" + preferences.getBoolean(resources.getString(R.string.bluetooth_pref), false);
 

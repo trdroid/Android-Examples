@@ -17,6 +17,7 @@ public class MenusInXMLActivity extends AppCompatActivity {
     private boolean group2CheckableToggle;
     private boolean group2VisibilityToggle = true;
     private boolean group2EnabledToogle = true;
+    private boolean group2IsRadio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +83,12 @@ public class MenusInXMLActivity extends AppCompatActivity {
 
         MenuItem group2MenuItem3 = menu.findItem(R.id.group2_menu_item3);
         group2MenuItem3.setOnMenuItemClickListener(menuItemClickListener);
+
+        Intent intent = new Intent(this, MenusInCodeActivity.class);
+        group2MenuItem3.setIntent(intent);
+
+        MenuItem group1MenuItem2 = menu.findItem(R.id.group2_menu_item3);
+        group1MenuItem2.setIntent(intent);
     }
 
     /*
@@ -169,6 +176,12 @@ public class MenusInXMLActivity extends AppCompatActivity {
         }
      */
 
+    public boolean group1MenuItem2ClickHandler(MenuItem item) {
+        Log.d(TAG, "in group1MenuItem2ClickHandler(), " + item.getTitle() + " Clicked");
+        Toast.makeText(getApplicationContext(), "Group1 Item 2 Clicked", Toast.LENGTH_SHORT).show();
+        return false;
+    }
+
     /*
         Returning true implies that the control is NOT transferred to onOptionsItemSelected() after executing this event handler
      */
@@ -176,12 +189,6 @@ public class MenusInXMLActivity extends AppCompatActivity {
         Log.d(TAG, "in group1MenuItem3ClickHandler(), " + item.getTitle() + " Clicked");
         Toast.makeText(getApplicationContext(), "Group1 Item 3 Clicked", Toast.LENGTH_SHORT).show();
         return true;
-    }
-
-    public boolean group1MenuItem2ClickHandler(MenuItem item) {
-        Log.d(TAG, "in group1MenuItem2ClickHandler(), " + item.getTitle() + " Clicked");
-        Toast.makeText(getApplicationContext(), "Group1 Item 2 Clicked", Toast.LENGTH_SHORT).show();
-        return false;
     }
 
     public boolean group2MenuItem2ClickHandler(MenuItem item) {
@@ -209,6 +216,12 @@ public class MenusInXMLActivity extends AppCompatActivity {
         menu.setGroupCheckable(R.id.menu_group2, group2CheckableToggle, false);
     }
 
+    public void group2RadioButtonClickHandler(View view) {
+        group2IsRadio = !group2IsRadio;
+
+        menu.setGroupCheckable(R.id.menu_group2, true, group2IsRadio);
+    }
+
     public void group2EnabledClickHandler(View view) {
         group2EnabledToogle = !group2EnabledToogle;
 
@@ -224,9 +237,6 @@ public class MenusInXMLActivity extends AppCompatActivity {
     public void group2RemoveClickHandler(View view) {
         Log.d(TAG, "in group2RemoveClickHandler()");
 
-        /*
-            For some reason, it is deleting an item of the group for every click, but not the entire group
-         */
         menu.removeGroup(R.id.menu_group2);
     }
 
@@ -241,7 +251,7 @@ public class MenusInXMLActivity extends AppCompatActivity {
         }
 
         /*
-            Returning false => onOptionsItemSelected() method would be called after executing onMenuItemClick() method
+            Returning false => onOptionsItemSelected() method would be called after
          */
         @Override
         public boolean onMenuItemClick(MenuItem item) {

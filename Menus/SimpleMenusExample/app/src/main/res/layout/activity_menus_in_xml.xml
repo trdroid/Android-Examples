@@ -16,6 +16,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
+    <Button android:text="Turn Group2 To RadioButtons"
+        android:onClick="group2RadioButtonClickHandler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
     <Button android:text="Toggle Group 2 Enabled"
         android:onClick="group2EnabledClickHandler"
         android:layout_width="match_parent"

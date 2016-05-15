@@ -9,5 +9,17 @@
     <string name="edit_preference_button">Edit Preferences</string>
 
     <string name="bluetooth_pref">bluetooth_pref</string>
+
+    <string name="signal_strength_category_key">signal_strength</string>
+    <string name="signal_strength_title">Signal Strength</string>
+    <string name="signal_strength_summary">Select Signal strength</string>
+
+    <string name="connectivity_level_key">connectivity_level</string>
+    <string name="connectivity_level">Connectivity Level</string>
+    <string name="connectivity_level_default">1</string>
+    <string name="connectivity_dialog">Choose Connectivity Strength</string>
+    <string name="connectivity_summary">Set Search Options</string>
+    <string name="connectivity_title">Connectivity Options</string>
+    <string name="menu_prefs_title">Settings</string>
 </resources>
 

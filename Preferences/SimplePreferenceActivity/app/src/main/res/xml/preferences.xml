@@ -45,4 +45,25 @@
 
         </PreferenceScreen>
     </PreferenceCategory>
+
+    <!--
+        A better approach is to externalize strings, even for keys
+    -->
+
+    <PreferenceCategory
+        android:key="@string/signal_strength_category_key"
+        android:title="@string/signal_strength_title"
+        android:summary="@string/signal_strength_summary">
+
+        <ListPreference
+            android:key="@string/connectivity_level_key"
+            android:title="@string/connectivity_level"
+            android:summary="@string/connectivity_summary"
+            android:entries="@array/connectivity_options"
+            android:entryValues="@array/connectivity_values"
+            android:dialogTitle="@string/connectivity_title"
+            android:defaultValue="@string/connectivity_level_default" />
+
+    </PreferenceCategory>
+
 </PreferenceScreen>
