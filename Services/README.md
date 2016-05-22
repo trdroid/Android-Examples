@@ -18,11 +18,17 @@ The Runtime could terminate a Service prematurely to provide additional resource
 
 ### Creating a Service
 
+A service is created by extending the **Service** class. 
+
+The *onCreate()* method is executed when the service is created.
+
 The *onBind()* method allows the service to be bound to an activity which allows the activity to directly access members and methods of the service.
 
 The *onStartCommand()* method is called when the service is explicitly started using the *startService()* method
 
 The *onDestroy()* method is called when the service is stopped using the stopService() method
+
+Once a service is defined, it has to be registered in the manifest file. An *android:permission* attribute to the service can be specified if other applications have to request a permission in their manifest to use this service.
 
 ### Execution
 
@@ -30,9 +36,7 @@ A service runs on the main thread of the application process. It should not run 
 
 ## NonSticky Services
 
-When a Service returns the nonsticky flag, Service.START_NOT_STICKY, from its onStartCommand() method, Android does not restart the Service ONLY if there are no pending intents. This means to say that Android will restart the Service if there are any pending intents for the Service. 
-
-
+When a Service returns the nonsticky flag, Service.START_NOT_STICKY, from its onStartCommand() method, Android restarts the Service ONLY if there were any pending intents before the service was taken down.
 
 ## Sticky Services
 
@@ -50,9 +54,11 @@ If a service is torn-down and recreated, the wake lock has to be obtained again.
 
 After the worker thread completes its task, it can intimate the service to stop either directly or through a handler.
 
-### Killing a service
+### Platform taking down a service
 
-A service is taken down by the platform only when it cannot allocate resources for a foreground component, which usually is an Activity. Depending on how a service is configured, it can be restarted by the platform as soon as it detects the availability of resources.
+A service can be taken down prematurely by the platform only when it cannot allocate resources for a foreground component, which usually is an Activity. Depending on how a service is configured, it can be restarted by the platform as soon as it detects the availability of resources.
+
+To prevent the platform from taking down a service prematurely, a service's priority can be increased by making it a foreground component. A foreground service's chances of being taken down by the platform is very low except under extreme cases. Marking every service as a foreground component could degrade the performance of the platform, so marking a service as a foreground component should be done judiciously. 
 
 ### Usage Scenarios
 
