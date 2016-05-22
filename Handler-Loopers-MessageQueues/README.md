@@ -38,4 +38,6 @@ A task message is just executed on the consumer thread.
 ### Consumer Thread
 
 
+### Snapshot
 
+![](_misc/General%20Block%20Diagram.png)
