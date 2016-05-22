@@ -1,16 +1,16 @@
 # Services
 
-A Service is an Android component that runs invisibly in the background without a user interface. It has its own life cycle separate from other components. Services are similar in spirits to services in Windows or daemons in Linux, which means they can be available at all times without necessarily doing anything actively, just waiting to serve.
+A Service is an Android component that runs invisibly in the background without a user interface. They serve the purpose of performing long running/time-consuming operations. It has its own life cycle separate from other components. Services are similar in spirits to services in Windows or daemons in Linux, which means they can be available at all times without necessarily doing anything actively, just waiting to serve.
 
 ### Types of services
 
 1) Local Services
   
- A Local service is a service that is accessible ONLY to the application hosting the service.
+ A Local service is a service that is accessible ONLY to the application hosting the service. 
  
 ### Priority of a Service
 
-*The priority of a started Service is greater than the priority of an Activity which is inactive*
+*The priority of a started/running Service is greater than the priority of an Activity which is inactive*
 
 A Service's priority can be raised to be the same as the priority of a foreground Activity in cases when the termination of a Service is unacceptable. 
 
@@ -50,7 +50,19 @@ If a service is torn-down and recreated, the wake lock has to be obtained again.
 
 After the worker thread completes its task, it can intimate the service to stop either directly or through a handler.
 
-### Scenarios
+### Killing a service
+
+A service is taken down by the platform only when it cannot allocate resources for a foreground component, which usually is an Activity. Depending on how a service is configured, it can be restarted by the platform as soon as it detects the availability of resources.
+
+### Usage Scenarios
 
 1) On pausing, stopping or destroying an Activity, any outstanding processing that has to be continued can be delegated to a service.
+
+2) Data processing
+
+3) Fetching information from the internet 
+
+4) Sync data in content providers
+
+5) Trigger notifications and intents
 
