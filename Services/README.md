@@ -1,16 +1,16 @@
 # Services
 
-A Service is an Android component that runs invisibly in the background without a user interface. It has its own life cycle separate from other components. Services are similar in spirits to services in Windows or daemons in Linux, which means they can be available at all times without necessarily doing anything actively, just waiting to serve.
+A Service is an Android component that runs invisibly in the background without a user interface. They serve the purpose of performing long running/time-consuming operations. It has its own life cycle separate from other components. Services are similar in spirits to services in Windows or daemons in Linux, which means they can be available at all times without necessarily doing anything actively, just waiting to serve.
 
 ### Types of services
 
 1) Local Services
   
- A Local service is a service that is accessible ONLY to the application hosting the service.
+ A Local service is a service that is accessible ONLY to the application hosting the service. 
  
 ### Priority of a Service
 
-*The priority of a started Service is greater than the priority of an Activity which is inactive*
+*The priority of a started/running Service is greater than the priority of an Activity which is inactive*
 
 A Service's priority can be raised to be the same as the priority of a foreground Activity in cases when the termination of a Service is unacceptable. 
 
@@ -18,11 +18,17 @@ The Runtime could terminate a Service prematurely to provide additional resource
 
 ### Creating a Service
 
+A service is created by extending the **Service** class. 
+
+The *onCreate()* method is executed when the service is created.
+
 The *onBind()* method allows the service to be bound to an activity which allows the activity to directly access members and methods of the service.
 
 The *onStartCommand()* method is called when the service is explicitly started using the *startService()* method
 
 The *onDestroy()* method is called when the service is stopped using the stopService() method
+
+Once a service is defined, it has to be registered in the manifest file. An *android:permission* attribute to the service can be specified if other applications have to request a permission in their manifest to use this service.
 
 ### Execution
 
@@ -30,9 +36,7 @@ A service runs on the main thread of the application process. It should not run 
 
 ## NonSticky Services
 
-When a Service returns the nonsticky flag, Service.START_NOT_STICKY, from its onStartCommand() method, Android does not restart the Service ONLY if there are no pending intents. This means to say that Android will restart the Service if there are any pending intents for the Service. 
-
-
+When a Service returns the nonsticky flag, Service.START_NOT_STICKY, from its onStartCommand() method, Android restarts the Service ONLY if there were any pending intents before the service was taken down.
 
 ## Sticky Services
 
@@ -50,7 +54,21 @@ If a service is torn-down and recreated, the wake lock has to be obtained again.
 
 After the worker thread completes its task, it can intimate the service to stop either directly or through a handler.
 
-### Scenarios
+### Platform taking down a service
+
+A service can be taken down prematurely by the platform only when it cannot allocate resources for a foreground component, which usually is an Activity. Depending on how a service is configured, it can be restarted by the platform as soon as it detects the availability of resources.
+
+To prevent the platform from taking down a service prematurely, a service's priority can be increased by making it a foreground component. A foreground service's chances of being taken down by the platform is very low except under extreme cases. Marking every service as a foreground component could degrade the performance of the platform, so marking a service as a foreground component should be done judiciously. 
+
+### Usage Scenarios
 
 1) On pausing, stopping or destroying an Activity, any outstanding processing that has to be continued can be delegated to a service.
+
+2) Data processing
+
+3) Fetching information from the internet 
+
+4) Sync data in content providers
+
+5) Trigger notifications and intents
 
