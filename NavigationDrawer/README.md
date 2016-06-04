@@ -18,5 +18,3 @@ It is composed using the following components:
 **event handlers**
 
 1. An item selection listener added to the NavigationView to handle item selections.
-
-
