@@ -1,1 +1,1 @@
-As specified at [](https://developer.android.com/guide/topics/resources/animation-resource.html#Frame), a frame animation has to be specified in an xml file located at res/drawable.
+As specified at [https://developer.android.com/guide/topics/resources/animation-resource.html#Frame](), a frame animation has to be specified in an xml file located at res/drawable.
