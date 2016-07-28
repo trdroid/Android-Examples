@@ -89,4 +89,7 @@ Plugins extend build scripts by providing the properties, blocks and tasks defin
 Every Android project requires to apply the Android plugin in the following way, as it provides everything required to build and test the applications.
 
 
+### Build Variants
+
+
 
