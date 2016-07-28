@@ -14,3 +14,7 @@ The SmartType code completion greatly helps to find methods and variables that a
 
 When using Code Completion, you can accept the currently highlighted selection in the popup list with Tab key.
 Unlike accepting with the Enter key, the selected name will overwrite the rest of the name to the right of the caret. This can be especially useful for replacing one method or variable name with another.
+
+**Find all occurrences of a class, method or variable**
+
+You can quickly find all places where a particular class, method or variable is used in the whole project by positioning the caret at the symbol's name or at its usage in code and pressing Alt+F7 (Edit | Find | Find Usages in the popup menu).
