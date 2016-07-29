@@ -98,4 +98,4 @@ Staging Version (Manually verifying functionality?)
 
 ### Build Types
 
-The Android plugin for Gradle provides a *buildTypes* block
+The Android plugin for Gradle provides a *buildTypes* block that can be configured to define how an app or a library should be built.
