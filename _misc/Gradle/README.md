@@ -95,3 +95,6 @@ Build Variant is Build Type + Product Flavor
 
 Production Version
 Staging Version (Manually verifying functionality?)
+
+### Build Types
+
