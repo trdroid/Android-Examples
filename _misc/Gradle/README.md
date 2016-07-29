@@ -94,4 +94,4 @@ Every Android project requires to apply the Android plugin in the following way,
 Build Variant is Build Type + Product Flavor
 
 Production Version
-Staging Version
+Staging Version (Manually verifying functionality?)
