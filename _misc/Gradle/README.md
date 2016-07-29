@@ -98,3 +98,4 @@ Staging Version (Manually verifying functionality?)
 
 ### Build Types
 
+The Android plugin for Gradle provides a *buildTypes* block
