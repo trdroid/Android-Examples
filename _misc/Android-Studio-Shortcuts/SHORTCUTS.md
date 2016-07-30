@@ -18,3 +18,7 @@ Unlike accepting with the Enter key, the selected name will overwrite the rest o
 **Find all occurrences of a class, method or variable**
 
 You can quickly find all places where a particular class, method or variable is used in the whole project by positioning the caret at the symbol's name or at its usage in code and pressing Alt+F7 (Edit | Find | Find Usages in the popup menu).
+
+**Quickly select currently edited element**
+
+To quickly select the currently edited element (class, file, method or field) in any view (Project view, Structure view or other), press Alt+F1.
