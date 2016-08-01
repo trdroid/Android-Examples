@@ -22,3 +22,7 @@ You can quickly find all places where a particular class, method or variable is 
 **Quickly select currently edited element**
 
 To quickly select the currently edited element (class, file, method or field) in any view (Project view, Structure view or other), press Alt+F1.
+
+**Speed Search**
+
+The speed search is available in all the tree views: just start typing and you'll quickly locate the necessary item.
