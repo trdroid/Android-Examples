@@ -26,3 +26,9 @@ To quickly select the currently edited element (class, file, method or field) in
 **Speed Search**
 
 The speed search is available in all the tree views: just start typing and you'll quickly locate the necessary item.
+
+**Enclose with try/catch blocks**
+
+When you want to catch exceptions thrown by some code fragment, select it in the editor, press Ctrl+Alt+T (Code | Surround With) and choose try / catch. The catch blocks for all the exceptions thrown inside the block will be generated automatically.
+You can customize the bodies of the generated catch blocks on the Code tab of File | Settings | File and Code Templates.
+Use other items in the list to surround with other constructs.
