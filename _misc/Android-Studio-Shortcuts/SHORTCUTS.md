@@ -32,3 +32,8 @@ The speed search is available in all the tree views: just start typing and you'l
 When you want to catch exceptions thrown by some code fragment, select it in the editor, press Ctrl+Alt+T (Code | Surround With) and choose try / catch. The catch blocks for all the exceptions thrown inside the block will be generated automatically.
 You can customize the bodies of the generated catch blocks on the Code tab of File | Settings | File and Code Templates.
 Use other items in the list to surround with other constructs.
+
+**SmartType code completion after new**
+
+The SmartType code completion may be used after the new keyword, to instantiate an object of the expected type. For example, type *new* and press Ctrl+Shift+Space
+ 
