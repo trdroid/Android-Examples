@@ -36,4 +36,9 @@ Use other items in the list to surround with other constructs.
 **SmartType code completion after new**
 
 The SmartType code completion may be used after the new keyword, to instantiate an object of the expected type. For example, type *new* and press Ctrl+Shift+Space
+
+**Renaming**
+
+You can easily rename your classes, methods and variables with automatic correction of all places where they are used.
+To try it, place the caret at the symbol you want to rename, and press Shift+F6 (Refactor | Rename). Type the new name in the popup window that appears, or select one of the suggested names, and press Enter.
  
