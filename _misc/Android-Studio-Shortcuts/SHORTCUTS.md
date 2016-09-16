@@ -42,3 +42,6 @@ The SmartType code completion may be used after the new keyword, to instantiate 
 You can easily rename your classes, methods and variables with automatic correction of all places where they are used.
 To try it, place the caret at the symbol you want to rename, and press Shift+F6 (Refactor | Rename). Type the new name in the popup window that appears, or select one of the suggested names, and press Enter.
  
+ **Navigating implementation(s) of an abstract method**
+ 
+ To navigate to the implementation(s) of an abstract method, position the caret at its usage or its name in the declaration and press Ctrl+Alt+B.
