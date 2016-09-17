@@ -1,9 +1,10 @@
 ### Terms 
 
-<b>Screen Size</b>:
-  The measurement of the diagonal size of a screen in inches
+**Screen Size**
 
-Android categorizes the screen sizes in <b>size constants</b> and provides the following qualifiers
+The measurement of the diagonal size of a screen in inches
+
+Android categorizes the screen sizes in *size constants* and provides the following qualifiers
 
 | Qualifier        | Description           | Version  |
 | ------------- |:-------------:| -----:|
@@ -13,7 +14,8 @@ Android categorizes the screen sizes in <b>size constants</b> and provides the f
 |  | extra large      |     |
 
 
-<b>Screen Density</b>:
+**Screen Density**
+
   The number of physical pixels contained in one inch area of the display screen. A physical pixel is an element of the 
   screen's hardware that generates 1 pixel. On LCD's, it would be one cell. On LED's, it would be one LED. 
   
@@ -25,14 +27,14 @@ Android categorizes the screen sizes in <b>size constants</b> and provides the f
   
 Android categorizes the screen densities into the following <b>density constants</b>
 
-| Qualifier        | Description           | Version  |
-| ------------- |:-------------:| -----:|
-|  LDPI     | low |  |
-|  MDPI      | medium      |    |
-|  HDPI  | high      |     |
-| XHDPI | extra high      |     |
-| XXHDPI | extra extra high      |  4.2.2   |
-| XXXHDPI | extra extra extra large      |  4.3   |
+| Qualifier        | Description           | dots per inch (dpi)  | Version  |
+| ------------- |:-------------:| -----:|-----:|
+|  LDPI     | low | ~120 dpi |  |
+|  MDPI      | medium      |  ~160 dpi  |  |
+|  HDPI  | high      |  ~240 dpi   |  |
+| XHDPI | extra high      | ~320 dpi    |  |
+| XXHDPI | extra extra high      |  ~480 dpi   | 4.2.2 |
+| XXXHDPI | extra extra extra large      | ~640 dpi |  4.3  |
 
 XXXHDPI was added in 4.3 to support 4K iTVs.
 
@@ -43,3 +45,41 @@ XXXHDPI was added in 4.3 to support 4K iTVs.
   
 An Android application takes into account only the screen size and the screen density (through the use of the constants provided), but not the screen resolution. 
 
+### Resource Qualifiers associated with Layouts
+
+
+
+**Choosing layouts based on orientation**
+
+Android provides the qualifiers *port* and *land* to distinguish between portland and landscape orientations.
+
+*Scenario*
+
+1) Use a different layout based on the orientation of an Android device i.e. use a single pane in portrait mode and multi-pane layout in landscape mode. 
+
+* Place default layouts in *res/layout/* directory.
+* Place portrait-only layouts in *res/layout-port/* directory
+* Place landscape-only layouts in *res/layout-land/* directory
+
+**Choosing layouts based on screen size**
+
+Android provides the *sw (smallestWidth)* qualifier to distinguish between a phone and a tablet. *smallestWidth* implies the smaller of the width and height irrespective of the orientation of the device.
+
+*Scenario*
+
+
+
+**Resource Qualifiers to handle different Android versions**
+
+Resource qualifiers can be used to specify the usage of alternate resources based on the version of Android an app is running on. 
+
+*Scenario*
+
+Use different colors when an app is running on Android 4.1 than on Android 5. 
+
+* Place default colors in *res/values/colors.xml*
+* Place 4.1 (API 16) specific colors in *res/values-v16/colors.xml*
+
+### Specifying Multiple Qualifiers
+
+Multiple resource qualifiers can be specified for a single set of resources separated by dashes. 
