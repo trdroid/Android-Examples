@@ -47,11 +47,17 @@ An Android application takes into account only the screen size and the screen de
 
 ### Resource Qualifiers associated with Layouts
 
+**Orientation based Resource Qualifiers associated with Layouts**
 
+Orientation based resource qualifier associated with layouts allow Android to choose layouts based on orientation. Android provides the resource qualifiers *port* and *land* to allow developers to provide different layouts for portland and landscape orientations.
 
-**Choosing layouts based on orientation**
+Android chooses a specific layout from 
 
-Android provides the qualifiers *port* and *land* to distinguish between portland and landscape orientations.
+* *res/layout/* or
+* *res/layout-port/* or
+* *res/layout-land/*
+
+based on the orientation of the device. 
 
 *Scenario*
 
@@ -61,7 +67,7 @@ Android provides the qualifiers *port* and *land* to distinguish between portlan
 * Place portrait-only layouts in *res/layout-port/* directory
 * Place landscape-only layouts in *res/layout-land/* directory
 
-**Choosing layouts based on screen size**
+**Screen Size based Resource Qualifiers associated with Layouts**
 
 Android provides the *sw (smallestWidth)* qualifier to distinguish between a phone and a tablet. *smallestWidth* implies the smaller of the width and height irrespective of the orientation of the device.
 
