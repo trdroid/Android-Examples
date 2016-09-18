@@ -1,17 +1,23 @@
-### Terms 
+# Resource Qualifiers
+
+https://developer.android.com/guide/practices/screens_support.html
+
+Android provided support for multiple screen sizes and densities starting Android 1.6 (API Level 4). This feature can be used to customize an application's UI for each screen configuration.
+
+
 
 **Screen Size**
 
-The measurement of the diagonal size of a screen in inches
+The measurement of the diagonal length of a screen in inches
 
 Android categorizes the screen sizes in *size constants* and provides the following qualifiers
 
-| Qualifier        | Description           | Version  |
+| Qualifier        |   Generalized Screen Size         | Minimum Screen Resolution |
 | ------------- |:-------------:| -----:|
-|       | small |  |
-|       | normal      |    |
-|  | large      |     |
-|  | extra large      |     |
+| resource-small    | small screens | 426 dp x 320 dp |
+| resource-medium      | normal screens     |  470 dp x 320 dp  |
+| resource-large |  large screens    |   640 dp x 480 dp  |
+| resource-xlarge |  xlarge screens    |  960 dp x 720 dp   |
 
 
 **Screen Density**
