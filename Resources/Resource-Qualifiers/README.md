@@ -2,22 +2,32 @@
 
 https://developer.android.com/guide/practices/screens_support.html
 
-Android provided support for multiple screen sizes and densities starting Android 1.6 (API Level 4). This feature can be used to customize an application's UI for each screen configuration.
-
-
-
 **Screen Size**
 
-The measurement of the diagonal length of a screen in inches
+Android provided support for multiple screen sizes and densities starting Android 1.6 (API Level 4). This feature can be used to customize an application's UI for each screen configuration.
 
-Android categorizes the screen sizes in *size constants* and provides the following qualifiers
+*Screen Size* is the measurement of the diagonal length of a screen in inches.
 
-| Qualifier        |   Generalized Screen Size         | Minimum Screen Resolution |
+Prior to Android 3.2 (API Level 13), Android categorized the screen sizes in *size constants* and provided the following resource qualifiers.
+
+| Resource Qualifier        |   Generalized Screen Size         | Minimum Screen Resolution |
 | ------------- |:-------------:| -----:|
-| resource-small    | small screens | 426 dp x 320 dp |
-| resource-medium      | normal screens     |  470 dp x 320 dp  |
-| resource-large |  large screens    |   640 dp x 480 dp  |
-| resource-xlarge |  xlarge screens    |  960 dp x 720 dp   |
+| \<resource\>-small    | small screens | 426 dp x 320 dp |
+| \<resource\>-medium      | normal screens     |  470 dp x 320 dp  |
+| \<resource\>-large |  large screens    |   640 dp x 480 dp  |
+| \<resource\>-xlarge |  xlarge screens    |  960 dp x 720 dp   |
+
+
+*Issues with this categorization*
+
+In Android 3.2 (API Level 13), a new set of resource qualifiers were introduced that are based on the actual screen dimensions in *dp units*. 
+
+| Resource Qualifier          |  Description |
+| ------------- |-----:|
+| \<resource\>-sw___dp  | Screen with at least the specified Smallest Width irrespective of the orientation |
+| \<resource\>-w___dp   |  Screen with at least the specified Width in the current orientation  |
+| \<resource\>-h___dp | Screen with at least the specified Height in the current orientation  |
+
 
 
 **Screen Density**
