@@ -396,3 +396,14 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+![](_misc/Settings.png)
+
+![](_misc/Group%20One.png)
+
+![](_misc/Group%20Two.png)
+
+![](_misc/EditText.png)
+
+![](_misc/ListPreference.png)
+
+![](_misc/Ringtones.png)
