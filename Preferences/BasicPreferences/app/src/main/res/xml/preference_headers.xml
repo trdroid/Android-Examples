@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<preference-headers xmlns:android="http://schemas.android.com/apk/res/android">
+    <header
+        android:fragment="com.gruprog.basicpreferences.SettingsFragment"
+        android:title="@string/group_1"
+        android:summary="@string/summary_1">
+        <extra android:name="fragment_preference_resource" android:value="preference_group_1"/>
+    </header>
+    <header
+        android:fragment="com.gruprog.basicpreferences.SettingsFragment"
+        android:title="@string/group_1"
+        android:summary="@string/summary_2">
+        <extra android:name="fragment_preference_resource" android:value="preference_group_2"/>
+    </header>
+</preference-headers>
