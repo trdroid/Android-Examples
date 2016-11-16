@@ -25,8 +25,25 @@ Digital certificates can be used for
 A *digital certificate* can be obtained by
 
 * Generating one individually using tools like *keytool*
-* Getting one from a trusted Certificate Authority (CA)
+* Getting one from a trusted Certificate Authority (CA) like "VeriSign"
+
+**Storage**
+
+Digital certificates are stored in *keystores*. 
+
+A *keystore* stores a list of digital certificates. 
+Each digital certificate in the *keystore* has an *alias* that can be used to address its corresponding digital certificate. 
 
 ### Signing an Android application
 
-An Android application signed with a digital certificate CAN ONLY BE UPDATED by the original author of the application who holds the digital certificate used to initially sign and deploy the app.
+Signing an Android application requires
+
+* The .apk file to be signed
+* A digital certificate
+* A utility to apply the digital certificate to the .apk file
+
+**Benefits**
+
+An Android application signed with a digital certificate 
+
+* CAN ONLY BE UPDATED by the original author of the application who holds the digital certificate used to initially sign and deploy the app.
