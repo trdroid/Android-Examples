@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="Category One">
+        <EditTextPreference
+            android:key="text1"
+            android:title="Nick name"
+            android:summary="Choose a nick name for the chat window"
+            android:dialogTitle="Enter chat nick name"/>
+
+        <CheckBoxPreference
+            android:key="checkbox1"
+            android:title="Enabled being found?"
+            android:summary="Choose if you are visible in search results"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Category Two">
+
+        <SwitchPreference
+            android:key="Select"
+            android:title="Selection"
+            android:summary="Sample selection"/>
+
+        <ListPreference
+            android:key="list"
+            android:title="Select a city"
+            android:entries="@array/cities"
+            android:entryValues="@array/ids"
+            android:dialogTitle="Your favorite city?"
+            android:summary="Choose your favorite city"/>
+            
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -89,4 +89,15 @@ Plugins extend build scripts by providing the properties, blocks and tasks defin
 Every Android project requires to apply the Android plugin in the following way, as it provides everything required to build and test the applications.
 
 
+### Build Variants
 
+Build Variant is Build Type + Product Flavor
+
+Production Version
+Staging Version (Manually verifying functionality?)
+
+### Build Types
+
+The Android plugin for Gradle provides a *buildTypes* block that can be configured to define how an app or a library should be built.
+
+Test string, Try again!
